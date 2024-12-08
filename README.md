@@ -29,3 +29,37 @@
 | `git reset --hard <commit>` | Hoàn tác thay đổi và quay lại commit chỉ định. |
 | `git stash` | Lưu tạm thời các thay đổi hiện tại mà không commit. |
 | `git merge <branch-name>` | Hợp nhất một nhánh vào nhánh hiện tại. |
+
+
+
+src/
+├── auth/
+│   ├── DangNhapController.java          // Xử lý đăng nhập
+│   ├── DangKyTaiKhoanController.java    // Đăng ký tài khoản
+│
+├── controller/
+│   ├── HocVienController.java           // Xử lý yêu cầu liên quan đến học viên
+│   ├── LopHocController.java            // Xử lý yêu cầu liên quan đến lớp học
+│   ├── DangKyController.java            // Xử lý yêu cầu đăng ký
+│
+├── model/
+│   ├── HocVien.java                     // Lớp đại diện cho học viên
+│   ├── LopHoc.java                      // Lớp đại diện cho lớp học
+│   ├── DangKy.java                      // Lớp đại diện cho thông tin đăng ký
+│
+├── services/
+│   ├── HocVienService.java              // Xử lý logic liên quan đến học viên
+│   ├── LopHocService.java               // Xử lý logic liên quan đến lớp học
+│   ├── DangKyService.java               // Xử lý logic liên quan đến đăng ký
+│
+├── ui/
+│   ├── HocVienUI.java                   // Giao diện học viên
+│   ├── DangKyUI.java                    // Giao diện đăng ký
+│   ├── LopHocUI.java                    // Giao diện hiển thị danh sách lớp học
+│
+├── utils/
+│   ├── BoLocLopHoc.java                 // Bộ lọc tìm kiếm lớp học
+│   ├── Validator.java                   // Kiểm tra dữ liệu nhập vào
+│
+└── app.java                             // Chương trình chính
+

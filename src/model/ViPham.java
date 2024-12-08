@@ -2,14 +2,14 @@ package model;
 
 public class ViPham {
     private String maViPham;
-    private String maHocVien;
+    private HocVien hocVien;
     private String lyDo;
     private String ketQua; // Ví dụ: "Đình chỉ", "Cảnh cáo", ...
 
     // Constructor
-    public ViPham(String maViPham, String maHocVien, String lyDo, String ketQua) {
+    public ViPham(String maViPham, HocVien hocVien, String lyDo, String ketQua) {
         this.maViPham = maViPham;
-        this.maHocVien = maHocVien;
+        this.hocVien = hocVien;
         this.lyDo = lyDo;
         this.ketQua = ketQua;
     }
@@ -23,12 +23,12 @@ public class ViPham {
         this.maViPham = maViPham;
     }
 
-    public String getMaHocVien() {
-        return maHocVien;
+    public HocVien gethocVien() {
+        return hocVien;
     }
 
-    public void setMaHocVien(String maHocVien) {
-        this.maHocVien = maHocVien;
+    public void sethocVien(HocVien hocVien) {
+        this.hocVien = hocVien;
     }
 
     public String getLyDo() {
@@ -50,7 +50,7 @@ public class ViPham {
     // Optional: You can add other methods for handling logic related to violations.
     public void prStringDetails() {
         System.out.println("Mã vi phạm: " + maViPham);
-        System.out.println("Mã học viên: " + maHocVien);
+        System.out.println("Mã học viên: " + hocVien);
         System.out.println("Lý do: " + lyDo);
         System.out.println("Kết quả: " + ketQua);
     }

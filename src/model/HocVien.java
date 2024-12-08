@@ -1,23 +1,24 @@
 package model;
-
+import java.util.ArrayList;
 public class HocVien {
-    private int maHocVien;
+    private String maHocVien;
     private NguoiDung maNguoiDung;  // Đây có thể là tham chiếu đến đối tượng người dùng
-
+    private ArrayList<LopHoc> lopHocs;
+    private ArrayList<HoaDonThanhToan> hoaDonThanhToans;
     // Constructor
     public HocVien() {}
-    
-    public HocVien(int maHocVien, NguoiDung maNguoiDung) {
+
+    public HocVien(String maHocVien, NguoiDung maNguoiDung) {
         this.maHocVien = maHocVien;
         this.maNguoiDung = maNguoiDung;
     }
 
     // Getters and Setters
-    public int getMaHocVien() {
+    public String getMaHocVien() {
         return maHocVien;
     }
 
-    public void setMaHocVien(int maHocVien) {
+    public void setMaHocVien(String maHocVien) {
         this.maHocVien = maHocVien;
     }
 

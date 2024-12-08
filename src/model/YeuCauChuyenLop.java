@@ -4,21 +4,21 @@ import model.person.*;
 
 public class YeuCauChuyenLop {
     private String maYeuCau;
-    private String maHocVien;
-    private String maLopCu;
-    private String maLopMoi;
+    private HocVien hocVien;
+    private LopHoc lopCu;
+    private LopHoc lopMoi;
     private String lyDo;
     private String trangThai; // ChuaDuyet, Duyet, TuChoi
     private NgayThangNam ngayYeuCau;
     private NgayThangNam ngayXuLy;
 
     // Constructor
-    public YeuCauChuyenLop(String maYeuCau, String maHocVien, String maLopCu, String maLopMoi, String lyDo, String trangThai,
+    public YeuCauChuyenLop(String maYeuCau, HocVien hocVien, LopHoc lopCu, LopHoc lopMoi, String lyDo, String trangThai,
                            NgayThangNam ngayYeuCau, NgayThangNam ngayXuLy) {
         this.maYeuCau = maYeuCau;
-        this.maHocVien = maHocVien;
-        this.maLopCu = maLopCu;
-        this.maLopMoi = maLopMoi;
+        this.hocVien = hocVien;
+        this.lopCu = lopCu;
+        this.lopMoi = lopMoi;
         this.lyDo = lyDo;
         this.trangThai = trangThai;
         this.ngayYeuCau = ngayYeuCau;
@@ -34,28 +34,28 @@ public class YeuCauChuyenLop {
         this.maYeuCau = maYeuCau;
     }
 
-    public String getMaHocVien() {
-        return maHocVien;
+    public HocVien gethocVien() {
+        return hocVien;
     }
 
-    public void setMaHocVien(String maHocVien) {
-        this.maHocVien = maHocVien;
+    public void sethocVien(HocVien hocVien) {
+        this.hocVien = hocVien;
     }
 
-    public String getMaLopCu() {
-        return maLopCu;
+    public LopHoc getlopCu() {
+        return lopCu;
     }
 
-    public void setMaLopCu(String maLopCu) {
-        this.maLopCu = maLopCu;
+    public void setlopCu(LopHoc lopCu) {
+        this.lopCu = lopCu;
     }
 
-    public String getMaLopMoi() {
-        return maLopMoi;
+    public LopHoc getlopMoi() {
+        return lopMoi;
     }
 
-    public void setMaLopMoi(String maLopMoi) {
-        this.maLopMoi = maLopMoi;
+    public void setlopMoi(LopHoc lopMoi) {
+        this.lopMoi = lopMoi;
     }
 
     public String getLyDo() {

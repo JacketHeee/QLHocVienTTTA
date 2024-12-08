@@ -4,16 +4,16 @@ import model.person.NgayThangNam;
 
 public class PhanCong {
     private String maPhanCong;          // Mã phân công (khóa chính, tự động tăng)
-    private String maGiaoVien;          // Mã giáo viên (khóa ngoại từ bảng GiaoVien)
+    private GiaoVien giaoVien;          // Mã giáo viên (khóa ngoại từ bảng GiaoVien)
     private String maYeuCau;            // Mã yêu cầu tư vấn (khóa ngoại từ bảng YeuCauTuVan)
     private NgayThangNam ngayPhongVan;       // Ngày phỏng vấn
     private String ketQua;           // Kết quả của buổi tư vấn
     private GioPhut gioPhongVan;        // Giờ phỏng vấn
 
     // Constructor
-    public PhanCong(String maPhanCong, String maGiaoVien, String maYeuCau, NgayThangNam ngayPhongVan, String ketQua, GioPhut gioPhongVan) {
+    public PhanCong(String maPhanCong, GiaoVien giaoVien, String maYeuCau, NgayThangNam ngayPhongVan, String ketQua, GioPhut gioPhongVan) {
         this.maPhanCong = maPhanCong;
-        this.maGiaoVien = maGiaoVien;
+        this.giaoVien = giaoVien;
         this.maYeuCau = maYeuCau;
         this.ngayPhongVan = ngayPhongVan;
         this.ketQua = ketQua;
@@ -29,12 +29,12 @@ public class PhanCong {
         this.maPhanCong = maPhanCong;
     }
 
-    public String getMaGiaoVien() {
-        return maGiaoVien;
+    public GiaoVien getgiaoVien() {
+        return giaoVien;
     }
 
-    public void setMaGiaoVien(String maGiaoVien) {
-        this.maGiaoVien = maGiaoVien;
+    public void setgiaoVien(GiaoVien giaoVien) {
+        this.giaoVien = giaoVien;
     }
 
     public String getMaYeuCau() {

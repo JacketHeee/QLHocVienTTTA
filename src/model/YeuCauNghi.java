@@ -4,8 +4,7 @@ import model.person.*;
 
 public class YeuCauNghi {
     private String maYeuCau;
-    private String maHocVien;
-    private String maLopHoc;
+    private HocVien hocVien;
     private String lyDoNghi;
     private NgayThangNam ngayYeuCau;
     private NgayThangNam ngayBatDauNghi;
@@ -13,11 +12,10 @@ public class YeuCauNghi {
     private String trangThai; // ChuaDuyet, DaDuyet, TuChoi
 
     // Constructor
-    public YeuCauNghi(String maYeuCau, String maHocVien, String maLopHoc, String lyDoNghi, NgayThangNam ngayYeuCau,
+    public YeuCauNghi(String maYeuCau, HocVien hocVien, String lyDoNghi, NgayThangNam ngayYeuCau,
                       NgayThangNam ngayBatDauNghi, NgayThangNam ngayDuKienQuayLai, String trangThai) {
         this.maYeuCau = maYeuCau;
-        this.maHocVien = maHocVien;
-        this.maLopHoc = maLopHoc;
+        this.hocVien = hocVien;
         this.lyDoNghi = lyDoNghi;
         this.ngayYeuCau = ngayYeuCau;
         this.ngayBatDauNghi = ngayBatDauNghi;
@@ -34,20 +32,12 @@ public class YeuCauNghi {
         this.maYeuCau = maYeuCau;
     }
 
-    public String getMaHocVien() {
-        return maHocVien;
+    public HocVien gethocVien() {
+        return hocVien;
     }
 
-    public void setMaHocVien(String maHocVien) {
-        this.maHocVien = maHocVien;
-    }
-
-    public String getMaLopHoc() {
-        return maLopHoc;
-    }
-
-    public void setMaLopHoc(String maLopHoc) {
-        this.maLopHoc = maLopHoc;
+    public void sethocVien(HocVien hocVien) {
+        this.hocVien = hocVien;
     }
 
     public String getLyDoNghi() {

@@ -4,30 +4,27 @@ import model.person.*;
 
 public class HoaDonThanhToan {
     private String maHoaDon;
-    private String maHocVien;
-    private String maLopHoc;
-    private String maChuongTrinhKhuyenMai;
+    private HocVien hocVien;
+    private LopHoc lopHoc;
+    private KhuyenMai khuyenMai;
     private NgayThangNam ngayPhatHanh;
-    private String tinhTrang; // 'ChuaThanhToan', 'DaThanhToan', 'DaHuy'
+    private String tinhTrang; // 'ChuaThanhToan', 'DaThanhToan', 'DaHuy','chua xong'
     private double tongTien;
     private String phuongThucThanhToan; // 'TienMat', 'ChuyenKhoan'
     private NgayThangNam ngayThanhToan;
     private double soTienThanhToan;
     private String ghiChu;
     private NgayThangNam ngayHetHan;
-    private double mucGiamGia;
-    private double soTienConNo;
 
     // Constructor
-    public HoaDonThanhToan(String maHoaDon, String maHocVien, String maLopHoc, String maChuongTrinhKhuyenMai, 
+    public HoaDonThanhToan(String maHoaDon, HocVien hocVien, LopHoc lopHoc, KhuyenMai khuyenMai, 
                            NgayThangNam ngayPhatHanh, String tinhTrang, double tongTien, 
                            String phuongThucThanhToan, NgayThangNam ngayThanhToan, double soTienThanhToan, 
-                           String ghiChu, NgayThangNam ngayHetHan, 
-                           double mucGiamGia, double soTienConNo) {
+                           String ghiChu, NgayThangNam ngayHetHan) {
         this.maHoaDon = maHoaDon;
-        this.maHocVien = maHocVien;
-        this.maLopHoc = maLopHoc;
-        this.maChuongTrinhKhuyenMai = maChuongTrinhKhuyenMai;
+        this.hocVien = hocVien;
+        this.lopHoc = lopHoc;
+        this.khuyenMai = khuyenMai;
         this.ngayPhatHanh = ngayPhatHanh;
         this.tinhTrang = tinhTrang;
         this.tongTien = tongTien;
@@ -36,8 +33,6 @@ public class HoaDonThanhToan {
         this.soTienThanhToan = soTienThanhToan;
         this.ghiChu = ghiChu;
         this.ngayHetHan = ngayHetHan;
-        this.mucGiamGia = mucGiamGia;
-        this.soTienConNo = soTienConNo;
     }
 
     // Getters and Setters
@@ -49,28 +44,28 @@ public class HoaDonThanhToan {
         this.maHoaDon = maHoaDon;
     }
 
-    public String getMaHocVien() {
-        return maHocVien;
+    public HocVien gethocVien() {
+        return hocVien;
     }
 
-    public void setMaHocVien(String maHocVien) {
-        this.maHocVien = maHocVien;
+    public void sethocVien(HocVien hocVien) {
+        this.hocVien = hocVien;
     }
 
-    public String getMaLopHoc() {
-        return maLopHoc;
+    public LopHoc getlopHoc() {
+        return lopHoc;
     }
 
-    public void setMaLopHoc(String maLopHoc) {
-        this.maLopHoc = maLopHoc;
+    public void setlopHoc(LopHoc lopHoc) {
+        this.lopHoc = lopHoc;
     }
 
-    public String getMaChuongTrinhKhuyenMai() {
-        return maChuongTrinhKhuyenMai;
+    public KhuyenMai getkhuyenMai() {
+        return khuyenMai;
     }
 
-    public void setMaChuongTrinhKhuyenMai(String maChuongTrinhKhuyenMai) {
-        this.maChuongTrinhKhuyenMai = maChuongTrinhKhuyenMai;
+    public void setkhuyenMai(KhuyenMai khuyenMai) {
+        this.khuyenMai = khuyenMai;
     }
 
     public NgayThangNam getNgayPhatHanh() {
@@ -137,19 +132,7 @@ public class HoaDonThanhToan {
         this.ngayHetHan = ngayHetHan;
     }
 
-    public double getMucGiamGia() {
-        return mucGiamGia;
-    }
-
-    public void setMucGiamGia(double mucGiamGia) {
-        this.mucGiamGia = mucGiamGia;
-    }
-
-    public double getSoTienConNo() {
-        return soTienConNo;
-    }
-
-    public void setSoTienConNo(double soTienConNo) {
-        this.soTienConNo = soTienConNo;
+    public double soTienConNo() {
+        return this.tongTien - this.soTienThanhToan;
     }
 }

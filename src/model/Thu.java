@@ -1,19 +1,19 @@
 package model;
 
 public class Thu {
-    private int maThu;       // Mã thứ (1 - 7, tương ứng Thứ 2 - Thứ 7)
+    private String maThu;       // Mã thứ (1 - 7, tương ứng Thứ 2 - Thứ 7)
     private String tenThu;   // Tên thứ (Thứ 2, Thứ 3, ...)
 
-    public Thu(int maThu, String tenThu) {
+    public Thu(String maThu, String tenThu) {
         this.maThu = maThu;
         this.tenThu = tenThu;
     }
 
-    public int getMaThu() {
+    public String getMaThu() {
         return maThu;
     }
 
-    public void setMaThu(int maThu) {
+    public void setMaThu(String maThu) {
         this.maThu = maThu;
     }
 

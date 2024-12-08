@@ -1,23 +1,25 @@
 package model;
 
+import java.util.ArrayList;
+
 public class ChuongTrinh {
-    private int maChuongTrinh;
+    private String maChuongTrinh;
     private String tenChuongTrinh;
     private String doiTuong;
-
+    private ArrayList<CapBac> capBacs;
     // Constructor
-    public ChuongTrinh(int maChuongTrinh, String tenChuongTrinh, String doiTuong) {
+    public ChuongTrinh(String maChuongTrinh, String tenChuongTrinh, String doiTuong) {
         this.maChuongTrinh = maChuongTrinh;
         this.tenChuongTrinh = tenChuongTrinh;
         this.doiTuong = doiTuong;
     }
 
     // Getters and Setters
-    public int getMaChuongTrinh() {
+    public String getMaChuongTrinh() {
         return maChuongTrinh;
     }
 
-    public void setMaChuongTrinh(int maChuongTrinh) {
+    public void setMaChuongTrinh(String maChuongTrinh) {
         this.maChuongTrinh = maChuongTrinh;
     }
 

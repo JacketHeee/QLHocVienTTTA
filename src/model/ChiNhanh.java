@@ -1,12 +1,15 @@
 package model;
 
+import java.util.ArrayList;
+
 public class ChiNhanh {
-    private int maChiNhanh;
+    private String maChiNhanh;
     private String tenChiNhanh;
     private String diaChi;
     private String soDienThoai;
+    private ArrayList<PhongHoc> phongHocs;
 
-    public ChiNhanh(int maChiNhanh, String tenChiNhanh, String diaChi, String soDienThoai) {
+    public ChiNhanh(String maChiNhanh, String tenChiNhanh, String diaChi, String soDienThoai) {
         this.maChiNhanh = maChiNhanh;
         this.tenChiNhanh = tenChiNhanh;
         this.diaChi = diaChi;
@@ -14,11 +17,11 @@ public class ChiNhanh {
     }
 
     // Getter and Setter methods
-    public int getMaChiNhanh() {
+    public String getMaChiNhanh() {
         return maChiNhanh;
     }
 
-    public void setMaChiNhanh(int maChiNhanh) {
+    public void setMaChiNhanh(String maChiNhanh) {
         this.maChiNhanh = maChiNhanh;
     }
 
@@ -46,4 +49,5 @@ public class ChiNhanh {
         this.soDienThoai = soDienThoai;
     }
 }
+
 

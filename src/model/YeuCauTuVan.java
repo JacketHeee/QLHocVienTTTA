@@ -3,15 +3,15 @@ package model;
 import model.person.*;
 public class YeuCauTuVan {
     private String maYeuCau;           // Mã yêu cầu tư vấn
-    private String maHocVien;          // Mã học viên (khóa ngoại từ bảng HocVien)
+    private HocVien hocVien;          // Mã học viên (khóa ngoại từ bảng HocVien)
     private String mucTieu;         // Mục tiêu tư vấn của học viên
     private NgayThangNam ngayDangKy;        // Ngày đăng ký yêu cầu tư vấn
     private String trangThai;       // Trạng thái yêu cầu (ví dụ: 'Đang xử lý', 'Đã hoàn thành', 'Đã hủy')
 
     // Constructor
-    public YeuCauTuVan(String maYeuCau, String maHocVien, String mucTieu, NgayThangNam ngayDangKy, String trangThai) {
+    public YeuCauTuVan(String maYeuCau, HocVien hocVien, String mucTieu, NgayThangNam ngayDangKy, String trangThai) {
         this.maYeuCau = maYeuCau;
-        this.maHocVien = maHocVien;
+        this.hocVien = hocVien;
         this.mucTieu = mucTieu;
         this.ngayDangKy = ngayDangKy;
         this.trangThai = trangThai;
@@ -26,12 +26,12 @@ public class YeuCauTuVan {
         this.maYeuCau = maYeuCau;
     }
 
-    public String getMaHocVien() {
-        return maHocVien;
+    public HocVien gethocVien() {
+        return hocVien;
     }
 
-    public void setMaHocVien(String maHocVien) {
-        this.maHocVien = maHocVien;
+    public void sethocVien(HocVien hocVien) {
+        this.hocVien = hocVien;
     }
 
     public String getMucTieu() {

@@ -1,13 +1,15 @@
 package model;
 
+import java.util.ArrayList;
+
 public class CapBac {
-    private int maCapBac;
+    private String maCapBac;
     private ChuongTrinh chuongTrinh;  // Association with ChuongTrinh class
     private String tenCapBac;
     private String thoiGianHoc;
-
+    private ArrayList<KhoaHoc> khoaHocs;
     // Constructor
-    public CapBac(int maCapBac, ChuongTrinh chuongTrinh, String tenCapBac, String thoiGianHoc) {
+    public CapBac(String maCapBac, ChuongTrinh chuongTrinh, String tenCapBac, String thoiGianHoc) {
         this.maCapBac = maCapBac;
         this.chuongTrinh = chuongTrinh;
         this.tenCapBac = tenCapBac;
@@ -15,11 +17,11 @@ public class CapBac {
     }
 
     // Getters and Setters
-    public int getMaCapBac() {
+    public String getMaCapBac() {
         return maCapBac;
     }
 
-    public void setMaCapBac(int maCapBac) {
+    public void setMaCapBac(String maCapBac) {
         this.maCapBac = maCapBac;
     }
 

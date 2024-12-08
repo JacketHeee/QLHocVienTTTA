@@ -1,34 +1,36 @@
 package model;
 
 import model.person.*;
+import java.util.ArrayList;
 
 public class LopHoc {
     private String maLopHoc;
     private String tenLopHoc;
-    private String maKhoaHoc;
-    private String maKhoaKhaiGiang;
-    private String maPhongHoc;
-    private String maGVNhat;
-    private String maGVTroGiang;
+    private KhoaHoc khoaHoc;
+    private KhoaKhaiGiang khoaKhaiGiang;
+    private PhongHoc phongHoc;
+    private GiaoVien gvChinh;
+    private GiaoVien gvTroGiang;
     private int soLuongToiDa;
     private NgayThangNam ngayKhaiGiang;
     private String trangThai;  // String để thay thế enum, ví dụ: "DangTuyenSinh", "NgungTuyenSinh"
-    private String maGioHoc;
-
+    private GioHoc gioHoc;
+    private ArrayList<HocVien> hocViens;
+    private ArrayList<HoaDonThanhToan> hoaDonThanhToans;
     // Constructor
-    public LopHoc(String maLopHoc, String tenLopHoc, String maKhoaHoc, String maKhoaKhaiGiang, String maPhongHoc,
-                  String maGVNhat, String maGVTroGiang, int soLuongToiDa, NgayThangNam ngayKhaiGiang, String trangThai, String maGioHoc) {
+    public LopHoc(String maLopHoc, String tenLopHoc, KhoaHoc khoaHoc, KhoaKhaiGiang khoaKhaiGiang, PhongHoc phongHoc,
+                  GiaoVien gvChinh, GiaoVien gvTroGiang, int soLuongToiDa, NgayThangNam ngayKhaiGiang, String trangThai, GioHoc gioHoc) {
         this.maLopHoc = maLopHoc;
         this.tenLopHoc = tenLopHoc;
-        this.maKhoaHoc = maKhoaHoc;
-        this.maKhoaKhaiGiang = maKhoaKhaiGiang;
-        this.maPhongHoc = maPhongHoc;
-        this.maGVNhat = maGVNhat;
-        this.maGVTroGiang = maGVTroGiang;
+        this.khoaHoc = khoaHoc;
+        this.khoaKhaiGiang = khoaKhaiGiang;
+        this.phongHoc = phongHoc;
+        this.gvChinh = gvChinh;
+        this.gvTroGiang = gvTroGiang;
         this.soLuongToiDa = soLuongToiDa;
         this.ngayKhaiGiang = ngayKhaiGiang;
         this.trangThai = trangThai;
-        this.maGioHoc = maGioHoc;
+        this.gioHoc = gioHoc;
     }
 
     // Getters and Setters
@@ -48,44 +50,44 @@ public class LopHoc {
         this.tenLopHoc = tenLopHoc;
     }
 
-    public String getMaKhoaHoc() {
-        return maKhoaHoc;
+    public KhoaHoc getkhoaHoc() {
+        return khoaHoc;
     }
 
-    public void setMaKhoaHoc(String maKhoaHoc) {
-        this.maKhoaHoc = maKhoaHoc;
+    public void setkhoaHoc(KhoaHoc khoaHoc) {
+        this.khoaHoc = khoaHoc;
     }
 
-    public String getMaKhoaKhaiGiang() {
-        return maKhoaKhaiGiang;
+    public KhoaKhaiGiang getkhoaKhaiGiang() {
+        return khoaKhaiGiang;
     }
 
-    public void setMaKhoaKhaiGiang(String maKhoaKhaiGiang) {
-        this.maKhoaKhaiGiang = maKhoaKhaiGiang;
+    public void setkhoaKhaiGiang(KhoaKhaiGiang khoaKhaiGiang) {
+        this.khoaKhaiGiang = khoaKhaiGiang;
     }
 
-    public String getMaPhongHoc() {
-        return maPhongHoc;
+    public PhongHoc getphongHoc() {
+        return phongHoc;
     }
 
-    public void setMaPhongHoc(String maPhongHoc) {
-        this.maPhongHoc = maPhongHoc;
+    public void setphongHoc(PhongHoc phongHoc) {
+        this.phongHoc = phongHoc;
     }
 
-    public String getMaGVNhat() {
-        return maGVNhat;
+    public GiaoVien getgvChinh() {
+        return gvChinh;
     }
 
-    public void setMaGVNhat(String maGVNhat) {
-        this.maGVNhat = maGVNhat;
+    public void setgvChinh(GiaoVien gvChinh) {
+        this.gvChinh = gvChinh;
     }
 
-    public String getMaGVTroGiang() {
-        return maGVTroGiang;
+    public GiaoVien getgvTroGiang() {
+        return gvTroGiang;
     }
 
-    public void setMaGVTroGiang(String maGVTroGiang) {
-        this.maGVTroGiang = maGVTroGiang;
+    public void setgvTroGiang(GiaoVien gvTroGiang) {
+        this.gvTroGiang = gvTroGiang;
     }
 
     public int getSoLuongToiDa() {
@@ -112,12 +114,12 @@ public class LopHoc {
         this.trangThai = trangThai;
     }
 
-    public String getmaGioHoc() {
-        return maGioHoc;
+    public GioHoc getgioHoc() {
+        return gioHoc;
     }
 
-    public void setmaGioHoc(String maGioHoc) {
-        this.maGioHoc = maGioHoc;
+    public void setgioHoc(GioHoc gioHoc) {
+        this.gioHoc = gioHoc;
     }
 
     // Other methods as needed

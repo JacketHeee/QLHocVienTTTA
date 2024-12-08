@@ -1,16 +1,19 @@
 package model;
 
+import java.util.ArrayList;
+
 public class KhoaHoc {
-    private int maKhoaHoc;
-    private String maCapBac;
+    private String maKhoaHoc;
+    private CapBac capBac;
     private String tenKhoaHoc;
     private String moTa;
     private String noiDung;
     private double hocPhi;
+    private ArrayList<LopHoc> lopHocs;
 
-    public KhoaHoc(int maKhoaHoc, String maCapBac, String tenKhoaHoc, String moTa, String noiDung, double hocPhi) {
+    public KhoaHoc(String maKhoaHoc, CapBac capBac, String tenKhoaHoc, String moTa, String noiDung, double hocPhi) {
         this.maKhoaHoc = maKhoaHoc;
-        this.maCapBac = maCapBac;
+        this.capBac = capBac;
         this.tenKhoaHoc = tenKhoaHoc;
         this.moTa = moTa;
         this.noiDung = noiDung;
@@ -18,20 +21,20 @@ public class KhoaHoc {
     }
 
     // Getter and Setter methods
-    public int getMaKhoaHoc() {
+    public String getMaKhoaHoc() {
         return maKhoaHoc;
     }
 
-    public void setMaKhoaHoc(int maKhoaHoc) {
+    public void setMaKhoaHoc(String maKhoaHoc) {
         this.maKhoaHoc = maKhoaHoc;
     }
 
-    public String getMaCapBac() {
-        return maCapBac;
+    public CapBac getcapBac() {
+        return capBac;
     }
 
-    public void setMaCapBac(String maCapBac) {
-        this.maCapBac = maCapBac;
+    public void setcapBac(CapBac capBac) {
+        this.capBac = capBac;
     }
 
     public String getTenKhoaHoc() {

@@ -1,19 +1,19 @@
 package model;
 
-public class HocVien_LopHoc {
-    private String maHocVien;
-    private String maLopHoc;
+public class TheoDoiHocTap {
+    private HocVien hocVien;
+    private LopHoc lopHoc;
     private String trangThai; // 'Đang học', 'Đã hoàn thành', 'Bỏ học'
-    private float diemGiuaKy;
-    private float diemCuoiKy;
-    private float tongDiem; // Tổng điểm (0.4 * diemGiuaKy + 0.6 * diemCuoiKy)
+    private double diemGiuaKy;
+    private double diemCuoiKy;
+    private double tongDiem; // Tổng điểm (0.4 * diemGiuaKy + 0.6 * diemCuoiKy)
     private String nhanXet;
-
+    
     // Constructor
-    public HocVien_LopHoc(String maHocVien, String maLopHoc, String trangThai, float diemGiuaKy, 
-                          float diemCuoiKy, String nhanXet) {
-        this.maHocVien = maHocVien;
-        this.maLopHoc = maLopHoc;
+    public TheoDoiHocTap(HocVien hocVien, LopHoc lopHoc, String trangThai, double diemGiuaKy, 
+                          double diemCuoiKy, String nhanXet) {
+        this.hocVien = hocVien;
+        this.lopHoc = lopHoc;
         this.trangThai = trangThai;
         this.diemGiuaKy = diemGiuaKy;
         this.diemCuoiKy = diemCuoiKy;
@@ -22,20 +22,20 @@ public class HocVien_LopHoc {
     }
 
     // Getters and Setters
-    public String getMaHocVien() {
-        return maHocVien;
+    public HocVien gethocVien() {
+        return hocVien;
     }
 
-    public void setMaHocVien(String maHocVien) {
-        this.maHocVien = maHocVien;
+    public void sethocVien(HocVien hocVien) {
+        this.hocVien = hocVien;
     }
 
-    public String getMaLopHoc() {
-        return maLopHoc;
+    public LopHoc getlopHoc() {
+        return lopHoc;
     }
 
-    public void setMaLopHoc(String maLopHoc) {
-        this.maLopHoc = maLopHoc;
+    public void setlopHoc(LopHoc lopHoc) {
+        this.lopHoc = lopHoc;
     }
 
     public String getTrangThai() {
@@ -46,25 +46,25 @@ public class HocVien_LopHoc {
         this.trangThai = trangThai;
     }
 
-    public float getDiemGiuaKy() {
+    public double getDiemGiuaKy() {
         return diemGiuaKy;
     }
 
-    public void setDiemGiuaKy(float diemGiuaKy) {
+    public void setDiemGiuaKy(double diemGiuaKy) {
         this.diemGiuaKy = diemGiuaKy;
         this.tongDiem = 0.4f * diemGiuaKy + 0.6f * diemCuoiKy; // Cập nhật tổng điểm
     }
 
-    public float getDiemCuoiKy() {
+    public double getDiemCuoiKy() {
         return diemCuoiKy;
     }
 
-    public void setDiemCuoiKy(float diemCuoiKy) {
+    public void setDiemCuoiKy(double diemCuoiKy) {
         this.diemCuoiKy = diemCuoiKy;
         this.tongDiem = 0.4f * diemGiuaKy + 0.6f * diemCuoiKy; // Cập nhật tổng điểm
     }
 
-    public float getTongDiem() {
+    public double getTongDiem() {
         return tongDiem;
     }
 

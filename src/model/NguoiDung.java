@@ -1,7 +1,7 @@
 package model;
 
 import model.person.*;
-
+import java.util.ArrayList;
 public class NguoiDung {
 
     private int maNguoiDung;       // Mã người dùng
@@ -12,6 +12,7 @@ public class NguoiDung {
     private String soDienthoai;    // Số điện thoại
     private String email;          // Email
     private NgayThangNam ngayDangKy;  // Ngày đăng ký
+    private ArrayList<NguoiDung> users;
 
     // Constructor
     public NguoiDung(int maNguoiDung, String tenNguoiDung, String matKhau, String vaiTro, String trangThai, String soDienthoai, String email, NgayThangNam ngayDangKy) {

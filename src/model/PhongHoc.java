@@ -1,28 +1,28 @@
 package model;
 
 public class PhongHoc {
-    private int maPhong;
+    private String maPhong;
     private String tenPhong;
-    private int maChiNhanh;
+    private ChiNhanh chiNhanh;
     private int sucChua;
     private String trangThai;
     private String trangThietBi;
 
-    public PhongHoc(int maPhong, String tenPhong, int maChiNhanh, int sucChua, String trangThai, String trangThietBi) {
+    public PhongHoc(String maPhong, String tenPhong, ChiNhanh chiNhanh, int sucChua, String trangThai, String trangThietBi) {
         this.maPhong = maPhong;
         this.tenPhong = tenPhong;
-        this.maChiNhanh = maChiNhanh;
+        this.chiNhanh = chiNhanh;
         this.sucChua = sucChua;
         this.trangThai = trangThai;
         this.trangThietBi = trangThietBi;
     }
 
     // Getter and Setter methods
-    public int getMaPhong() {
+    public String getMaPhong() {
         return maPhong;
     }
 
-    public void setMaPhong(int maPhong) {
+    public void setMaPhong(String maPhong) {
         this.maPhong = maPhong;
     }
 
@@ -34,12 +34,12 @@ public class PhongHoc {
         this.tenPhong = tenPhong;
     }
 
-    public int getMaChiNhanh() {
-        return maChiNhanh;
+    public ChiNhanh getchiNhanh() {
+        return chiNhanh;
     }
 
-    public void setMaChiNhanh(int maChiNhanh) {
-        this.maChiNhanh = maChiNhanh;
+    public void setchiNhanh(ChiNhanh chiNhanh) {
+        this.chiNhanh = chiNhanh;
     }
 
     public int getSucChua() {

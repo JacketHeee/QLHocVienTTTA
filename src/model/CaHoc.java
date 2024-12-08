@@ -2,21 +2,21 @@ package model;
 
 
 public class CaHoc {
-    private int maCaHoc;            // Mã ca học
+    private String maCaHoc;            // Mã ca học
     private GioPhut gioBatDau;     // Giờ bắt đầu
     private GioPhut gioKetThuc;    // Giờ kết thúc
 
-    public CaHoc(int maCaHoc, GioPhut gioBatDau, GioPhut gioKetThuc) {
+    public CaHoc(String maCaHoc, GioPhut gioBatDau, GioPhut gioKetThuc) {
         this.maCaHoc = maCaHoc;
         this.gioBatDau = gioBatDau;
         this.gioKetThuc = gioKetThuc;
     }
 
-    public int getMaCaHoc() {
+    public String getMaCaHoc() {
         return maCaHoc;
     }
-
-    public void setMaCaHoc(int maCaHoc) {
+    
+    public void setMaCaHoc(String maCaHoc) {
         this.maCaHoc = maCaHoc;
     }
 

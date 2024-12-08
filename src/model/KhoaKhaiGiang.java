@@ -1,16 +1,19 @@
 package model;
 
-import java.util.Date;
+
+import java.util.ArrayList;
+import model.person.NgayThangNam;
 
 public class KhoaKhaiGiang {
     private int maKhoaKhaiGiang;
     private String tenKhoaKhaiGiang;
     private int namHoc;
-    private Date thoiGianBatDau;
-    private Date thoiGianKetThuc;
+    private NgayThangNam thoiGianBatDau;
+    private NgayThangNam thoiGianKetThuc;
     private String moTa;
+    private ArrayList<LopHoc> lopHocs;
 
-    public KhoaKhaiGiang(int maKhoaKhaiGiang, String tenKhoaKhaiGiang, int namHoc, Date thoiGianBatDau, Date thoiGianKetThuc, String moTa) {
+    public KhoaKhaiGiang(int maKhoaKhaiGiang, String tenKhoaKhaiGiang, int namHoc, NgayThangNam thoiGianBatDau, NgayThangNam thoiGianKetThuc, String moTa) {
         this.maKhoaKhaiGiang = maKhoaKhaiGiang;
         this.tenKhoaKhaiGiang = tenKhoaKhaiGiang;
         this.namHoc = namHoc;
@@ -44,19 +47,19 @@ public class KhoaKhaiGiang {
         this.namHoc = namHoc;
     }
 
-    public Date getThoiGianBatDau() {
+    public NgayThangNam getThoiGianBatDau() {
         return thoiGianBatDau;
     }
 
-    public void setThoiGianBatDau(Date thoiGianBatDau) {
+    public void setThoiGianBatDau(NgayThangNam thoiGianBatDau) {
         this.thoiGianBatDau = thoiGianBatDau;
     }
 
-    public Date getThoiGianKetThuc() {
+    public NgayThangNam getThoiGianKetThuc() {
         return thoiGianKetThuc;
     }
 
-    public void setThoiGianKetThuc(Date thoiGianKetThuc) {
+    public void setThoiGianKetThuc(NgayThangNam thoiGianKetThuc) {
         this.thoiGianKetThuc = thoiGianKetThuc;
     }
 

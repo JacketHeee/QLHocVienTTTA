@@ -1,15 +1,16 @@
 package model;
 import model.person.*;
-
+import java.util.ArrayList;
 public class GiaoVien extends CaNhan {
-    private int maGV;
+    private String maGV;
     private NguoiDung maNguoiDung;  // Email
     private String trinhDo;  // Trình độ
     private String chuyenMon;  // Chuyên môn
     private String vaiTro;  // Vai trò
+    private ArrayList<LopHoc> lopHocs;
 
     // Constructor
-    public GiaoVien(int maGV, NguoiDung maNguoiDung, String trinhDo, String chuyenMon, String vaiTro) {
+    public GiaoVien(String maGV, NguoiDung maNguoiDung, String trinhDo, String chuyenMon, String vaiTro) {
         this.maGV = maGV;
         this.maNguoiDung = maNguoiDung;
         this.trinhDo = trinhDo;
@@ -18,11 +19,11 @@ public class GiaoVien extends CaNhan {
     }
 
     // Getters and Setters
-    public int getMaGV() {
+    public String getMaGV() {
         return maGV;
     }
 
-    public void setMaGV(int maGV) {
+    public void setMaGV(String maGV) {
         this.maGV = maGV;
     }
 

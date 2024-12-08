@@ -1,13 +1,13 @@
 package model;
-
+import java.util.ArrayList;
 public class GioHoc {
-    private int maTKB;            // Mã thời khóa biểu
+    private String maTKB;            // Mã thời khóa biểu
     private CaHoc caHoc;          // Liên kết với CaHoc (Mã Ca học)
     private Thu thu1;             // Liên kết với Thu (Thứ 1)
     private Thu thu2;             // Liên kết với Thu (Thứ 2, có thể là NULL)
     private String ghiChu;        // Ghi chú
-
-    public GioHoc(int maTKB, CaHoc caHoc, Thu thu1, Thu thu2, String ghiChu) {
+    private ArrayList<LopHoc> lopHocs;
+    public GioHoc(String maTKB, CaHoc caHoc, Thu thu1, Thu thu2, String ghiChu) {
         this.maTKB = maTKB;
         this.caHoc = caHoc;
         this.thu1 = thu1;
@@ -15,11 +15,11 @@ public class GioHoc {
         this.ghiChu = ghiChu;
     }
 
-    public int getMaTKB() {
+    public String getMaTKB() {
         return maTKB;
     }
 
-    public void setMaTKB(int maTKB) {
+    public void setMaTKB(String maTKB) {
         this.maTKB = maTKB;
     }
 

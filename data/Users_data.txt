@@ -1,0 +1,10 @@
+1#NguyenVanA#password532#1#Dang hoat dong#0901234567#nguyenvana@gmail.com#14#03#2022
+2#TranThiB#password874#2#Khoa#0902345678#tranthib@gmail.com#22#05#2021
+3#LeMinhC#password123#3#Dang hoat dong#0903456789#leminhc@gmail.com#19#08#2023
+4#PhamThiD#password912#2#Khoa#0904567890#phamthid@gmail.com#30#12#2020
+5#HoangThiE#password347#3#Dang hoat dong#0905678901#hoangthie@gmail.com#25#01#2024
+6#NguyenThiF#password675#1#Dang hoat dong#0906789012#nguyenthif@gmail.com#10#06#2022
+7#MaiThiG#password489#3#Khoa#0907890123#maithig@gmail.com#03#11#2021
+8#NguyenThiH#password587#2#Dang hoat dong#0908901234#nguyenthih@gmail.com#15#07#2023
+9#HoangMinhI#password234#3#Dang hoat dong#0909012345#hoangminhi@gmail.com#12#02#2022
+10#TranThiJ#password857#1#Khoa#0900123456#tranthij@gmail.com#01#09#2020

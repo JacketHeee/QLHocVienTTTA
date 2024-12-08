@@ -4,22 +4,22 @@ import model.person.*;
 import java.util.ArrayList;
 public class NguoiDung {
 
-    private int maNguoiDung;       // Mã người dùng
+    private String maNguoiDung;       // Mã người dùng
     private String tenNguoiDung;   // Tên người dùng
     private String matKhau;        // Mật khẩu
-    private String vaiTro;         // Vai trò (admin, giáo viên, học viên)
+    private int role;         // Vai trò (admin, giáo viên, học viên) 1 admin, 2 giáo viên, 3 học viên
     private String trangThai;      // Trạng thái (đang hoạt động, khóa, v.v.)
     private String soDienthoai;    // Số điện thoại
     private String email;          // Email
     private NgayThangNam ngayDangKy;  // Ngày đăng ký
     private ArrayList<NguoiDung> users;
-
+    
     // Constructor
-    public NguoiDung(int maNguoiDung, String tenNguoiDung, String matKhau, String vaiTro, String trangThai, String soDienthoai, String email, NgayThangNam ngayDangKy) {
+    public NguoiDung(String maNguoiDung, String tenNguoiDung, String matKhau, int role, String trangThai, String soDienthoai, String email, NgayThangNam ngayDangKy) {
         this.maNguoiDung = maNguoiDung;
         this.tenNguoiDung = tenNguoiDung;
         this.matKhau = matKhau;
-        this.vaiTro = vaiTro;
+        this.role = role;
         this.trangThai = trangThai;
         this.soDienthoai = soDienthoai;
         this.email = email;
@@ -27,11 +27,11 @@ public class NguoiDung {
     }
 
     // Getter và Setter cho các thuộc tính
-    public int getMaNguoiDung() {
+    public String getMaNguoiDung() {
         return maNguoiDung;
     }
 
-    public void setMaNguoiDung(int maNguoiDung) {
+    public void setMaNguoiDung(String maNguoiDung) {
         this.maNguoiDung = maNguoiDung;
     }
 
@@ -51,12 +51,12 @@ public class NguoiDung {
         this.matKhau = matKhau;
     }
 
-    public String getVaiTro() {
-        return vaiTro;
+    public int getrole() {
+        return role;
     }
 
-    public void setVaiTro(String vaiTro) {
-        this.vaiTro = vaiTro;
+    public void setrole(int role) {
+        this.role = role;
     }
 
     public String getTrangThai() {
@@ -95,10 +95,14 @@ public class NguoiDung {
     public void printInfo() {
         System.out.println("Mã Người Dùng: " + maNguoiDung);
         System.out.println("Tên Người Dùng: " + tenNguoiDung);
-        System.out.println("Vai Trò: " + vaiTro);
+        System.out.println("Vai Trò: " + role);
         System.out.println("Trạng Thái: " + trangThai);
         System.out.println("Số Điện Thoại: " + soDienthoai);
         System.out.println("Email: " + email);
         System.out.println("Ngày Đăng Ký: " + ngayDangKy.getInfor());
+    }
+
+    public boolean dangNhap(String username, String pass) {
+        return this.tenNguoiDung.equals(username) && this.matKhau.equals(pass);
     }
 }

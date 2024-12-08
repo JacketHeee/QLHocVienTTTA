@@ -5,12 +5,15 @@ import model.NguoiDung;
 import model.person.NgayThangNam;
 import interfaces.*;
 import java.util.ArrayList;
+import java.time.LocalDate;
 public class UserDB {
     static String src = "data/Users_data.txt";
     public static void main(String[] args) {
         // System.err.println(System.getProperty("user.dir"));
-        UserDB hii = new UserDB();
-        hii.docFile();
+        // UserDB hii = new UserDB();
+        // hii.docFile();
+        
+        ghiVaofile(docFile().get(1));
     }
     public static ArrayList<NguoiDung> docFile() {
         ArrayList<NguoiDung> listUser = new ArrayList<>();
@@ -32,8 +35,16 @@ public class UserDB {
     }
     public static void ghiVaofile(NguoiDung user) {
         try (FileWriter writer = new FileWriter(src, true)) { // 'true' để mở chế độ ghi thêm
-
-            System.out.println("Ghi thêm dữ liệu vào file thành công!");
+            writer.write("\n");
+            writer.write(user.getMaNguoiDung()+"#");
+            writer.write(user.getTenNguoiDung()+"#");
+            writer.write(user.getMatKhau()+"#");
+            writer.write(user.getrole()+"#");
+            writer.write(user.getTrangThai()+"#");
+            writer.write(user.getSoDienthoai()+"#");
+            writer.write(user.getEmail()+"#");
+            LocalDate currentDate = LocalDate.now();
+            writer.write(user.getNgayDangKy().getForWrite());
         } catch (IOException e) {
             System.out.println("Có lỗi xảy ra: " + e.getMessage());
         }

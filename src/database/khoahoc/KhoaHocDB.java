@@ -1,4 +1,4 @@
-package database;
+package database.khoahoc;
 
 public class KhoaHocDB {
     

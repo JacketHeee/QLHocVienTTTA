@@ -1,13 +1,12 @@
-package database;
+package database.users;
 import java.io.*;
 import java.util.Scanner;
-import model.NguoiDung;
 import model.person.NgayThangNam;
-import interfaces.*;
+import model.user.NguoiDung;
 import java.util.ArrayList;
-import java.time.LocalDate;
+
 public class UserDB {
-    static String src = "data/Users_data.txt";
+    static String src = "data/users/Users_data.txt";
     public static void main(String[] args) {
         // System.err.println(System.getProperty("user.dir"));
         // UserDB hii = new UserDB();
@@ -43,7 +42,6 @@ public class UserDB {
             writer.write(user.getTrangThai()+"#");
             writer.write(user.getSoDienthoai()+"#");
             writer.write(user.getEmail()+"#");
-            LocalDate currentDate = LocalDate.now();
             writer.write(user.getNgayDangKy().getForWrite());
         } catch (IOException e) {
             System.out.println("Có lỗi xảy ra: " + e.getMessage());

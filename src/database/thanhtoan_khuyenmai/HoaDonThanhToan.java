@@ -1,4 +1,4 @@
-package database;
+package database.thanhtoan_khuyenmai;
 
 public class HoaDonThanhToan {
     

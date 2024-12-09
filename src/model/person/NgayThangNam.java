@@ -49,6 +49,9 @@ public class NgayThangNam {
     public String getInfor() {
         return this.ngay + "/" + this.thang + "/" + this.nam;
     }
+    public String getForWrite() {
+        return this.ngay + "#" + this.thang + "#" + this.nam;
+    }
     public int compareTo(NgayThangNam date) {
         int k = this.nam.compareTo(date.getNam());
         if (k != 0) 

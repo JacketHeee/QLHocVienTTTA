@@ -1,7 +1,7 @@
 package ui;
 
 public class GiaoDien_HocVien {
-    public void giaoDienChinh() {
+    public static void giaoDienChinh() {
         System.out.println("+---------------------------------------------------------------------+");
         System.out.println("|1. Thông tin học viên                                                |");
         System.out.println("|2. Lịch phỏng vấn trình độ học viên đầu vào                          |");

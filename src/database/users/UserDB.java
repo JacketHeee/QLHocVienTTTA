@@ -6,15 +6,22 @@ import model.user.NguoiDung;
 import java.util.ArrayList;
 
 public class UserDB {
-    static String src = "data/users/Users_data.txt";
-    public static void main(String[] args) {
-        // System.err.println(System.getProperty("user.dir"));
-        // UserDB hii = new UserDB();
-        // hii.docFile();
-        
-        ghiVaofile(docFile().get(1));
+    private ArrayList<NguoiDung> listUser; 
+    static String src;
+
+    public UserDB() {
+        src = "data/users/Users_data.txt";
+        listUser = this.docFile();
     }
-    public static ArrayList<NguoiDung> docFile() {
+
+    public ArrayList<NguoiDung> getListUser() {
+        return listUser;
+    }
+
+    public void setListUser(ArrayList<NguoiDung> listUser) {
+        this.listUser = listUser;
+    }
+    public ArrayList<NguoiDung> docFile() {
         ArrayList<NguoiDung> listUser = new ArrayList<>();
         File userFile = new File(src); 
         try (Scanner sc = new Scanner(userFile)) {
@@ -32,7 +39,7 @@ public class UserDB {
         }
         return listUser;
     }
-    public static void ghiVaofile(NguoiDung user) {
+    public void ghiVaofile(NguoiDung user) {
         try (FileWriter writer = new FileWriter(src, true)) { // 'true' để mở chế độ ghi thêm
             writer.write("\n");
             writer.write(user.getMaNguoiDung()+"#");

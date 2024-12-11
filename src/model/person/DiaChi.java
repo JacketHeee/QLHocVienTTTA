@@ -14,7 +14,6 @@ public class DiaChi {
     }
     public void setInfor() {
         Scanner sc = new Scanner(System.in);
-        this.tinh = new TinhThanh();
         this.tinh.setInfor();
         System.out.printf("Tinh: %s\n",this.tinh.getTentinh());
         System.out.print("Quan: ");
@@ -26,7 +25,10 @@ public class DiaChi {
         System.out.print("So nha: ");
         this.sonha =NameHandler.format(sc.nextLine());
     }
-    public DiaChi() {}
+    public DiaChi(
+    ) {
+        this.tinh = new TinhThanh();
+    }
     public DiaChi(String sonha, String duong, String phuong, String quan, TinhThanh tinh) {
         this.sonha = sonha;
         this.duong = duong;

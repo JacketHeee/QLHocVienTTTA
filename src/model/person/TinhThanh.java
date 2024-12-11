@@ -68,10 +68,11 @@ public class TinhThanh {
     public int compareTo(TinhThanh tinh) {
         return this.tentinh.compareTo(tinh.getTentinh());
     }
-    public static String getMatinh(int n) {
+    public static String getMatinhtheoN(int n) {
         String[] stra = arrTinh[n].split("-");
         return stra[0];
     }
+
     public static TinhThanh layTinhTheoMaTinh(String maTinh) {
         for (String x : arrTinh) {
             String[] tmp = x.split("-");

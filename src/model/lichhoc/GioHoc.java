@@ -9,6 +9,14 @@ public class GioHoc {
     private Thu thu2;             // Liên kết với Thu (Thứ 2, có thể là NULL)
     private String ghiChu;        // Ghi chú
     private ArrayList<LopHoc> lopHocs;
+
+    public GioHoc() {
+        this.caHoc = new CaHoc(); 
+        this.thu1 = new Thu(); 
+        this.thu2 = new Thu();
+        this.lopHocs = new ArrayList<>();
+    }
+    
     public GioHoc(String maTKB, CaHoc caHoc, Thu thu1, Thu thu2, String ghiChu) {
         this.maTKB = maTKB;
         this.caHoc = caHoc;
@@ -56,4 +64,15 @@ public class GioHoc {
     public void setGhiChu(String ghiChu) {
         this.ghiChu = ghiChu;
     }
+
+    @Override
+    public String toString() {
+        return caHoc.toString() + ", " + thu1.getTenThu() + ", " + thu2.getTenThu()
+                ;
+    }
+
+    public void show() {
+        System.out.println(this.toString());
+    }
+    
 }

@@ -4,6 +4,8 @@ public class GioPhut {
     private int gio;   // Giờ
     private int phut;  // Phút
 
+    public GioPhut() {
+    }
     // Constructor
     public GioPhut(int gio, int phut) {
         this.gio = gio;
@@ -31,6 +33,10 @@ public class GioPhut {
     // Method to get the time in string format (HH:mm)
     public String getFormattedTime() {
         return String.format("%02d:%02d", gio, phut);
+    }
+
+    public void show() {
+        System.out.println(this.getFormattedTime());
     }
 }
 

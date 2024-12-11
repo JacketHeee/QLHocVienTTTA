@@ -1,17 +1,17 @@
-kh01#cb01#A1#12000000
-kh02#cb01#A2#12000000
-kh03#cb01#A3#12000000
-kh04#cb02#B1#12000000
-kh05#cb02#B2#12000000
-kh06#cb02#B3#12000000
-kh07#cb03#C1#13800000
-kh08#cb03#C2#13800000
-kh09#cb03#C3#13800000
-kh10#cb04#IELTS Basic#10000000
-kh11#cb04#Pre–Foundation#10000000 
-kh12#cb04#Foundation#10000000
-kh13#cb04#Intermediate#12000000
-kh14#cb04#Figher#12000000
-kh15#cb05#Beginner#9800000
-kh16#cb05#Intermediate#9800000
-kh17#cb05#Advanced#11000000
+kh01#cb01#A1#Day la 1 khoa hoc nen tang#12000000
+kh02#cb01#A2#Day la 1 khoa hoc nen tang#12000000
+kh03#cb01#A3#Day la 1 khoa hoc nen tang#12000000
+kh04#cb02#B1#Day la 1 khoa hoc nen tang#12000000
+kh05#cb02#B2#Day la 1 khoa hoc nen tang#12000000
+kh06#cb02#B3#Day la 1 khoa hoc nen tang#12000000
+kh07#cb03#C1#Day la 1 khoa hoc nen tang#13800000
+kh08#cb03#C2#Day la 1 khoa hoc nen tang#13800000
+kh09#cb03#C3#Day la 1 khoa hoc nen tang#13800000
+kh10#cb04#IELTS Basic#Day la 1 khoa hoc chuyen#10000000
+kh11#cb04#Pre–Foundation#Day la 1 khoa hoc chuyen#10000000 
+kh12#cb04#Foundation#Day la 1 khoa hoc chuyen#10000000
+kh13#cb04#Intermediate#Day la 1 khoa hoc chuyen#12000000
+kh14#cb04#Figher#Day la 1 khoa hoc chuyen#12000000
+kh15#cb05#Beginner#Day la 1 khoa hoc chuyen#9800000
+kh16#cb05#Intermediate#Day la 1 khoa hoc chuyen#9800000
+kh17#cb05#Advanced#Day la 1 khoa hoc chuyen#11000000

@@ -1,0 +1,10 @@
+1#1#Master#English Teaching#Giang vien chinh#John Smith#24#12#1954#123#Nguyen Trai#5#3#079#1
+2#2#PhD#Linguistics#Giang vien chinh#Emily Johnson#15#08#1980#456#Hai Ba Trung#6#1#001#0
+3#3#Bachelor#TESOL#Giang vien chinh#Michael Brown#20#12#1992#789#Le Duan#2#Thanh Khe#048#1
+4#4#Master#Curriculum Design#Giang vien chinh#Sarah Davis#10#03#1987#12#Tran Phu#10#Hai Chau#048#0
+5#5#Master#IELTS Training#Giang vien chinh#William Jones#25#07#1989#98#Hoang Van Thu#7#Tan Binh#079#1
+6#6#Thac si#Giang day Tieng Anh#Tro giang#Nguyen Van An#05#04#1986#67#Tran Hung Dao#9#1#001#1
+7#7#Tien si#Bien soan giao trinh#Tro giang#Le Thi Hoa#12#06#1981#23#Bach Dang#3#4#079#0
+8#8#Cuu nhan#Tro giang#Tro giang#Tran Van Binh#09#10#1995#88#Ly Thuong Kiet#4#8#038#1
+9#9#Thac si#Dao tao giao vien#Tro giang#Pham Thi Lan#30#01#1990#34#Pham Ngu Lao#12#Ninh Kieu#092#0
+10#10#Tien si#Nghien cuu ngon ngu#Tro giang#Hoang Minh Tuan#18#11#1978#10#Ngo Gia Tu#1#Binh Thuy#092#1

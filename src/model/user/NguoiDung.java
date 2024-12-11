@@ -15,6 +15,11 @@ public class NguoiDung {
     private ArrayList<NguoiDung> users;
     
     // Constructor
+    public NguoiDung() {
+        this.ngayDangKy = new NgayThangNam();
+        this.users = new ArrayList<>();
+    }
+
     public NguoiDung(String maNguoiDung, String tenNguoiDung, String matKhau, int role, String trangThai, String soDienthoai, String email, NgayThangNam ngayDangKy) {
         this.maNguoiDung = maNguoiDung;
         this.tenNguoiDung = tenNguoiDung;

@@ -13,6 +13,7 @@ public class HocVien extends CaNhan{
 
     public HocVien() {
         super();
+        this.maNguoiDung = new NguoiDung();
         this.lopHocs = new ArrayList<>();
         this.hoaDonThanhToans = new ArrayList<>();
     }

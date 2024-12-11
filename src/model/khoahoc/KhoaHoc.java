@@ -10,6 +10,11 @@ public class KhoaHoc {
     private double hocPhi;
     private ArrayList<LopHoc> lopHocs;
 
+    public KhoaHoc() {
+        this.capBac = new CapBac();
+        this.lopHocs = new ArrayList<>();
+    }
+
     public KhoaHoc(String maKhoaHoc, CapBac capBac, String tenKhoaHoc, String moTa, double hocPhi) {
         this.maKhoaHoc = maKhoaHoc;
         this.capBac = capBac;
@@ -56,5 +61,15 @@ public class KhoaHoc {
 
     public void setHocPhi(double hocPhi) {
         this.hocPhi = hocPhi;
+    }
+
+    @Override
+    public String toString() {
+        return "[Cap bac: " + capBac.getTenCapBac() + ", Ten: " + tenKhoaHoc + ", moTa: " + moTa + ", hocPhi: " + hocPhi
+                + "]";
+    }
+
+    public void show() {
+        System.out.println(this.toString());
     }
 }

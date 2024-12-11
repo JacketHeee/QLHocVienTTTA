@@ -11,7 +11,14 @@ public class GiaoVien extends CaNhan {
     private ArrayList<LopHoc> lopHocs;
 
     // Constructor
-    public GiaoVien(String maGV, NguoiDung maNguoiDung, String trinhDo, String chuyenMon, String vaiTro) {
+    public GiaoVien() {
+        super();
+        this.maNguoiDung = new NguoiDung();
+        this.lopHocs = new ArrayList<>();
+    }
+    public GiaoVien(String maGV, NguoiDung maNguoiDung, String trinhDo, String chuyenMon, String vaiTro, 
+        String hoten, NgayThangNam ngaysinh, DiaChi noisinh, int gioitinh) {
+        super(hoten,ngaysinh,noisinh,gioitinh);
         this.maGV = maGV;
         this.maNguoiDung = maNguoiDung;
         this.trinhDo = trinhDo;
@@ -59,6 +66,21 @@ public class GiaoVien extends CaNhan {
     public void setVaiTro(String vaiTro) {
         this.vaiTro = vaiTro;
     }
+    @Override
+    public String toString() {
+        return  "[maGV: " + maGV + ", maNguoiDung:" + maNguoiDung.getMaNguoiDung() + ", trinhDo: " + trinhDo + ", chuyenMon:"
+                + chuyenMon + ", vaiTro:" + vaiTro + "]";
+    }
+    public String getTrinhDoChuyenMon() {
+        return this.getHoten() + "\n\tTrinh do: "+ this.trinhDo + "\n\tChuyen: " + this.chuyenMon;
+    }
+    public void show () {
+        System.out.println(this.toString());
+        super.show();
+        System.out.println();
+    }
+
+    
 
     // Other methods as needed
 }

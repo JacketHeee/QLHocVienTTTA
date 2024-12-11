@@ -8,6 +8,10 @@ public class PhongHoc {
     private String trangThai;
     private String trangThietBi;
 
+    public PhongHoc() {
+        this.chiNhanh = new ChiNhanh();
+    }
+
     public PhongHoc(String maPhong, String tenPhong, ChiNhanh chiNhanh, int sucChua, String trangThai, String trangThietBi) {
         this.maPhong = maPhong;
         this.tenPhong = tenPhong;

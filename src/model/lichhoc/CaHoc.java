@@ -6,6 +6,11 @@ public class CaHoc {
     private GioPhut gioBatDau;     // Giờ bắt đầu
     private GioPhut gioKetThuc;    // Giờ kết thúc
 
+    public CaHoc() {
+        this.gioBatDau = new GioPhut();
+        this.gioKetThuc = new GioPhut();
+    }
+    
     public CaHoc(String maCaHoc, GioPhut gioBatDau, GioPhut gioKetThuc) {
         this.maCaHoc = maCaHoc;
         this.gioBatDau = gioBatDau;
@@ -35,5 +40,16 @@ public class CaHoc {
     public void setGioKetThuc(GioPhut gioKetThuc) {
         this.gioKetThuc = gioKetThuc;
     }
+
+    @Override
+    public String toString() {
+        return "["+gioBatDau.getFormattedTime()+ " - " + gioKetThuc.getFormattedTime() + "]";
+    }
+
+    public void show() {
+        System.out.println(this.toString());
+    }
+
+    
 }
 

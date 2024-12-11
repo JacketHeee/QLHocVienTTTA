@@ -50,19 +50,20 @@ public class HocVienDB {
         }
         return listHocVien;
     }
-    // public static void ghiVaofile(NguoiDung user) {
-    //     try (FileWriter writer = new FileWriter(src, true)) { // 'true' để mở chế độ ghi thêm
-    //         writer.write("\n");
-    //         writer.write(user.getMaNguoiDung()+"#");
-    //         writer.write(user.getTenNguoiDung()+"#");
-    //         writer.write(user.getMatKhau()+"#");
-    //         writer.write(user.getrole()+"#");
-    //         writer.write(user.getTrangThai()+"#");
-    //         writer.write(user.getSoDienthoai()+"#");
-    //         writer.write(user.getEmail()+"#");
-    //         writer.write(user.getNgayDangKy().getForWrite());
-    //     } catch (IOException e) {
-    //         System.out.println("Có lỗi xảy ra: " + e.getMessage());
-    //     }
-    // }
+    
 }
+// public static void ghiVaofile(NguoiDung user) {
+//     try (FileWriter writer = new FileWriter(src, true)) { // 'true' để mở chế độ ghi thêm
+//         writer.write("\n");
+//         writer.write(user.getMaNguoiDung()+"#");
+//         writer.write(user.getTenNguoiDung()+"#");
+//         writer.write(user.getMatKhau()+"#");
+//         writer.write(user.getrole()+"#");
+//         writer.write(user.getTrangThai()+"#");
+//         writer.write(user.getSoDienthoai()+"#");
+//         writer.write(user.getEmail()+"#");
+//         writer.write(user.getNgayDangKy().getForWrite());
+//     } catch (IOException e) {
+//         System.out.println("Có lỗi xảy ra: " + e.getMessage());
+//     }
+// }

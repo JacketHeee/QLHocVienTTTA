@@ -8,11 +8,16 @@ public class ChuongTrinh {
     private String doiTuong;
     private ArrayList<CapBac> capBacs;
     // Constructor
+    public ChuongTrinh() {
+        this.capBacs = new ArrayList<>();
+    }
+    
     public ChuongTrinh(String maChuongTrinh, String tenChuongTrinh, String doiTuong) {
         this.maChuongTrinh = maChuongTrinh;
         this.tenChuongTrinh = tenChuongTrinh;
         this.doiTuong = doiTuong;
     }
+
 
     // Getters and Setters
     public String getMaChuongTrinh() {
@@ -39,6 +44,15 @@ public class ChuongTrinh {
         this.doiTuong = doiTuong;
     }
 
+    @Override
+    public String toString() {
+        return "[" + tenChuongTrinh + ", Doi tuong: " + doiTuong + "]";
+    }
+
+    public void show() {
+        System.out.println(this.toString());
+    }
+    
     // Other methods as needed
 }
 

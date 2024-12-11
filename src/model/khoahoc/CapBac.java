@@ -9,6 +9,11 @@ public class CapBac {
     private int thoiGianHoc;
     private ArrayList<KhoaHoc> khoaHocs;
     // Constructor
+    public CapBac() {
+        this.chuongTrinh =  new ChuongTrinh();
+        this.khoaHocs = new ArrayList<>();
+    }
+    
     public CapBac(String maCapBac, ChuongTrinh chuongTrinh, String tenCapBac, int thoiGianHoc) {
         this.maCapBac = maCapBac;
         this.chuongTrinh = chuongTrinh;
@@ -49,6 +54,14 @@ public class CapBac {
         this.thoiGianHoc = thoiGianHoc;
     }
 
+    @Override
+    public String toString() {
+        return "[" + chuongTrinh.getTenChuongTrinh()+ ", " + tenCapBac + ", " + thoiGianHoc + "]";
+    }
+
+    public void show() {
+        System.out.println(this.toString());
+    }
     // Other methods as needed
 }
 

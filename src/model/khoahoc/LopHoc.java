@@ -19,14 +19,24 @@ public class LopHoc {
     private GiaoVien gvChinh;
     private GiaoVien gvTroGiang;
     private int soLuongToiDa;
-    private NgayThangNam ngayKhaiGiang;
     private String trangThai;  // String để thay thế enum, ví dụ: "DangTuyenSinh", "NgungTuyenSinh"
     private GioHoc gioHoc;
     private ArrayList<HocVien> hocViens;
     private ArrayList<HoaDonThanhToan> hoaDonThanhToans;
     // Constructor
+    public LopHoc() {
+        this.khoaHoc = new KhoaHoc(); 
+        this.khoaKhaiGiang = new KhoaKhaiGiang(); 
+        this.phongHoc = new PhongHoc(); 
+        this.gvChinh = new GiaoVien();
+        this.gvTroGiang = new GiaoVien();
+        this.gioHoc = new GioHoc();
+        this.hocViens = new ArrayList<>();
+        this.hoaDonThanhToans = new ArrayList<>();
+    }
+
     public LopHoc(String maLopHoc, String tenLopHoc, KhoaHoc khoaHoc, KhoaKhaiGiang khoaKhaiGiang, PhongHoc phongHoc,
-                  GiaoVien gvChinh, GiaoVien gvTroGiang, int soLuongToiDa, NgayThangNam ngayKhaiGiang, String trangThai, GioHoc gioHoc) {
+                  GiaoVien gvChinh, GiaoVien gvTroGiang, int soLuongToiDa, String trangThai, GioHoc gioHoc) {
         this.maLopHoc = maLopHoc;
         this.tenLopHoc = tenLopHoc;
         this.khoaHoc = khoaHoc;
@@ -35,9 +45,10 @@ public class LopHoc {
         this.gvChinh = gvChinh;
         this.gvTroGiang = gvTroGiang;
         this.soLuongToiDa = soLuongToiDa;
-        this.ngayKhaiGiang = ngayKhaiGiang;
         this.trangThai = trangThai;
         this.gioHoc = gioHoc;
+        this.hocViens = new ArrayList<>();
+        this.hoaDonThanhToans = new ArrayList<>();
     }
 
     // Getters and Setters
@@ -105,14 +116,6 @@ public class LopHoc {
         this.soLuongToiDa = soLuongToiDa;
     }
 
-    public NgayThangNam getNgayKhaiGiang() {
-        return ngayKhaiGiang;
-    }
-
-    public void setNgayKhaiGiang(NgayThangNam ngayKhaiGiang) {
-        this.ngayKhaiGiang = ngayKhaiGiang;
-    }
-
     public String getTrangThai() {
         return trangThai;
     }
@@ -129,6 +132,17 @@ public class LopHoc {
         this.gioHoc = gioHoc;
     }
 
+    @Override
+    public String toString() {
+        return "Ten lop: " + tenLopHoc + "\nKhoaHoc:" + khoaHoc.getTenKhoaHoc() + "\nKKG: "
+                + khoaKhaiGiang.getTenKhoaKhaiGiang() + "\nPhongHoc: " + phongHoc.getTenPhong() + "\nGioHoc:" + gioHoc.toString() + "\nGvChinh: " + gvChinh.getTrinhDoChuyenMon() + "\nGvTroGiang: " + gvTroGiang.getTrinhDoChuyenMon()
+                + "\nSoLuongToiDa:" + soLuongToiDa + "\nSo luong hien tai: " + this.hocViens.size() +"\nTrangThai:" + trangThai+ "\n";
+    }
+
+    public void show() {
+        System.out.println(this.toString());
+    }
     // Other methods as needed
+    
 }
 

@@ -65,5 +65,21 @@ public class PhongHoc {
     public void setTrangThietBi(String trangThietBi) {
         this.trangThietBi = trangThietBi;
     }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Ma Phong: ").append(maPhong).append("\n");
+        sb.append("Ten Phong: ").append(tenPhong).append("\n");
+        sb.append("Chi Nhanh: ").append(chiNhanh.toString()).append("\n");
+        sb.append("Suc Chua: ").append(sucChua).append("\n");
+        sb.append("Trang Thai: ").append(trangThai).append("\n");
+        sb.append("Trang Thiet Bi: ").append(trangThietBi).append("\n");
+        return sb.toString();
+    }
+
+    public void show() {
+        System.out.println(this.toString());
+    }
+
 }
 

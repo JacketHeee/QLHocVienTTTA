@@ -1,0 +1,30 @@
+A349#Phong Thiet bi#1#20#hoat dong#may chieu, may lanh
+A350#Phong Lap Trinh#2#15#hoat dong#may tinh, ban ghe
+A351#Phong Tieng Anh#3#25#dang bao tri#may chieu, ban ghi
+A352#Phong Toan#1#20#hoat dong#may tinh, loai doan
+A353#Phong Ngon ngu#2#18#hoat dong#ban ghe, loa
+A354#Phong Ky Thuat#3#30#hoat dong#may tinh, may chieu
+A355#Phong Cau Truc#1#22#dang bao tri#may lanh, ban ghi
+A356#Phong Chuong Trinh#2#25#hoat dong#may chieu, ban ghe
+A357#Phong Diem Quan Trac#3#15#dang bao tri#loa, may lanh
+A358#Phong Du Lieu#1#30#hoat dong#may tinh, may lanh
+B238#Phong Quan Ly#2#18#hoat dong#ban ghe, loa
+B239#Phong Bao Mat#3#20#dang bao tri#may chieu, may tinh
+B240#Phong Duong Luong#1#22#hoat dong#may chieu, ban ghe
+B241#Phong Hien Thi#2#28#hoat dong#loa, ban ghi
+B242#Phong Internet#3#15#hoat dong#may lanh, may tinh
+B243#Phong Mua Hang#1#25#dang bao tri#may chieu, loa
+B244#Phong Cong Ty#2#30#hoat dong#ban ghe, may chieu
+B245#Phong Tu Van#3#18#hoat dong#may lanh, may chieu
+B246#Phong Trinh Bay#1#20#hoat dong#may tinh, loa
+B247#Phong Chat Luong#2#25#dang bao tri#ban ghe, may tinh
+C128#Phong Tin Hoc#3#22#hoat dong#may chieu, may lanh
+C129#Phong Nghien Cuu#1#20#dang bao tri#loa, ban ghi
+C130#Phong Xa Hoi#2#15#hoat dong#may chieu, may lanh
+C131#Phong To Chuc#3#30#hoat dong#may tinh, loa
+C132#Phong Khach Hang#1#25#hoat dong#ban ghe, may chieu
+C133#Phong Chuc Nang#2#18#dang bao tri#loa, may lanh
+C134#Phong Cung Cap#3#20#hoat dong#may tinh, ban ghe
+C135#Phong Quan He#1#22#hoat dong#may chieu, loa
+C136#Phong Xu Ly#2#25#hoat dong#may lanh, may chieu
+C137#Phong Ham Lan#3#30#dang bao tri#ban ghe, loa

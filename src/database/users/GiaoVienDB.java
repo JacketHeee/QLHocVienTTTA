@@ -49,4 +49,18 @@ public class GiaoVienDB {
         }
         return listGiaoVien;
     }
+
+
+    public GiaoVien getGiaoVienByID(String id) {
+        for (GiaoVien x : this.listGiaoVien) 
+            if (x.getMaGV().equals(id))
+                return x;
+        return null;
+    }
+    public GiaoVien getGiaoVienByIDUser(String id) {
+        for (GiaoVien x : this.listGiaoVien) 
+            if (x.getMaNguoiDung().getMaNguoiDung().equals(id))
+                return x;
+        return null;
+    }
 }

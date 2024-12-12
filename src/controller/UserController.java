@@ -2,6 +2,7 @@ package controller;
 
 import java.util.Scanner;
 
+import database.users.HocVienDB;
 import model.user.NguoiDung;
 import services.HocVienServices;
 import services.UserServices;
@@ -53,9 +54,9 @@ public class UserController {
                 // giaoVienUI.dashboard();
                 break;
             case 3:
-                HocVienServices hocVienServices = new HocVienServices();
+                HocVienDB hocVienDB = new HocVienDB();
                 HocVienUI hocVienUI = new HocVienUI();
-                hocVienUI.dashboard(hocVienServices.getHocVienByIDUser(user.getMaNguoiDung()));
+                hocVienUI.dashboard(hocVienDB.getHocVienByIDUser(user.getMaNguoiDung()));
                 break;
             default:
                 System.out.println("Role khong hop le.");

@@ -23,6 +23,9 @@ public class KhoaHoc {
         this.hocPhi = hocPhi;
     }
 
+    public void addLopHoc(LopHoc lopHoc) {
+        this.lopHocs.add(lopHoc);
+    }
     // Getter and Setter methods
     public String getMaKhoaHoc() {
         return maKhoaHoc;
@@ -63,12 +66,29 @@ public class KhoaHoc {
         this.hocPhi = hocPhi;
     }
 
-    @Override
-    public String toString() {
-        return "[Cap bac: " + capBac.getTenCapBac() + ", Ten: " + tenKhoaHoc + ", moTa: " + moTa + ", hocPhi: " + hocPhi
-                + "]";
+    
+
+    public ArrayList<LopHoc> getLopHocs() {
+        return lopHocs;
     }
 
+    
+
+    public void setLopHocs(ArrayList<LopHoc> lopHocs) {
+        this.lopHocs = lopHocs;
+    }
+
+    @Override
+    public String toString() {
+        // return "[" + "Ten: " + tenKhoaHoc + ", moTa: " + moTa + ", hocPhi: " + hocPhi
+        //         + "]";
+        return String.format("%-5s %-20s %-10s %.1f",maKhoaHoc,tenKhoaHoc,capBac.getThoiGianHoc()+" Tuan",hocPhi);
+    }
+
+    // public String inlineString() {
+    //     return 
+    // }
+    
     public void show() {
         System.out.println(this.toString());
     }

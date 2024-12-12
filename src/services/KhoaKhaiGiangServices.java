@@ -10,12 +10,6 @@ public class KhoaKhaiGiangServices {
         KhoaKhaiGiangDB = new KhoaKhaiGiangDB();
     }
 
-    public KhoaKhaiGiang getKhoaKhaiGiangById(String id) {
-        for (KhoaKhaiGiang x : KhoaKhaiGiangDB.getlistKhoaKhaiGiang()) 
-            if (x.getMaKhoaKhaiGiang().equals(id))
-                return x;
-        return null;
-    }
     // private NgayThangNam tinhThoiGianKetKhoaKhaiGiangc(NgayThangNam batDau, int soTuan) {
     //     int ngay = batDau.getNgay();
     //     int thang = batDau.getThang();

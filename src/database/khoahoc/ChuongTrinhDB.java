@@ -43,4 +43,11 @@ public class ChuongTrinhDB {
         for (ChuongTrinh x : ChuongTrinhDB.getlistChuongTrinh())
             x.show();
     }
+
+    public ChuongTrinh getChuongTrinhById(String id) {
+        for (ChuongTrinh x : this.listChuongTrinh) 
+            if (x.getMaChuongTrinh().equals(id))
+                return x;
+        return null;
+    }
 }

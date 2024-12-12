@@ -1,19 +1,35 @@
 package services;
 
 import database.khoahoc.KhoaHocDB;
+import database.khoahoc.LopHocDB;
 import model.khoahoc.KhoaHoc;
+import model.khoahoc.LopHoc;
 
 public class KhoaHocServices {
-    private KhoaHocDB KhoaHocDB; 
+    private KhoaHocDB khoaHocDB; 
 
     public KhoaHocServices() {
-        KhoaHocDB = new KhoaHocDB();
+        khoaHocDB = new KhoaHocDB();   
+        LopHocDB lopHocDB = new LopHocDB();
+        for (KhoaHoc x : khoaHocDB.getlistKhoaHoc()) 
+            x.setLopHocs(lopHocDB.getLopHoctheoIDKhoaHoc(x.getMaKhoaHoc()));
     }
 
-    public KhoaHoc getKhoaHocById(String id) {
-        for (KhoaHoc x : KhoaHocDB.getlistKhoaHoc()) 
-            if (x.getMaKhoaHoc().equals(id))
-                return x;
-        return null;
+    public void displayLopHocTheoID(String id) {
+        KhoaHoc kh = this.khoaHocDB.getKhoaHocById(id); 
+        for (LopHoc x : kh.getLopHocs()) 
+            x.show();
     }
+
+    public void displayAllKhoaHoc() {
+        for (KhoaHoc x : khoaHocDB.getlistKhoaHoc()) 
+            x.show();
+    }
+
+    public static void main(String[] args) {
+        KhoaHocServices khoaHocServices = new KhoaHocServices(); 
+            // khoaHocServices.displayLopHocTheoID("kh02");
+        khoaHocServices.displayAllKhoaHoc();
+    }
+
 }

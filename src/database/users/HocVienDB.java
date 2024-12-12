@@ -1,7 +1,6 @@
 package database.users;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -50,20 +49,19 @@ public class HocVienDB {
         }
         return listHocVien;
     }
+
+
+    public HocVien getHocvienByID(String id) {
+        for (HocVien x : this.listHocVien) 
+            if (x.getMaHocVien().equals(id))
+                return x;
+        return null;
+    }
+    public HocVien getHocVienByIDUser(String id) {
+        for (HocVien x : this.listHocVien) 
+            if (x.getMaNguoiDung().getMaNguoiDung().equals(id))
+                return x;
+        return null;
+    }
     
 }
-// public static void ghiVaofile(NguoiDung user) {
-//     try (FileWriter writer = new FileWriter(src, true)) { // 'true' để mở chế độ ghi thêm
-//         writer.write("\n");
-//         writer.write(user.getMaNguoiDung()+"#");
-//         writer.write(user.getTenNguoiDung()+"#");
-//         writer.write(user.getMatKhau()+"#");
-//         writer.write(user.getrole()+"#");
-//         writer.write(user.getTrangThai()+"#");
-//         writer.write(user.getSoDienthoai()+"#");
-//         writer.write(user.getEmail()+"#");
-//         writer.write(user.getNgayDangKy().getForWrite());
-//     } catch (IOException e) {
-//         System.out.println("Có lỗi xảy ra: " + e.getMessage());
-//     }
-// }

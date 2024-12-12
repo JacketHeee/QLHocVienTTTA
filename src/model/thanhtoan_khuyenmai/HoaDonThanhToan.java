@@ -1,5 +1,7 @@
 package model.thanhtoan_khuyenmai;
 
+import java.util.ArrayList;
+
 import model.khoahoc.LopHoc;
 import model.person.*;
 import model.user.HocVien;
@@ -7,7 +9,7 @@ import model.user.HocVien;
 public class HoaDonThanhToan {
     private String maHoaDon;
     private HocVien hocVien;
-    private LopHoc lopHoc;
+    private ArrayList<LopHoc> lopHoc;
     private KhuyenMai khuyenMai;
     private NgayThangNam ngayPhatHanh;
     private String tinhTrang; // 'ChuaThanhToan', 'DaThanhToan', 'DaHuy','chua xong'
@@ -19,7 +21,7 @@ public class HoaDonThanhToan {
     private NgayThangNam ngayHetHan;
 
     // Constructor
-    public HoaDonThanhToan(String maHoaDon, HocVien hocVien, LopHoc lopHoc, KhuyenMai khuyenMai, 
+    public HoaDonThanhToan(String maHoaDon, HocVien hocVien, ArrayList<LopHoc> lopHoc, KhuyenMai khuyenMai, 
                            NgayThangNam ngayPhatHanh, String tinhTrang, double tongTien, 
                            String phuongThucThanhToan, NgayThangNam ngayThanhToan, double soTienThanhToan, 
                            String ghiChu, NgayThangNam ngayHetHan) {
@@ -54,11 +56,11 @@ public class HoaDonThanhToan {
         this.hocVien = hocVien;
     }
 
-    public LopHoc getlopHoc() {
+    public ArrayList<LopHoc> getlopHoc() {
         return lopHoc;
     }
 
-    public void setlopHoc(LopHoc lopHoc) {
+    public void setlopHoc(ArrayList<LopHoc> lopHoc) {
         this.lopHoc = lopHoc;
     }
 

@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import model.lichhoc.*;
-import services.CaHocServices;
-import services.ThuServices;
 
 public class GioHocDB {
        private ArrayList<GioHoc> listGioHoc; 
@@ -31,11 +29,11 @@ public class GioHocDB {
         try (Scanner sc = new Scanner(userFile)) {
             while (sc.hasNextLine()) {
                 String tmp[] = sc.nextLine().split("#"); 
-                CaHocServices caHocServices = new CaHocServices(); 
-                ThuServices thuServices = new ThuServices();
-                CaHoc caHoc =  caHocServices.getCaHocById(tmp[1]); 
-                Thu thu1 = thuServices.getThuById(tmp[2]); 
-                Thu thu2 = thuServices.getThuById(tmp[3]); 
+                CaHocDB caHocDB = new CaHocDB();
+                ThuDB thuDB =  new ThuDB();
+                CaHoc caHoc =  caHocDB.getCaHocById(tmp[1]); 
+                Thu thu1 = thuDB.getThuById(tmp[2]); 
+                Thu thu2 = thuDB.getThuById(tmp[3]); 
                 listGioHoc.add(new GioHoc(tmp[0],caHoc,thu1,thu2,tmp[4]));
             }
         }
@@ -49,5 +47,13 @@ public class GioHocDB {
         GioHocDB GioHocDB = new GioHocDB(); 
         for (GioHoc x : GioHocDB.getlistGioHoc())
             x.show();
+    }
+
+
+    public GioHoc getGioHocById(String id) {
+        for (GioHoc x : this.listGioHoc) 
+            if (x.getMaTKB().equals(id))
+                return x;
+        return null;
     }
 }

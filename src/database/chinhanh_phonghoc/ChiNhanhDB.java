@@ -7,9 +7,7 @@ import java.util.Scanner;
 
 import model.chinhanh_phonghoc.ChiNhanh;
 import model.person.DiaChi;
-import model.person.NgayThangNam;
 import model.person.TinhThanh;
-import model.chinhanh_phonghoc.*;
 
 public class ChiNhanhDB {
     private ArrayList<ChiNhanh> listChiNhanh; 
@@ -46,5 +44,13 @@ public class ChiNhanhDB {
         ChiNhanhDB chiNhanhDB = new ChiNhanhDB(); 
         for (ChiNhanh x : chiNhanhDB.getlistChiNhanh()) 
             x.show();
+    }
+
+    
+    public ChiNhanh getChiNhanhById(String id) {
+        for (ChiNhanh x : this.listChiNhanh) 
+            if (x.getMaChiNhanh().equals(id))
+                return x;
+        return null;
     }
 }

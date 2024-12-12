@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 import model.khoahoc.CapBac;
 import model.khoahoc.ChuongTrinh;
-import services.ChuongTrinhServices;
 
 public class CapBacDB {
        private ArrayList<CapBac> listCapBac; 
@@ -31,8 +30,8 @@ public class CapBacDB {
         try (Scanner sc = new Scanner(userFile)) {
             while (sc.hasNextLine()) {
                 String tmp[] = sc.nextLine().split("#"); 
-                ChuongTrinhServices chuongTrinhServices = new ChuongTrinhServices();
-                ChuongTrinh ct = chuongTrinhServices.getChuongTrinhById(tmp[1]);
+                ChuongTrinhDB chuongTrinhDB = new ChuongTrinhDB();
+                ChuongTrinh ct = chuongTrinhDB.getChuongTrinhById(tmp[1]);
                 listCapBac.add(new CapBac(tmp[0],ct,tmp[2],Integer.parseInt(tmp[3])));
             }
         }
@@ -46,5 +45,12 @@ public class CapBacDB {
         CapBacDB CapBacDB = new CapBacDB(); 
         for (CapBac x : CapBacDB.getlistCapBac())
             x.show();
+    }
+
+    public CapBac getCapBacById(String id) {
+        for (CapBac x : this.listCapBac) 
+            if (x.getMaCapBac().equals(id))
+                return x;
+        return null;
     }
 }

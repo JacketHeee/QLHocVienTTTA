@@ -7,9 +7,6 @@ import java.util.Scanner;
 
 import model.chinhanh_phonghoc.ChiNhanh;
 import model.chinhanh_phonghoc.PhongHoc;
-import model.person.DiaChi;
-import model.person.TinhThanh;
-import services.ChiNhanhServices;
 
 public class PhongHocDB {
     private ArrayList<PhongHoc> listPhongHoc; 
@@ -33,8 +30,8 @@ public class PhongHocDB {
         try (Scanner sc = new Scanner(userFile)) {
             while (sc.hasNextLine()) {
                 String tmp[] = sc.nextLine().split("#"); 
-                ChiNhanhServices chiNhanhServices = new ChiNhanhServices();
-                ChiNhanh chiNhanh = chiNhanhServices.getChiNhanhById(tmp[2]);
+                ChiNhanhDB chiNhanhDB = new ChiNhanhDB();
+                ChiNhanh chiNhanh = chiNhanhDB.getChiNhanhById(tmp[2]);
                 listPhongHoc.add(new PhongHoc(tmp[0],tmp[1],chiNhanh,Integer.parseInt(tmp[3]),tmp[4],tmp[5]));
             }
         }
@@ -48,5 +45,12 @@ public class PhongHocDB {
         PhongHocDB phongHocDB = new PhongHocDB(); 
         for (PhongHoc x : phongHocDB.getlistPhongHoc())
             x.show();
+    }
+
+    public PhongHoc getPhongHocById(String id) {
+        for (PhongHoc x : this.listPhongHoc) 
+            if (x.getMaPhong().equals(id))
+                return x;
+        return null;
     }
 }

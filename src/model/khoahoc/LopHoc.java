@@ -138,6 +138,14 @@ public class LopHoc {
                 + khoaKhaiGiang.getTenKhoaKhaiGiang() + "\nPhongHoc: " + phongHoc.getTenPhong() + "\nGioHoc:" + gioHoc.toString() + "\nGvChinh: " + gvChinh.getTrinhDoChuyenMon() + "\nGvTroGiang: " + gvTroGiang.getTrinhDoChuyenMon()
                 + "\nSoLuongToiDa:" + soLuongToiDa + "\nSo luong hien tai: " + this.hocViens.size() +"\nTrangThai:" + trangThai+ "\n";
     }
+    
+    public ArrayList<HocVien> getHocViens() {
+        return hocViens;
+    }
+
+    public ArrayList<HoaDonThanhToan> getHoaDonThanhToans() {
+        return hoaDonThanhToans;
+    }
 
     public void show() {
         System.out.println(this.toString());

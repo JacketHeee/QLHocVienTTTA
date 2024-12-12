@@ -10,10 +10,5 @@ public class CapBacServices {
         CapBacDB = new CapBacDB();
     }
 
-    public CapBac getCapBacById(String id) {
-        for (CapBac x : CapBacDB.getlistCapBac()) 
-            if (x.getMaCapBac().equals(id))
-                return x;
-        return null;
-    }
+
 }

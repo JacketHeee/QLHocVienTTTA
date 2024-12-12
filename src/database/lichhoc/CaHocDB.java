@@ -44,4 +44,12 @@ public class CaHocDB {
         for (CaHoc x : CaHocDB.getlistCaHoc())
             x.show();
     }
+
+    public CaHoc getCaHocById(String id) {
+        for (CaHoc x : this.listCaHoc) 
+            if (x.getMaCaHoc().equals(id))
+                return x;
+        return null;
+    }
 }
+

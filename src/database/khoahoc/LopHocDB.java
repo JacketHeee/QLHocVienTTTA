@@ -5,18 +5,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import database.chinhanh_phonghoc.PhongHocDB;
+import database.lichhoc.GioHocDB;
+import database.lichhoc.KhoaKhaiGiangDB;
+import database.users.GiaoVienDB;
 import model.chinhanh_phonghoc.PhongHoc;
 import model.khoahoc.KhoaHoc;
 import model.khoahoc.LopHoc;
 import model.lichhoc.GioHoc;
 import model.lichhoc.KhoaKhaiGiang;
 import model.user.GiaoVien;
-import services.CapBacServices;
-import services.GiaoVienServices;
-import services.GioHocServices;
-import services.KhoaHocServices;
-import services.KhoaKhaiGiangServices;
-import services.PhongHocServices;
 
 public class LopHocDB {
        private ArrayList<LopHoc> listLopHoc; 
@@ -40,18 +38,18 @@ public class LopHocDB {
         try (Scanner sc = new Scanner(userFile)) {
             while (sc.hasNextLine()) {
                 String tmp[] = sc.nextLine().split("#"); 
-                KhoaHocServices khoaHocServices = new KhoaHocServices(); 
-                KhoaHoc kh = khoaHocServices.getKhoaHocById(tmp[2]);
-                KhoaKhaiGiangServices khaiGiangServices = new KhoaKhaiGiangServices();
-                KhoaKhaiGiang kkh = khaiGiangServices.getKhoaKhaiGiangById(tmp[3]);
-                PhongHocServices phongHocServices = new PhongHocServices();
-                PhongHoc phong = phongHocServices.getPhongHocById(tmp[4]);
-                GiaoVienServices giaoVienServices =  new GiaoVienServices();
-                GiaoVien gvChinh = giaoVienServices.getGiaoVienByID(tmp[5]); 
-                GiaoVien troGiang = giaoVienServices.getGiaoVienByID(tmp[6]); 
+                KhoaHocDB khoaHocDB = new KhoaHocDB();
+                KhoaHoc kh = khoaHocDB.getKhoaHocById(tmp[2]);
+                KhoaKhaiGiangDB khaiGiangDB = new KhoaKhaiGiangDB();
+                KhoaKhaiGiang kkh = khaiGiangDB.getKhoaKhaiGiangById(tmp[3]);
+                PhongHocDB phongHocDB = new PhongHocDB();
+                PhongHoc phong = phongHocDB.getPhongHocById(tmp[4]);
+                GiaoVienDB giaoVienDB = new GiaoVienDB();
+                GiaoVien gvChinh = giaoVienDB.getGiaoVienByID(tmp[5]); 
+                GiaoVien troGiang = giaoVienDB.getGiaoVienByID(tmp[6]); 
                 int soLuongToiDa = Integer.parseInt(tmp[7]);
-                GioHocServices gioHocServices = new GioHocServices(); 
-                GioHoc giohoc = gioHocServices.getGioHocById(tmp[9]);
+                GioHocDB gioHocDB = new GioHocDB();
+                GioHoc giohoc = gioHocDB.getGioHocById(tmp[9]);
                 listLopHoc.add(new LopHoc(tmp[0],tmp[1],kh,kkh,phong,gvChinh,troGiang,soLuongToiDa,tmp[8],giohoc));
             }
         }
@@ -65,5 +63,21 @@ public class LopHocDB {
         LopHocDB LopHocDB = new LopHocDB(); 
         for (LopHoc x : LopHocDB.getlistLopHoc())
             x.show();
+    }
+
+    
+    public LopHoc getLopHocById(String id) {
+        for (LopHoc x : this.listLopHoc) 
+            if (x.getMaLopHoc().equals(id))
+                return x;
+        return null;
+    }
+
+    public ArrayList<LopHoc> getLopHoctheoIDKhoaHoc(String id) {
+        ArrayList<LopHoc> list = new ArrayList<>(); 
+        for (LopHoc x : this.listLopHoc) 
+            if (x.getkhoaHoc().getMaKhoaHoc().equals(id)) 
+                list.add(x); 
+        return list;
     }
 }

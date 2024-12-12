@@ -10,10 +10,5 @@ public class ChuongTrinhServices {
         chuongTrinhDB = new ChuongTrinhDB();
     }
 
-    public ChuongTrinh getChuongTrinhById(String id) {
-        for (ChuongTrinh x : chuongTrinhDB.getlistChuongTrinh()) 
-            if (x.getMaChuongTrinh().equals(id))
-                return x;
-        return null;
-    }
+
 }

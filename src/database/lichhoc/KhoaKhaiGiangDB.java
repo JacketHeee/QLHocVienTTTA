@@ -10,12 +10,18 @@ import model.person.NgayThangNam;
 public class KhoaKhaiGiangDB {
     private ArrayList<KhoaKhaiGiang> listKhoaKhaiGiang; 
     static String src;
-
+    
     public KhoaKhaiGiangDB() {
         src = "data/lichhoc/KhoaKhaiGiang_data.txt";
         listKhoaKhaiGiang = this.docFile();
     }
 
+    public static void main(String[] args) {
+        KhoaKhaiGiangDB KhoaKhaiGiangDB = new KhoaKhaiGiangDB(); 
+        for (KhoaKhaiGiang x : KhoaKhaiGiangDB.getlistKhoaKhaiGiang())
+            x.show();
+    }
+    
     public ArrayList<KhoaKhaiGiang> getlistKhoaKhaiGiang() {
         return listKhoaKhaiGiang;
     }
@@ -41,9 +47,11 @@ public class KhoaKhaiGiangDB {
         return listKhoaKhaiGiang;
     }
 
-    public static void main(String[] args) {
-        KhoaKhaiGiangDB KhoaKhaiGiangDB = new KhoaKhaiGiangDB(); 
-        for (KhoaKhaiGiang x : KhoaKhaiGiangDB.getlistKhoaKhaiGiang())
-            x.show();
+    
+    public KhoaKhaiGiang getKhoaKhaiGiangById(String id) {
+        for (KhoaKhaiGiang x : this.listKhoaKhaiGiang) 
+            if (x.getMaKhoaKhaiGiang().equals(id))
+                return x;
+        return null;
     }
 }

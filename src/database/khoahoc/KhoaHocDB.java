@@ -7,9 +7,6 @@ import java.util.Scanner;
 
 import model.khoahoc.KhoaHoc;
 import model.khoahoc.CapBac;
-import model.khoahoc.ChuongTrinh;
-import services.CapBacServices;
-import services.ChuongTrinhServices;
 
 public class KhoaHocDB {
        private ArrayList<KhoaHoc> listKhoaHoc; 
@@ -33,9 +30,10 @@ public class KhoaHocDB {
         try (Scanner sc = new Scanner(userFile)) {
             while (sc.hasNextLine()) {
                 String tmp[] = sc.nextLine().split("#"); 
-                CapBacServices capBacServices = new CapBacServices();
-                CapBac cb = capBacServices.getCapBacById(tmp[1]);
-                listKhoaHoc.add(new KhoaHoc(tmp[0],cb,tmp[2],tmp[3],Double.parseDouble(tmp[4])));
+                CapBacDB capBacDB = new CapBacDB();
+                CapBac cb = capBacDB.getCapBacById(tmp[1]);
+                KhoaHoc x = new KhoaHoc(tmp[0],cb,tmp[2],tmp[3],Double.parseDouble(tmp[4]));
+                listKhoaHoc.add(x);
             }
         }
         catch (IOException e) {
@@ -44,6 +42,13 @@ public class KhoaHocDB {
         return listKhoaHoc;
     }
 
+    
+    public KhoaHoc getKhoaHocById(String id) {
+        for (KhoaHoc x : this.listKhoaHoc) 
+            if (x.getMaKhoaHoc().equals(id))
+                return x;
+        return null;
+    }
     public static void main(String[] args) {
         KhoaHocDB KhoaHocDB = new KhoaHocDB(); 
         for (KhoaHoc x : KhoaHocDB.getlistKhoaHoc())

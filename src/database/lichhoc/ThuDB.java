@@ -43,4 +43,12 @@ public class ThuDB {
         for (Thu x : ThuDB.getlistThu())
             x.show();
     }
+
+    
+    public Thu getThuById(String id) {
+        for (Thu x : this.listThu) 
+            if (x.getMaThu().equals(id))
+                return x;
+        return null;
+    }
 }

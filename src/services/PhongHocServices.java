@@ -10,10 +10,5 @@ public class PhongHocServices {
         phongHocDB = new PhongHocDB();
     }
 
-    public PhongHoc getPhongHocById(String id) {
-        for (PhongHoc x : phongHocDB.getlistPhongHoc()) 
-            if (x.getMaPhong().equals(id))
-                return x;
-        return null;
-    }
+
 }

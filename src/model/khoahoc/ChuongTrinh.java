@@ -52,6 +52,16 @@ public class ChuongTrinh {
     public void show() {
         System.out.println(this.toString());
     }
+
+    public ArrayList<CapBac> getCapBacs() {
+        return capBacs;
+    }
+
+    public void setCapBacs(ArrayList<CapBac> capBacs) {
+        this.capBacs = capBacs;
+    }
+
+    
     
     // Other methods as needed
 }

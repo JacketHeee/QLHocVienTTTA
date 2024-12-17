@@ -49,6 +49,22 @@ public class KhoaHocDB {
                 return x;
         return null;
     }
+
+    public ArrayList<KhoaHoc> getListKhoaHocByIdCapBac(String id) {
+        ArrayList<KhoaHoc> list = new ArrayList<>();
+        for (KhoaHoc x : this.listKhoaHoc) 
+            if (x.getcapBac().getMaCapBac().equals(id))
+                list.add(x);
+        return list;
+    }
+
+    public ArrayList<KhoaHoc> getListKhoaHocByIdChuongTrinh(String id) {
+        ArrayList<KhoaHoc> list = new ArrayList<>();
+        for (KhoaHoc x : this.listKhoaHoc) 
+            if (x.getcapBac().getChuongTrinh().getMaChuongTrinh().equals(id))
+                list.add(x);
+        return list;
+    }
     public static void main(String[] args) {
         KhoaHocDB KhoaHocDB = new KhoaHocDB(); 
         for (KhoaHoc x : KhoaHocDB.getlistKhoaHoc())

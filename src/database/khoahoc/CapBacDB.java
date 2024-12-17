@@ -53,4 +53,12 @@ public class CapBacDB {
                 return x;
         return null;
     }
+
+    public ArrayList<CapBac> getListCapBacByIdChuongTrinh(String id) {
+        ArrayList<CapBac> list = new ArrayList<>();
+        for (CapBac x : this.listCapBac) 
+            if (x.getChuongTrinh().getMaChuongTrinh().equals(id)) 
+                list.add(x);
+        return list;
+    }
 }

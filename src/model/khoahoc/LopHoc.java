@@ -159,7 +159,8 @@ public class LopHoc {
         System.out.printf("Ten lop: \033[1m%s \033[0m \n",tenLopHoc);
         System.out.println("Khoa hoc: " + khoaHoc.getTenKhoaHoc());
         System.out.println("Ngay khai giang: " + khoaKhaiGiang.getThoiGianBatDau().getInfor()); 
-        System.out.println("Phong: " + phongHoc.getTenPhong());
+        System.out.println("Phong: " + phongHoc.getTenPhong() + " | " + phongHoc.getchiNhanh().getTenChiNhanh()+", " +
+        phongHoc.getchiNhanh().getDiaChi().toString());
         System.out.println("Giang vien: \n");
         System.out.println(Chuoi.line(80 ,'-'));
         System.out.printf("\033[1m%-40s | %-40s\033[0m\n",Chuoi.centerText(gvChinh.getHoten(), 40),Chuoi.centerText(gvTroGiang.getHoten(),40));

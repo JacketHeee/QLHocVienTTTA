@@ -79,6 +79,10 @@ public class DiaChi {
     public String getInfor() {
         return String.format("%-3s, %-20s, Phuong %-10s, Quan %-9s, Tinh %s",sonha,duong,phuong,quan,tinh.getTentinh());
     }
+
+    public String toString() {
+        return String.format("%s, %s, Phuong %s, Quan %s, Tinh %s",sonha,duong,phuong,quan,tinh.getTentinh());
+    }
     public void show() {
         System.out.printf(this.getInfor());
     } 

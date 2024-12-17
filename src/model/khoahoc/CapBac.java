@@ -58,6 +58,8 @@ public class CapBac {
         this.thoiGianHoc = thoiGianHoc;
     }
 
+    
+
     @Override
     public String toString() {
         return "[" + chuongTrinh.getTenChuongTrinh()+ ", " + tenCapBac + ", " + thoiGianHoc + "]";
@@ -67,5 +69,13 @@ public class CapBac {
         System.out.println(this.toString());
     }
     // Other methods as needed
+
+    public ArrayList<KhoaHoc> getKhoaHocs() {
+        return khoaHocs;
+    }
+
+    public void setKhoaHocs(ArrayList<KhoaHoc> khoaHocs) {
+        this.khoaHocs = khoaHocs;
+    }
 }
 

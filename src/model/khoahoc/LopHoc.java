@@ -152,5 +152,8 @@ public class LopHoc {
     }
     // Other methods as needed
     
-}
+    public void addHocVien(HocVien hv) {
+        this.hocViens.add(hv);
+    }
+}   
 

@@ -56,7 +56,7 @@ public class UserController {
             case 3:
                 HocVienDB hocVienDB = new HocVienDB();
                 HocVienUI hocVienUI = new HocVienUI();
-                hocVienUI.dashboard(hocVienDB.getHocVienByIDUser(user.getMaNguoiDung()));
+                // hocVienUI.dashboard(hocVienDB.getHocVienByIDUser(user.getMaNguoiDung()));
                 break;
             default:
                 System.out.println("Role khong hop le.");

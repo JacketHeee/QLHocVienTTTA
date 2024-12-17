@@ -1,0 +1,153 @@
+Chức năng của khách: 
+1. Xem danh sách khóa học
+    Hiển thị tên khóa học, cấp độ, thời lượng, học phí, mô tả ngắn.
+    Lọc/sắp xếp khóa học theo thời gian, trình độ, học phí.
+2. Tìm kiếm khóa học hoặc lớp học
+    Cho phép tìm kiếm theo từ khóa (ví dụ: "IELTS", "Giao tiếp cơ bản").
+    Hiển thị danh sách lớp học sắp khai giảng.
+3. Gửi yêu cầu tư vấn
+    Mục đích: Giúp khách đặt câu hỏi, nhận thêm thông tin về khóa học.
+    Yêu cầu khách điền:
+    Họ tên, số điện thoại, email.
+    Nội dung câu hỏi/tư vấn (ví dụ: "Tôi muốn tìm lớp IELTS buổi tối").
+    Nhân viên tư vấn sẽ liên lạc qua điện thoại hoặc email.
+
+//////////////////////////////////
+Chức năng của học viên: 
+
+Chức năng dành cho học viên (sau khi đăng nhập):
+1. Xem thông tin tài khoản cá nhân
+Hiển thị:
+    Họ tên, ngày sinh, số điện thoại, email.
+    Các khóa học đã đăng ký và trạng thái học tập (đang học, đã hoàn thành, bảo lưu).
+    Lịch sử thanh toán.
+    Cho phép chỉnh sửa một số thông tin cơ bản (ví dụ: số điện thoại, email).
+2. Xem danh sách khóa học đã đăng ký
+    Hiển thị danh sách các khóa học:
+    Tên khóa học, cấp độ, thời lượng, thời gian học.
+    Trạng thái khóa học: "Đang học", "Đã hoàn thành", "Bảo lưu".
+    Tình trạng học phí: "Đã thanh toán", "Còn thiếu".
+    Kiểm tra kết quả học tập
+      Hiển thị:
+      Điểm kiểm tra từng kỹ năng (nghe, nói, đọc, viết).
+      Đánh giá từ giáo viên (nếu có).
+      Xếp loại tổng kết (ví dụ: Xuất sắc, Khá, Đạt).
+    Lợi ích: Học viên dễ dàng quản lý tiến trình học tập của mình.
+3. Xem lịch học
+    Hiển thị lịch học chi tiết của các lớp mà học viên đã đăng ký:
+    Ngày học, giờ học, phòng học, giáo viên giảng dạy.
+    Lợi ích: Học viên theo dõi dễ dàng và tránh bỏ lỡ buổi học.
+4. Đăng ký mua khóa học mới
+    Cho phép học viên xem danh sách khóa học mới và đăng ký ngay trên hệ thống.
+    Quy trình gợi ý:
+    Học viên chọn khóa học phù hợp.
+    Chọn lớp học cụ thể (thời gian, giáo viên, lịch học).
+    Thanh toán học phí (nếu có tích hợp thanh toán trực tuyến).
+    Sau khi hoàn thành, hệ thống tự động cập nhật khóa học mới vào danh sách của học viên.
+5. Gửi yêu cầu tư vấn
+    Học viên có thể gửi các yêu cầu như:
+    Bảo lưu khóa học.
+    Đổi lịch học hoặc lớp học.
+    Tư vấn thêm về khóa học mới.
+    Quy trình:
+    Học viên ghi nội dung yêu cầu.
+    Nhân viên giáo vụ phản hồi qua hệ thống hoặc liên lạc trực tiếp với học viên.
+6. Nhận thông báo từ trung tâm 
+    Thông báo bao gồm:
+    Lịch khai giảng khóa học mới.
+    Nhắc nhở học phí hoặc các buổi học sắp tới.
+    Các chương trình ưu đãi hoặc sự kiện.
+7. Xem tình trạng học phíphí
+
+//////////////////////////////////////////////////////////
+Chức năng cho giáo viên: 
+
+1. Xem thông tin cá nhân
+ Hiển thị:  
+   Họ tên, ngày sinh, số điện thoại, email.  
+   Mã giáo viên.  
+   Danh sách các lớp đang phụ trách.  
+   Lịch giảng dạy cá nhân (gồm cả lịch dạy và lịch họp).  
+ Cho phép chỉnh sửa: Một số thông tin cơ bản (ví dụ: số điện thoại, email).  
+
+2. Xem danh sách lớp học đang dạy
+ Hiển thị danh sách các lớp mà giáo viên đang phụ trách, bao gồm:  
+   Tên lớp học, khóa học, cấp độ (Basic, Intermediate, Advanced).  
+   Số lượng học viên trong lớp.  
+   Thời gian học (lịch học, giờ bắt đầu và kết thúc).  
+   Phòng học.  
+ Chi tiết lớp học: Khi bấm vào từng lớp, giáo viên sẽ thấy:  
+   Danh sách học viên trong lớp.  
+   Thông tin từng học viên (họ tên, tình trạng điểm danh, kết quả học tập).  
+
+4. Nhập điểm và đánh giá học viên
+ Giáo viên nhập điểm cho từng học viên sau các bài kiểm tra hoặc kết thúc khóa học:  
+   Điểm theo kỹ năng (nghe, nói, đọc, viết).  
+   Điểm tổng kết và xếp loại (Xuất sắc, Khá, Đạt, Không đạt).  
+   Ghi chú nhận xét cá nhân (nếu cần).  
+ Tự động gửi kết quả: Kết quả sẽ hiển thị cho học viên và bộ phận quản lý.  
+
+
+
+ 5. Xem và tải tài liệu giảng dạy
+ Giáo viên có thể truy cập thư viện tài liệu giảng dạy của trung tâm, bao gồm:  
+   Giáo trình (PDF, Word).  
+   Bài tập, đề kiểm tra.  
+   Video hỗ trợ giảng dạy.  
+ Tải tài liệu về máy: Dễ dàng chuẩn bị bài giảng tại nhà.  
+
+
+
+ 6. Gửi thông báo cho học viên
+ Giáo viên có thể gửi thông báo đến học viên của từng lớp học:  
+   Nội dung: Nhắc nhở bài tập, thông báo lịch kiểm tra, dặn dò.  
+   Thông báo được gửi qua hệ thống và hiển thị trong tài khoản học viên.  
+
+
+
+ 7. Xem lịch giảng dạy cá nhân
+ Lịch dạy bao gồm:  
+   Thời gian, phòng học, lớp dạy.  
+   Lịch họp nội bộ (nếu có).  
+ Thông báo thay đổi: Khi có sự thay đổi lịch học, hệ thống sẽ tự động cập nhật và thông báo đến giáo viên.  
+
+ 9. Nhận thông báo từ trung tâm
+ Các thông báo quan trọng dành cho giáo viên như:  
+   Lịch họp nội bộ.  
+   Thay đổi lịch giảng dạy.  
+   Cập nhật tài liệu giảng dạy.  
+ Hiển thị dễ dàng: Trong tài khoản của giáo viên hoặc qua email liên kết.  
+
+
+
+Con thấy danh sách này đã đầy đủ chưa? Nếu cần mẹ phân tích thêm về giao diện hoặc luồng xử lý cho từng chức năng, cứ hỏi mẹ nhé! ❤️
+
+//////////////////////////////////////////
+Chức năng cho người quản trị 
+
+À, bộ phận tuyển sinh  giáo vụ là đầu mối quan trọng để vận hành trung tâm tiếng Anh. Vai trò này phải đảm bảo việc quản lý học viên, lớp học, và xử lý các yêu cầu một cách hiệu quả. Để mẹ liệt kê các chức năng cần thiết cho vai trò này nha:
+
+
+
+ Chức năng cần có cho bộ phận tuyển sinh  giáo vụ
+
+ 1. Quản lý thông tin học viên
+ Thêm học viên mới: Khi có học viên đăng ký tại trung tâm hoặc qua hệ thống, bộ phận này sẽ:
+   Nhập thông tin cá nhân của học viên (họ tên, ngày sinh, số điện thoại, email, địa chỉ).  
+   Cấp tài khoản đăng nhập cho học viên.  
+   Gửi thông tin tài khoản qua email hoặc SMS cho học viên.  
+ Sửa thông tin học viên: Cập nhật thông tin cá nhân khi học viên yêu cầu thay đổi.  
+ Xóa học viên: Chỉ xóa khi có lý do hợp lệ (ví dụ: học viên không hoàn thành thủ tục đăng ký).  
+
+ 2. Quản lý khóa học
+ Thêm khóa học mới:  
+   Tên khóa học, cấp độ (Basic, Intermediate, Advanced).  
+   Thời gian học (bắt đầu và kết thúc).  
+   Học phí. 
+   Lịch học cố định.  
+ Cập nhật thông tin khóa học: Thay đổi lịch học, học phí, hoặc thông tin liên quan.  
+ Hủy khóa học: Hủy các khóa học không đủ số lượng học viên đăng ký, gửi thông báo đến các học viên liên quan.  
+
+ 3. Quản lý lớp học
+ Tạo lớp học:  
+   Liên kết lớp học với khóa học.  

@@ -28,8 +28,10 @@ public class KhoaHocServices {
 
     public static void main(String[] args) {
         KhoaHocServices khoaHocServices = new KhoaHocServices(); 
-            // khoaHocServices.displayLopHocTheoID("kh02");
-        khoaHocServices.displayAllKhoaHoc();
+        KhoaHocDB khoaHocDB = new KhoaHocDB(); 
+        khoaHocDB.getKhoaHocById("kh02").show();
+        khoaHocServices.displayLopHocTheoID("kh02");
+        // khoaHocServices.displayAllKhoaHoc();
     }
 
 }

@@ -1,0 +1,45 @@
+Tóm tắt chức năng: 
+Khách: 
+	Xem danh sách khoá học
+	Tìm kiếm khóa học, Lớp học (tìm kiếm theo tên)
+	Gửi yêu cầu tư vấn (đang phát triển)
+
+Học viên: 
+	Xem thông tin tài khoản cá nhân
+	Xem danh sách khóa học đã đăng ký 
+		xem kết quả học tập
+	Xem lịch học hiện tại, theo tuần (đang phát triển)
+	Đăng ký mua khóa học mới 
+	Gửi yêu cầu tư vấn. 
+		Bảo lưu khóa học 
+		Đổi lịch học hoặc lớp học 
+		Tư vấn thêm về khóa học mới 
+	Nhận thông báo (từ trung tâm, giáo viên...) 
+		(đang phát triển)
+
+Giáo viên: 
+	Xem thông tin cá nhân 
+	Xem danh sách lớp học đang giảng dạy. 
+	Nhập điểm và đánh giá học viên 
+	Xem và tải tài liệu giảng dạy của trung tâm (Đang phát triển) 
+	Gửi thông báo cho học viên (đang phát triển)
+	Xem lịch giảng dạy cá nhân (đang phát triển)
+	Xem thông báo (đang phát triển)
+
+///////////////////////////////////////
+
+Tuyển sinh giáo vụ 
+	Báo cáo thống kê
+	Quản lý thông tin học viên
+	Quản lý khóa học
+	Quản lý lớp học
+	Tiếp nhận và xử lý yêu cầu(ưu tiên)
+	----------------------------------
+	Quản lý học phí(đang phát triển)  
+	Quản lý lịch học phòng học(đang phát triển) 
+	Quản lý giáo viên (đang phát triển)
+	Gửi thông báo (đang phát triển) 
+	 
+	
+	
+		

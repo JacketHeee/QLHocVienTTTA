@@ -1,0 +1,85 @@
+Con hỏi hay lắm! Mẹ sẽ phân tích kỹ cho con về **giao diện đăng ký mua khóa học mới** giữa **học viên đã đăng ký** (đăng nhập rồi) và **khách chưa đăng nhập** (người dùng vãng lai). Con sẽ thấy rõ ràng sự giống và khác nhau nhé.
+
+---
+
+### **1. Giống nhau giữa giao diện của học viên và khách:**
+
+#### **1.1. Các thông tin hiển thị cơ bản về khóa học**
+- Tên khóa học, cấp độ (Basic, Intermediate, Advanced).  
+- Thời lượng (số tuần hoặc giờ học).  
+- Học phí.  
+- Thời gian học (ca sáng, chiều, tối).  
+- Mô tả ngắn về nội dung khóa học.  
+
+=> **Mục tiêu:** Cả hai đối tượng đều cần thông tin cơ bản này để đưa ra quyết định.  
+
+---
+
+#### **1.2. Chức năng lọc và tìm kiếm**
+- Cho phép tìm kiếm khóa học theo từ khóa, trình độ, lịch học, học phí,...  
+=> **Mục tiêu:** Giúp người dùng dễ dàng tìm khóa học phù hợp.  
+
+---
+
+### **2. Khác nhau giữa giao diện của học viên và khách:**
+
+#### **2.1. Giao diện của học viên đã đăng nhập**
+- **Không cần nhập lại thông tin cá nhân:**  
+  - Vì học viên đã có tài khoản nên hệ thống tự động sử dụng thông tin trong hồ sơ (họ tên, số điện thoại, email, mã học viên).  
+  - **Giao diện đăng ký đơn giản hơn, chỉ yêu cầu chọn:**  
+    - Khóa học muốn mua.  
+    - Lớp học cụ thể (nếu có).  
+    - Phương thức thanh toán (trực tuyến, chuyển khoản, hoặc trực tiếp).  
+
+- **Tích hợp lịch sử học tập:**  
+  - Hệ thống có thể kiểm tra xem học viên đã học khóa này trước đó chưa.  
+  - Gợi ý các khóa học tiếp theo phù hợp với trình độ hiện tại.  
+
+- **Xác nhận đăng ký:**  
+  - Sau khi đăng ký, học viên có thể xem ngay thông tin khóa học trong tài khoản cá nhân.  
+
+---
+
+#### **2.2. Giao diện của khách chưa đăng nhập**
+- **Bắt buộc nhập thông tin cá nhân:**  
+  - Khách phải điền đầy đủ các trường thông tin như:  
+    - Họ tên, số điện thoại, email.  
+    - Địa chỉ (nếu cần).  
+  - Mục đích: Trung tâm cần lưu lại thông tin liên lạc để liên hệ xác nhận và hỗ trợ.  
+
+- **Không lưu vào tài khoản:**  
+  - Vì khách chưa có tài khoản, thông tin đăng ký chỉ được lưu tạm thời.  
+  - Sau khi đăng ký, trung tâm sẽ xử lý thủ công để tạo tài khoản học viên (nếu cần).  
+
+- **Không có gợi ý khóa học liên quan:**  
+  - Vì hệ thống không biết trình độ hoặc lịch sử học tập của khách, nên giao diện chỉ hiển thị các khóa học chung chung.  
+
+---
+
+### **3. Gợi ý cách thiết kế giao diện:**
+
+#### **Giao diện của học viên đã đăng nhập:**  
+- **Bố cục đơn giản, gọn gàng:**  
+  - Danh sách các khóa học với nút "Đăng ký".  
+  - Khi bấm vào "Đăng ký", học viên chỉ cần chọn lớp học và phương thức thanh toán.  
+
+#### **Giao diện của khách chưa đăng nhập:**  
+- **Bố cục phức tạp hơn một chút:**  
+  - Thông tin khóa học.  
+  - Form yêu cầu nhập thông tin cá nhân.  
+  - Nút "Đăng ký" sẽ kiểm tra thông tin trước khi lưu lại.  
+
+---
+
+### **4. So sánh tóm tắt:**
+
+| **Tiêu chí**              | **Học viên đã đăng nhập**                                 | **Khách chưa đăng nhập**                             |
+|---------------------------|----------------------------------------------------------|-----------------------------------------------------|
+| **Thông tin cá nhân**     | Tự động điền từ tài khoản.                                | Phải nhập thủ công.                                 |
+| **Gợi ý khóa học**         | Có gợi ý dựa trên lịch sử học tập.                       | Không có gợi ý, chỉ hiển thị danh sách chung.       |
+| **Lưu thông tin đăng ký**  | Lưu trực tiếp vào tài khoản học viên.                    | Lưu tạm thời, cần trung tâm xử lý.                 |
+| **Đơn giản hóa giao diện** | Ít bước đăng ký hơn, nhanh chóng.                        | Giao diện phức tạp hơn, cần thêm các trường thông tin. |
+
+---
+
+Con thấy cách thiết kế này hợp lý chưa? Nếu cần mẹ bổ sung chi tiết về luồng xử lý dữ liệu, con cứ nói nha. ❤️

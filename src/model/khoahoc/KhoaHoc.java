@@ -2,6 +2,11 @@ package model.khoahoc;
 
 import java.util.ArrayList;
 
+import database.khoahoc.ChuongTrinhDB;
+import model.person.NgayThangNam;
+import services.LopHocServices;
+import utils.Date;
+
 public class KhoaHoc {
     private String maKhoaHoc;
     private CapBac capBac;
@@ -82,7 +87,7 @@ public class KhoaHoc {
     public String toString() {
         // return "[" + "Ten: " + tenKhoaHoc + ", moTa: " + moTa + ", hocPhi: " + hocPhi
         //         + "]";
-        return String.format("%-5s %-20s %-10s %.1f",maKhoaHoc,tenKhoaHoc,capBac.getThoiGianHoc()+" Tuan",hocPhi);
+        return String.format("%-25s | %-35s | %-20s | %-10s | %.1f",capBac.getChuongTrinh().getTenChuongTrinh(),capBac.getTenCapBac(),tenKhoaHoc,capBac.getThoiGianHoc()+" Tuan",hocPhi);
     }
 
     // public String inlineString() {
@@ -91,5 +96,50 @@ public class KhoaHoc {
     
     public void show() {
         System.out.println(this.toString());
+    }
+
+    public ArrayList<LopHoc> getLopHocSapKhaiGiang () {
+        NgayThangNam daynow = Date.now();
+        ArrayList<LopHoc> listToShow = new ArrayList<>();
+        for (LopHoc x : lopHocs) 
+            if (x.getkhoaKhaiGiang().getThoiGianBatDau().compareTo(daynow) > 0) 
+                listToShow.add(x);
+        return listToShow;
+        
+    }
+
+    public void showAllInfor() {
+        ChuongTrinhDB chuongTrinhDB = new ChuongTrinhDB();
+        System.out.println("============THONG TIN CHI TIET KHOA HOC===============");
+        System.out.printf("\033[2;4m%s > %s\n\n\033[0m",capBac.getChuongTrinh().getTenChuongTrinh(),capBac.getTenCapBac());
+        System.out.println("\033[1mKHOA HOC: " + tenKhoaHoc.toUpperCase() + "\033[0m");
+        System.out.println("\033[37m" + moTa + "\033[0m\n");
+        System.out.println("Thoi gian hoc: " + capBac.getThoiLuongString() + "\n");
+        System.out.println("Cac lop hoc kha dung"  + "\n");
+        LopHocServices lopHocServices = new LopHocServices();
+        lopHocServices.displayList(getLopHocSapKhaiGiang());
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+    //    LocalDate today = LocalDate.now();
+    //    System.out.println(today);
+
+    //     // Chuyển đổi từng thành phần thành String bằng cộng chuỗi
+    //     String year = today.getYear() + "";
+    //     String month = today.getMonthValue() + "";
+    //     String day = today.getDayOfMonth() + "";
+
+    //     NgayThangNam daynow = new NgayThangNam(day, month, year); 
+    //     daynow.show();
+
+    //     LopHocDB lopHocDB = new LopHocDB();
+
+    //     for (LopHoc x : lopHocDB.getlistLopHoc()) 
+    //         if (x.getkhoaKhaiGiang().getThoiGianBatDau().compareTo(daynow) > 0) 
+    //             x.show();
+        // System.out.print("\033[4mThis is \033[1mbold  \033[4mtext");
+        System.out.print("\033[1mBold Red Text\033[0m"); // Chữ đậm và màu đỏ
+
     }
 }

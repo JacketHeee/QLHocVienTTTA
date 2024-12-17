@@ -80,4 +80,13 @@ public class LopHocDB {
                 list.add(x); 
         return list;
     }
+
+    // public ArrayList<LopHoc> getLopHocSapKhaiGiangTheoIDKhoaHoc(String id) {
+    //     ArrayList<LopHoc> list = new ArrayList<>(); 
+    //     for (LopHoc x : this.listLopHoc) 
+    //         if (x.getkhoaHoc().getMaKhoaHoc().equals(id)) 
+    //             list.add(x); 
+    //     return list;
+    // }
+
 }

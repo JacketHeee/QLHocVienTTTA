@@ -53,12 +53,13 @@ public class NgayThangNam {
         return this.ngay + "#" + this.thang + "#" + this.nam;
     }
     public int compareTo(NgayThangNam date) {
-        int k = this.nam.compareTo(date.getNam());
+        
+        int k = Integer.compare(Integer.parseInt(nam), Integer.parseInt(date.getNam()));
         if (k != 0) 
             return k;
-        k = this.thang.compareTo(date.getThang());
+        k = Integer.compare(Integer.parseInt(thang), Integer.parseInt(date.getThang()));
         if (k != 0) 
             return k;
-        return this.ngay.compareTo(date.getNgay());
+        return Integer.compare(Integer.parseInt(ngay), Integer.parseInt(date.getNgay()));
     }
 }

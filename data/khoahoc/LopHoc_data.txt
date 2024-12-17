@@ -16,9 +16,12 @@ LP015#Lop nen tang B2#kh05#5#A353#5#10#20#Ngung tuyen sinh#2
 LP016#Lop nen tang B3#kh06#1#A354#1#6#20#Dang tuyen sinh#6
 LP017#Lop nen tang B3#kh06#1#A355#2#7#20#Ngung tuyen sinh#7
 LP018#Lop nen tang B3#kh06#1#A356#3#8#20#Dang tuyen sinh#4
-LP019#Lop nen tang C1#kh07#2#A357#4#9#20#Ngung tuyen sinh#5
+LP019#Lop nen tang C1#kh07#1#A357#4#9#20#Ngung tuyen sinh#5
 LP020#Lop nen tang C1#kh07#2#A358#5#10#20#Dang tuyen sinh#6
-LP021#Lop nen tang C1#kh07#2#A349#1#6#20#Ngung tuyen sinh#2
+LP021#Lop nen tang C1#kh07#3#A349#1#6#20#Ngung tuyen sinh#2
+LP019#Lop nen tang C1#kh07#4#A357#4#9#20#Ngung tuyen sinh#5
+LP020#Lop nen tang C1#kh07#5#A358#5#10#20#Dang tuyen sinh#6
+LP021#Lop nen tang C1#kh07#4#A349#1#6#20#Ngung tuyen sinh#2
 LP022#Lop nen tang C2#kh08#3#A350#2#7#20#Dang tuyen sinh#1
 LP023#Lop nen tang C2#kh08#3#A351#3#8#20#Ngung tuyen sinh#4
 LP024#Lop nen tang C2#kh08#3#A352#4#9#20#Dang tuyen sinh#3
@@ -27,9 +30,9 @@ LP026#Lop nen tang C3#kh09#4#A354#1#6#20#Dang tuyen sinh#6
 LP027#Lop IELTS Basic#kh10#1#A349#1#6#20#Dang tuyen sinh#1
 LP028#Lop IELTS Basic#kh10#1#A350#2#7#20#Ngung tuyen sinh#2
 LP029#Lop IELTS Basic#kh10#1#A351#3#8#20#Dang tuyen sinh#3
-LP030#Lop Pre–Foundation#kh11#2#A352#4#9#20#Ngung tuyen sinh#4
-LP031#Lop Pre–Foundation#kh11#2#A353#5#10#20#Dang tuyen sinh#5
-LP032#Lop Pre–Foundation#kh11#2#A354#1#6#20#Ngung tuyen sinh#6
+LP030#Lop Pre_Foundation#kh11#2#A352#4#9#20#Ngung tuyen sinh#4
+LP031#Lop Pre_Foundation#kh11#2#A353#5#10#20#Dang tuyen sinh#5
+LP032#Lop Pre_Foundation#kh11#2#A354#1#6#20#Ngung tuyen sinh#6
 LP033#Lop Foundation#kh12#3#A355#2#7#20#Dang tuyen sinh#7
 LP034#Lop Foundation#kh12#3#A356#3#8#20#Ngung tuyen sinh#8
 LP035#Lop Foundation#kh12#3#A357#4#9#20#Dang tuyen sinh#9

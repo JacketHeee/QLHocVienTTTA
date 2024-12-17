@@ -1,9 +1,12 @@
 package services;
 
+import java.util.ArrayList;
+
 import database.khoahoc.KhoaHocDB;
 import database.khoahoc.LopHocDB;
 import model.khoahoc.KhoaHoc;
 import model.khoahoc.LopHoc;
+import utils.Chuoi;
 
 public class KhoaHocServices {
     private KhoaHocDB khoaHocDB; 
@@ -22,16 +25,35 @@ public class KhoaHocServices {
     }
 
     public void displayAllKhoaHoc() {
-        for (KhoaHoc x : khoaHocDB.getlistKhoaHoc()) 
-            x.show();
+        displayList(khoaHocDB.getlistKhoaHoc());
     }
 
+    public ArrayList<KhoaHoc> timKiemTheoTen(String input) {
+        ArrayList<KhoaHoc> list = new ArrayList<>();
+        String [] listKey = input.split(" ");
+        for (KhoaHoc x : khoaHocDB.getlistKhoaHoc()) {
+            if (x.getTenKhoaHoc().toLowerCase().indexOf(input.toLowerCase()) != -1) 
+                list.add(x);
+        }
+        return list;
+    }
+
+    public void displayList(ArrayList<KhoaHoc> list) {
+        System.out.println(Chuoi.line(120,'-')); 
+        System.out.printf("%4s | %-25s | %-35s | %-20s | %-10s | %s\n",Chuoi.centerText("STT",4),Chuoi.centerText("Chuong trinh", 25),
+            Chuoi.centerText("Cap Bac", 35),Chuoi.centerText("Khoa Hoc",20),
+            Chuoi.centerText("Thoi gian",10),"Hoc Phi");
+        System.out.println(Chuoi.line(120,'-')); 
+        int index = 1;
+        for (KhoaHoc x : list ) 
+            System.out.println(String.format("%4s | ", Chuoi.centerText(index++ + "",4))+ x.toString());
+        System.out.println(Chuoi.line(120,'-')); 
+        System.out.println(""); 
+    }
     public static void main(String[] args) {
-        KhoaHocServices khoaHocServices = new KhoaHocServices(); 
-        KhoaHocDB khoaHocDB = new KhoaHocDB(); 
-        khoaHocDB.getKhoaHocById("kh02").show();
-        khoaHocServices.displayLopHocTheoID("kh02");
-        // khoaHocServices.displayAllKhoaHoc();
+        KhoaHocServices khoaHocServices = new KhoaHocServices();
+        for (KhoaHoc x : khoaHocServices.timKiemTheoTen("b")) 
+            x.show();
     }
 
 }

@@ -7,8 +7,11 @@ import model.person.*;
 import model.thanhtoan_khuyenmai.HoaDonThanhToan;
 import model.user.GiaoVien;
 import model.user.HocVien;
+import utils.Chuoi;
 
 import java.util.ArrayList;
+
+import database.khoahoc.LopHocDB;
 
 public class LopHoc {
     private String maLopHoc;
@@ -148,12 +151,44 @@ public class LopHoc {
     }
 
     public void show() {
-        System.out.println(this.toString());
+        System.out.println(getInforPre());
+    }
+
+    public void showAllInfor() {
+        System.out.println("============================THONG TIN CHI TIET LOP HOC===============================\n");
+        System.out.printf("Ten lop: \033[1m%s \033[0m \n",tenLopHoc);
+        System.out.println("Khoa hoc: " + khoaHoc.getTenKhoaHoc());
+        System.out.println("Ngay khai giang: " + khoaKhaiGiang.getThoiGianBatDau().getInfor()); 
+        System.out.println("Phong: " + phongHoc.getTenPhong());
+        System.out.println("Giang vien: \n");
+        System.out.println(Chuoi.line(80 ,'-'));
+        System.out.printf("\033[1m%-40s | %-40s\033[0m\n",Chuoi.centerText(gvChinh.getHoten(), 40),Chuoi.centerText(gvTroGiang.getHoten(),40));
+        System.out.printf("%-40s | %-40s\n",Chuoi.centerText(gvChinh.getTrinhDo(),40),Chuoi.centerText(gvTroGiang.getTrinhDo(),40));
+        System.out.printf("%-40s | %-40s\n",Chuoi.centerText("CMon: "+gvChinh.getChuyenMon(),40),Chuoi.centerText("CMon: "+gvTroGiang.getChuyenMon(),40));
+        System.out.printf("%-40s | %-40s\n",Chuoi.centerText(gvChinh.getVaiTro(),40),Chuoi.centerText(gvTroGiang.getVaiTro(),40));
+        System.out.println(Chuoi.line(80 ,'-'));
+        System.out.println();
+        System.out.printf("Lich hoc: %s\n",gioHoc.toString());
+        System.out.println("So luong toi da: " + soLuongToiDa);
+        System.out.println("So luong hien tai: " + hocViens.size());
+        System.out.println("Trang thai: " + trangThai);
+        System.out.println("");
     }
     // Other methods as needed
     
     public void addHocVien(HocVien hv) {
         this.hocViens.add(hv);
     }
+
+    public String getInforPre() {
+        return String.format("%-20s | %-10s | %-10s | %-10s | %s", tenLopHoc, khoaKhaiGiang.getThoiGianBatDau().getInfor(), 
+        Chuoi.centerText(soLuongToiDa+"", 10), Chuoi.centerText(hocViens.size()+"", 10),trangThai);
+    }
+
+    public static void main(String[] args) {
+        LopHocDB lopHocDB = new LopHocDB(); 
+        lopHocDB.getLopHocById("LP005").showAllInfor();
+    }
 }   
+
 

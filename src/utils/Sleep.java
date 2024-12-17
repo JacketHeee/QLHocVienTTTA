@@ -26,4 +26,11 @@ public class Sleep {
         Console.clearConsole();
         System.out.println("Da dang xuat!");
     }
+
+    public static void load() {
+        for (int i=0; i<2; i++) {
+            tamDung(350);
+            System.out.print(".");
+        }
+    }
 }

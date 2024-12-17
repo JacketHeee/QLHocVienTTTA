@@ -11,4 +11,34 @@ public class HomeUI {
         System.out.println("x: Thoat");    
         System.out.println("--------------------------"); 
     }
+
+    public static void menu_2() {
+        System.out.println("1: Xem chi tiet khoa hoc");
+        System.out.println("x: Quay lai");
+        System.out.println("--------------------------");
+    }
+
+    public static void menu_2_1() {
+        System.out.println("--------------------------");
+        System.out.println("1: Xem chi tiet lop hoc");
+        System.out.println("2: Gui yeu cau tu van");
+        System.out.println("x: Quay lai");
+        System.out.println("--------------------------");
+    }
+
+    public static void menu_2_2() {
+        System.out.println("1: Loc theo chuong trinh");
+        System.out.println("2: Loc theo cap bac");
+        System.out.println("3: Loc theo khoang gia");
+        System.out.println("x: Quay lai");
+        System.out.println("--------------------------");
+    }
+
+    public static void menu_2_1_1() {
+        System.out.println("--------------------------");
+        System.out.println("1: Dang ky ghi danh ngay");
+        System.out.println("2: Gui yeu cau tu van");
+        System.out.println("x: Quay lai");
+        System.out.println("--------------------------");
+    }
 }

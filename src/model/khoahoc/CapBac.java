@@ -49,7 +49,11 @@ public class CapBac {
     public int getThoiGianHoc() {
         return thoiGianHoc;
     }
-
+    
+    public String getThoiLuongString() {
+        return thoiGianHoc + " Tuan";
+    }
+    
     public void setThoiGianHoc(int thoiGianHoc) {
         this.thoiGianHoc = thoiGianHoc;
     }

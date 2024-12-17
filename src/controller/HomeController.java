@@ -1,43 +1,39 @@
 package controller;
 
-import services.KhoaHocServices;
-import services.LopHocServices;
+import java.util.Scanner;
+
+import services.HomeServices;
+import services.UserServices;
 import ui.HomeUI;
+import utils.Console;
 
 public class HomeController {
-    private HomeUI homeUI;
-    
+    private HomeServices homeServices;
     public HomeController() {
-        homeUI = new HomeUI();
+        homeServices = new HomeServices();
     }
     public void showMenu() {
+        Scanner sc =  new Scanner(System.in);
+        char choose;
         while (true) {
-            homeUI.displayMenu();
-            String choice = homeUI.getUserChoice();
-
-            switch (choice) {
-                case "1":
-                    // Chuyển đến UI đăng nhập
-                    System.out.println("Chuyen sang giao dien dang nhap...");
-                    break;
-                case "2":
-                    // Xử lý tìm kiếm khóa học
-                    System.out.println("Tim kiem khoa hoc...");
-                    break;
-                case "3":
-                    // Hiển thị các khóa học hiện có
-                    System.out.println("Hien thi danh sach khoa hoc...");
-                    break;
-                case "4":
-                    // Hiển thị các lớp học hiện có
-                    System.out.println("Hien thi danh sach lop hoc...");
-                    break;
-                case "x":
-                    System.out.println("Thoat chuong trinh...");
-                    return;
-                default:
-                    System.out.println("Lua chon khong hop le. Vui long thu lai.");
+            Console.clearConsole();
+            HomeUI.menu();
+            System.out.print("Lua chon cua ban la: ");      
+            choose = sc.nextLine().charAt(0); 
+            switch (choose) {
+                case '1':   
+                    UserController userController = new UserController();
+                    userController.login();
+                break;
+                case '2':
+                break;
+                case '3': 
+                break;
             }
+            if (choose == 'x') 
+                break;
+            System.out.print("-------Enter de tiep tuc-----");
+            sc.nextLine();
         }
     }
 }   

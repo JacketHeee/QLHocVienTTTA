@@ -1,48 +1,21 @@
 package ui;
 
-import java.util.Scanner;
-
-import model.user.TuyenSinh_GiaoVu;
-
 public class TS_GiaoVuUI {
-    public static void dashboard(TuyenSinh_GiaoVu tsgv) {
-        Scanner sc = new Scanner(System.in); 
-        char choose;
-        while (true) {
-            clearConsole();
-            System.out.println("=== Tuyen sinh Giao vu ===");
-            System.out.println("1: Quan ly tai khoan hoc vien va giao vien");
-            System.out.println("2: Quan ly Khoa hoc");
-            System.out.println("x: Dang xuat");
-            
-            choose = sc.nextLine().charAt(0); 
-            switch (choose) {
-                case '1':   
-                break;
-                case '2':
-                break;
-                case '3': 
-                break;
-            }
-            if (choose == 'x') 
-                break;
-            System.out.println("-------Enter de tiep tuc-----");
-            sc.nextLine();
-        } 
-    }
-
-    public static void clearConsole() {
-        try {
-            // Lệnh để xóa màn hình trên Windows
-            if (System.getProperty("os.name").contains("Windows")) {
-                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-            }
-            // Lệnh để xóa màn hình trên Unix-based hệ thống (Linux/Mac)
-            else {
-                new ProcessBuilder("clear").inheritIO().start().waitFor();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public static void menu() {
+        System.out.println("========GIAO DIEN TUYEN SINH GIAO VU=======");
+        System.out.println("1: Quan ly hoc vien");
+        System.out.println("2: Quan ly giao vien (Dang phat trien)");
+        System.out.println("3: Quan ly khoa hoc");
+        System.out.println("4: Quan ly lop hoc");
+        System.out.println("5: Xu ly yeu cau ");
+        System.out.println("6: Quan ly hoc phi (Dang phat trien)");
+        System.out.println("7: Quan ly lich hoc phong hoc (Dang phat trien)");
+        System.out.println("8: Quan ly khoa khai giang (Dang phat trien)");
+        System.out.println("9: Quan ly ca hoc (Dang phat trien)");
+        System.out.println("10: Quan ly cap bac (Dang phat trien)");
+        System.out.println("11: Gui thong bao");
+        System.out.println("12: BAO CAO THONG KE");
+        System.out.println("x: Dang xuat");
+        System.out.println("------------------------");
     }
 }

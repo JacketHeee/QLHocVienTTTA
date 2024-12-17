@@ -2,6 +2,7 @@ package controller;
 
 import java.util.Scanner;
 
+import database.users.GiaoVienDB;
 import database.users.HocVienDB;
 import model.user.NguoiDung;
 import services.HocVienServices;
@@ -9,6 +10,8 @@ import services.UserServices;
 import ui.GiaoVienUI;
 import ui.HocVienUI;
 import ui.TS_GiaoVuUI;
+import utils.Console;
+import utils.Sleep;
 
 public class UserController {
     private UserServices userService;  // Khai báo đối tượng UserService
@@ -20,20 +23,24 @@ public class UserController {
     }
     // Phương thức xử lý đăng nhập
     public void login() {
+        Console.clearConsole();
+        System.out.println("==============GIAO Dien DANG NHap===================");
         Scanner sc = new Scanner(System.in);
-        System.out.print("Nhap ten dang nhap: ");
+        System.out.print("Ten dang nhap: ");
         String username = sc.nextLine();
-        System.out.print("Nhap mat khau: ");
+        System.out.print("Mat khau: ");
         String password = sc.nextLine();
         
         // Gọi service để kiểm tra thông tin đăng nhập
         loggedInUser = userService.checkLogin(username, password);
         if (loggedInUser != null) {
-            System.out.println("Danh nhap thanh cong!");
+            Console.clearConsole();
+            Sleep.dangNhap();
             // In ra thông tin người dùng
             showUIByRole(loggedInUser);
         } else {
             System.out.println("Sai tai khoan hoac mat khau.");
+            Sleep.tamDung(1000);
             this.login();
         }
     }
@@ -46,18 +53,20 @@ public class UserController {
     private void showUIByRole(NguoiDung user) {
         switch (user.getrole()) {
             case 1:
-                TS_GiaoVuUI adminUI = new TS_GiaoVuUI();
-                // adminUI.dashboard();
+                TSGVController tsgvController = new TSGVController();
+                tsgvController.showMenu();
                 break;
             case 2:
-                GiaoVienUI giaoVienUI = new GiaoVienUI();
-                // giaoVienUI.dashboard();
+                GiaoVienDB giaoVienDB = new GiaoVienDB();
+                GiaoVienController giaoVienController = new GiaoVienController(giaoVienDB.getGiaoVienByID(user.getMaNguoiDung()));
+                giaoVienController.showMenu();
                 break;
             case 3:
                 HocVienDB hocVienDB = new HocVienDB();
-                HocVienUI hocVienUI = new HocVienUI();
-                // hocVienUI.dashboard(hocVienDB.getHocVienByIDUser(user.getMaNguoiDung()));
-                break;
+                HocVienController hocVienController = new HocVienController(hocVienDB.getHocVienByIDUser(user.getMaNguoiDung()));
+                
+                hocVienController.showMenu();
+               break;
             default:
                 System.out.println("Role khong hop le.");
                 break;
@@ -65,38 +74,4 @@ public class UserController {
     }
 }
 
-
-// import java.util.Scanner;
-
-// import database.users.UserDB;
-// import model.user.NguoiDung;
-// import ui.*;
-
-// public class DangNhapController {
-//     public static void main(String[] args) {
-//         // DangKyController.UIDangKy();
-//         UILogin();
-//     }
-//     public static void UILogin() {
-//         Scanner sc = new Scanner(System.in); 
-//         System.out.print("username: ");
-//         String username = sc.nextLine(); 
-//         System.out.print("password: ");
-//         String pass = sc.nextLine(); 
-//         NguoiDung x = kiemtraDN(username,pass);
-//         if ( x != null) {
-//             switch (x.getrole()) {
-//                 case 1:
-//                      GiaoDien_TuyenSinhGiaoVu.giaoDienChinh();                   
-//                 break;
-//                 case 2: 
-//                     GiaoDien_GiaoVien.giaoDienChinh();
-//                 break;
-//                 case 3: 
-//                     GiaoDien_HocVien.giaoDienChinh();
-//                 break;
-//             }
-//         }
-//     }
-// }
 

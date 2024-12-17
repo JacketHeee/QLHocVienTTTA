@@ -1,20 +1,15 @@
 package ui;
 
-import java.util.Scanner;
-
 public class HocVienUI {
-    public void displayMenu() {
-        System.out.println("=== Menu Hoc Vien ===");
-        System.out.println("1. Xem thong tin khoa hoc");
-        System.out.println("2. Dang ky khoa hoc");
-        System.out.println("3. Xem lop hoc da dang ky");
-        System.out.println("4. Xem thong tin ca nhan");
-        System.out.println("x. Dang xuat");
-    }
-
-    public String getUserChoice() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Nhap lua chon cua ban: ");
-        return scanner.nextLine();
+    public static void menu() {
+        System.out.println("=============GIAO DIEN HOC VIEN===============");
+        System.out.println("1: Xem thong tin tai khoan");
+        System.out.println("2: Xem danh sach khoa hoc da dang ky");
+        System.out.println("3: Xem lich hoc hien tai (Dang phat trien)");
+        System.out.println("4: Dang ky khoa hoc moi");
+        System.out.println("5: Gui yeu cau tu van");
+        System.out.println("6: Xem thong bao");
+        System.out.println("x: Dang xuat");
+        System.out.println("-------------------------------");
     }
 }

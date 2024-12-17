@@ -3,22 +3,27 @@ package model.theoDoi;
 import model.person.*;
 import model.user.HocVien;
 public class YeuCauTuVan {
-    private String maYeuCau;           // Mã yêu cầu tư vấn
-    private HocVien hocVien;          // Mã học viên (khóa ngoại từ bảng HocVien)
-    private String mucTieu;         // Mục tiêu tư vấn của học viên
-    private NgayThangNam ngayDangKy;        // Ngày đăng ký yêu cầu tư vấn
-    private String trangThai;       // Trạng thái yêu cầu (ví dụ: 'Đang xử lý', 'Đã hoàn thành', 'Đã hủy')
+    private String maYeuCau;   
+    private HocVien hocVien;        
+    private String hoTen;  
+    private String sdt;  
+    private String email;
+    private String mucTieu;         
+    private NgayThangNam ngayDangKy;        
+    private String trangThai;
 
-    // Constructor
-    public YeuCauTuVan(String maYeuCau, HocVien hocVien, String mucTieu, NgayThangNam ngayDangKy, String trangThai) {
+    public YeuCauTuVan(String maYeuCau, HocVien hocVien, String hoTen, String sdt, String email, String mucTieu,
+            NgayThangNam ngayDangKy, String trangThai) {
         this.maYeuCau = maYeuCau;
         this.hocVien = hocVien;
+        this.hoTen = hoTen;
+        this.sdt = sdt;
+        this.email = email;
         this.mucTieu = mucTieu;
         this.ngayDangKy = ngayDangKy;
         this.trangThai = trangThai;
     }
 
-    // Getters and Setters
     public String getMaYeuCau() {
         return maYeuCau;
     }
@@ -27,12 +32,36 @@ public class YeuCauTuVan {
         this.maYeuCau = maYeuCau;
     }
 
-    public HocVien gethocVien() {
+    public HocVien getHocVien() {
         return hocVien;
     }
 
-    public void sethocVien(HocVien hocVien) {
+    public void setHocVien(HocVien hocVien) {
         this.hocVien = hocVien;
+    }
+
+    public String getHoTen() {
+        return hoTen;
+    }
+
+    public void setHoTen(String hoTen) {
+        this.hoTen = hoTen;
+    }
+
+    public String getSdt() {
+        return sdt;
+    }
+
+    public void setSdt(String sdt) {
+        this.sdt = sdt;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getMucTieu() {
@@ -58,4 +87,5 @@ public class YeuCauTuVan {
     public void setTrangThai(String trangThai) {
         this.trangThai = trangThai;
     }
+    
 }

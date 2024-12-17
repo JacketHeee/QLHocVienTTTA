@@ -171,6 +171,13 @@ public class HomeController {
                             break;
                     }
                 break;
+                case '5': 
+                    System.out.println("Dang gui yeu cau tu van");
+                    Sleep.load(500);
+                    Console.clearConsole();
+                    System.out.println("Da gui yeu cau tu van!");
+                    System.out.print("================ENTER de tiep tuc ==================");
+                    sc.nextLine();
             }
             if (choose == 'x') 
                 break;

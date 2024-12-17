@@ -33,4 +33,11 @@ public class Sleep {
             System.out.print(".");
         }
     }
+
+    public static void load(int mili) {
+        for (int i=0; i<3; i++) {
+            tamDung(mili);
+            System.out.print(".");
+        }
+    }
 }

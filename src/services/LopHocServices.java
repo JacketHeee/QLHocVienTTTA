@@ -13,7 +13,7 @@ public class LopHocServices {
     public LopHocServices() {
         lopHocDB = new LopHocDB();
     }
-    public void displayList(ArrayList<LopHoc> list) {
+    public ArrayList<LopHoc> displayList(ArrayList<LopHoc> list) {
         System.out.println(Chuoi.line(90,'-')); 
         System.out.printf("%4s | %-20s | %-10s | %-10s | %-10s | %s\n",Chuoi.centerText("STT",4),
             Chuoi.centerText("Ten lop hoc", 20),Chuoi.centerText("Ngay KG",10),
@@ -25,10 +25,19 @@ public class LopHocServices {
         System.out.println(String.format("%4s | ", Chuoi.centerText(index++ + "",4))+ x.getInforPre());
         System.out.println(Chuoi.line(90,'-')); 
         System.out.println(""); 
+        return list;
     }
     
-    public void displayAllLopHoc() {
-        displayList(lopHocDB.getlistLopHoc());
+    public ArrayList<LopHoc> displayAllLopHoc() {
+        return displayList(lopHocDB.getlistLopHoc());
+    }
+
+    public ArrayList<LopHoc> displayAllKhoaHocSapKhaiGiang() {
+        return displayList(lopHocDB.getLopHocSapKhaiGiang());
+    }
+
+    public ArrayList<LopHoc> getKhoaHocSapKhaiGiang() {
+        return lopHocDB.getLopHocSapKhaiGiang();
     }
       
     public static void main(String[] args) {

@@ -8,9 +8,10 @@ import java.util.ArrayList;
 
 import model.khoahoc.ChuongTrinh;
 import model.khoahoc.KhoaHoc;
+import model.khoahoc.LopHoc;
 import services.ChuongTrinhServices;
 import services.KhoaHocServices;
-
+import services.LopHocServices;
 import services.UserServices;
 import ui.HomeUI;
 import utils.Chuoi;
@@ -19,8 +20,10 @@ import utils.Sleep;
 
 public class HomeController {
     private KhoaHocServices khoaHocServices;
+    private LopHocServices lopHocServices;
     public HomeController() {
         khoaHocServices = new KhoaHocServices();
+        lopHocServices = new LopHocServices();
     }
     public void showMenu() {
         Scanner sc =  new Scanner(System.in);
@@ -52,59 +55,6 @@ public class HomeController {
                             }
                     }
                     break;
-
-                        // System.out.print("Lua chon cua ban la: ");      
-                        // choose_2 = sc.nextLine().charAt(0);
-                        // switch (choose_2) {
-                        //     case '1':
-                        //         System.out.print("\tSo thu tu khoa hoc la: ");
-                        //         int stt = Integer.parseInt(sc.nextLine());
-                        //         char choose_2_1;
-                        //         while (true) {
-                        //             Console.clearConsole();
-                        //             list.get(stt-1).showAllInfor();
-                        //             HomeUI.menu_2_1();
-                        
-                        //             System.out.print("Lua chon cua ban la: ");      
-                        //             choose_2_1 = sc.nextLine().charAt(0);
-                        //             switch (choose_2_1) {
-                        //                 case '1':
-                        //                     System.out.print("\tSo thu tu lop hoc la: ");
-                        //                     int sttLop = Integer.parseInt(sc.nextLine());
-                        //                     char choose_2_1_1;
-                        //                     while (true) {
-                        //                         Console.clearConsole();
-                        //                         list.get(stt-1).getLopHocSapKhaiGiang().get(sttLop-1).showAllInfor();
-                        //                         HomeUI.menu_2_1_1();
-                                                
-                        //                         System.out.print("Lua chon cua ban la: ");      
-                        //                         choose_2_1_1 = sc.nextLine().charAt(0);
-                        //                         switch (choose_2_1_1) {
-                        //                             case '1':
-                        //                                 System.out.println("Da gui yeu cau tu van");
-                        //                                 Sleep.load();
-                        //                             break;
-                        //                         }
-                        //                         if (choose_2_1_1 == 'x') 
-                        //                             break;
-                        //                     }
-                        //                 break;
-                        //                 case '2':
-                        //                 break;
-                        //             }
-                        //             if (choose_2_1 == 'x') 
-                        //                 break;
-                        //         }
-                        //     break;
-                        //     case '2':
-                        //     break;
-                        // }
-                        // if (choose_2 == 'x') 
-                        //     break;
-                        // System.out.print("-------Enter de tiep tuc-----");
-                        // sc.nextLine();
-                    // }
-                // break;
                 case '3': 
                     
                     char choose_3;
@@ -203,6 +153,24 @@ public class HomeController {
                     }
                     
                 break;
+                case '4': 
+                    char choose_4 = ' ';
+                    while (true) {
+                        Console.clearConsole();
+                        System.out.println("===========================DANH SACH LOP HOC SAP KHAI GIANG=======================\n");
+                        ArrayList<LopHoc> list_4 = lopHocServices.displayAllKhoaHocSapKhaiGiang();
+                        HomeUI.menu_2_1();
+                        System.out.print("Lua chon cua ban la: ");
+                        choose_4 = sc.nextLine().charAt(0);
+                        switch (choose_4) {
+                            case '1':
+                                shopMenuLuaChonLopHoc(list_4);
+                                break;
+                        }
+                        if (choose_4 == 'x') 
+                            break;
+                    }
+                break;
             }
             if (choose == 'x') 
                 break;
@@ -239,25 +207,7 @@ public class HomeController {
                     choose_2_1 = sc.nextLine().charAt(0);
                     switch (choose_2_1) {
                         case '1':
-                            System.out.print("\tSo thu tu lop hoc la: ");
-                            int sttLop = Integer.parseInt(sc.nextLine());
-                            char choose_2_1_1;
-                            while (true) {
-                                Console.clearConsole();
-                                list.get(stt-1).getLopHocSapKhaiGiang().get(sttLop-1).showAllInfor();
-                                HomeUI.menu_2_1_1();
-                                
-                                System.out.print("Lua chon cua ban la: ");      
-                                choose_2_1_1 = sc.nextLine().charAt(0);
-                                switch (choose_2_1_1) {
-                                    case '1':
-                                        System.out.println("Da gui yeu cau tu van");
-                                        Sleep.load();
-                                    break;
-                                }
-                                if (choose_2_1_1 == 'x') 
-                                    break;
-                            }
+                            shopMenuLuaChonLopHoc(list.get(stt-1).getLopHocSapKhaiGiang());
                         break;
                         case '2':
                         break;
@@ -268,6 +218,29 @@ public class HomeController {
             break;
             case '2':
             break;
+        }
+    }
+
+    public void shopMenuLuaChonLopHoc(ArrayList<LopHoc> list) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("\tSo thu tu lop hoc la: ");
+        int sttLop = Integer.parseInt(sc.nextLine());
+        char choose_2_1_1;
+        while (true) {
+            Console.clearConsole();
+            list.get(sttLop-1).showAllInfor();
+            HomeUI.menu_2_1_1();
+            
+            System.out.print("Lua chon cua ban la: ");      
+            choose_2_1_1 = sc.nextLine().charAt(0);
+            switch (choose_2_1_1) {
+                case '1':
+                    System.out.println("Da gui yeu cau tu van");
+                    Sleep.load();
+                break;
+            }
+            if (choose_2_1_1 == 'x') 
+                break;
         }
     }
 }   

@@ -6,10 +6,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import model.khoahoc.KhoaHoc;
+import model.khoahoc.LopHoc;
+import model.person.NgayThangNam;
+import utils.Date;
 import model.khoahoc.CapBac;
 
 public class KhoaHocDB {
-       private ArrayList<KhoaHoc> listKhoaHoc; 
+    private ArrayList<KhoaHoc> listKhoaHoc; 
     static String src;
 
     public KhoaHocDB() {
@@ -65,6 +68,8 @@ public class KhoaHocDB {
                 list.add(x);
         return list;
     }
+
+    
     public static void main(String[] args) {
         KhoaHocDB KhoaHocDB = new KhoaHocDB(); 
         for (KhoaHoc x : KhoaHocDB.getlistKhoaHoc())

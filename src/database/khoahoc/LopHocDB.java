@@ -14,7 +14,9 @@ import model.khoahoc.KhoaHoc;
 import model.khoahoc.LopHoc;
 import model.lichhoc.GioHoc;
 import model.lichhoc.KhoaKhaiGiang;
+import model.person.NgayThangNam;
 import model.user.GiaoVien;
+import utils.Date;
 
 public class LopHocDB {
        private ArrayList<LopHoc> listLopHoc; 
@@ -81,6 +83,14 @@ public class LopHocDB {
         return list;
     }
 
+    public ArrayList<LopHoc> getLopHocSapKhaiGiang () {
+        NgayThangNam daynow = Date.now();
+        ArrayList<LopHoc> listToShow = new ArrayList<>();
+        for (LopHoc x : listLopHoc) 
+            if (x.getkhoaKhaiGiang().getThoiGianBatDau().compareTo(daynow) > 0) 
+                listToShow.add(x);
+        return listToShow;
+    }
     // public ArrayList<LopHoc> getLopHocSapKhaiGiangTheoIDKhoaHoc(String id) {
     //     ArrayList<LopHoc> list = new ArrayList<>(); 
     //     for (LopHoc x : this.listLopHoc) 

@@ -13,7 +13,7 @@ public class KhoaHocServices {
     private KhoaHocDB khoaHocDB; 
 
     public KhoaHocServices() {
-        khoaHocDB = new KhoaHocDB();   
+        khoaHocDB = new KhoaHocDB();  
         LopHocDB lopHocDB = new LopHocDB();
         for (KhoaHoc x : khoaHocDB.getlistKhoaHoc()) 
             x.setLopHocs(lopHocDB.getLopHoctheoIDKhoaHoc(x.getMaKhoaHoc()));

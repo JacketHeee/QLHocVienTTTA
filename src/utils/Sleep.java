@@ -11,7 +11,7 @@ public class Sleep {
 
     public static void dangNhap() {
         System.out.print("Dang dang nhap");
-        for (int i=0; i<6; i++) {
+        for (int i=0; i<3; i++) {
             tamDung(500);
             System.out.print(".");
         }

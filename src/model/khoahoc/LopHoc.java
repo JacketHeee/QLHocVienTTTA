@@ -3,7 +3,6 @@ package model.khoahoc;
 import model.chinhanh_phonghoc.PhongHoc;
 import model.lichhoc.GioHoc;
 import model.lichhoc.KhoaKhaiGiang;
-import model.person.*;
 import model.thanhtoan_khuyenmai.HoaDonThanhToan;
 import model.user.GiaoVien;
 import model.user.HocVien;
@@ -167,6 +166,7 @@ public class LopHoc {
         System.out.printf("Ten lop: \033[1m%s \033[0m \n",tenLopHoc);
         System.out.println("Khoa hoc: " + khoaHoc.getTenKhoaHoc());
         System.out.println("Ngay khai giang: " + khoaKhaiGiang.getThoiGianBatDau().getInfor()); 
+        System.out.println("Thoi luong: " + khoaHoc.getcapBac().getThoiLuongString());
         System.out.println("Phong: " + phongHoc.getTenPhong());
         System.out.println("Co so: " + phongHoc.getchiNhanh().getTenChiNhanh()+"\nDia chi: " +
         phongHoc.getchiNhanh().getDiaChi().toString());
@@ -191,8 +191,8 @@ public class LopHoc {
     }
 
     public String getInforPre() {
-        return String.format("%-20s | %-10s | %-10s | %-10s | %s", khoaHoc.getTenKhoaHoc(), khoaKhaiGiang.getThoiGianBatDau().getInfor(), 
-        Chuoi.centerText(soLuongToiDa+"", 10), Chuoi.centerText(hocViens.size()+"", 10),gioHoc.toString());
+        return String.format("%-20s | %-10s | %-10s | %-10s | %-35s | %s", khoaHoc.getTenKhoaHoc(), khoaKhaiGiang.getThoiGianBatDau().getInfor(), 
+        Chuoi.centerText(soLuongToiDa+"", 10), Chuoi.centerText(hocViens.size()+"", 10),gioHoc.toString(),phongHoc.getchiNhanh().getTenChiNhanh());
     }
 
     public static void main(String[] args) {

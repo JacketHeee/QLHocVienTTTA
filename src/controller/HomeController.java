@@ -5,10 +5,13 @@ import java.util.Scanner;
 import database.khoahoc.ChuongTrinhDB;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import model.chinhanh_phonghoc.ChiNhanh;
 import model.khoahoc.ChuongTrinh;
 import model.khoahoc.KhoaHoc;
 import model.khoahoc.LopHoc;
+import model.lichhoc.GioHoc;
 import services.ChuongTrinhServices;
 import services.KhoaHocServices;
 import services.LopHocServices;
@@ -178,9 +181,128 @@ public class HomeController {
                     System.out.println("Da gui yeu cau tu van!");
                     System.out.print("================ENTER de tiep tuc ==================");
                     sc.nextLine();
+                break;
+                case '6': 
+                    timKiemLopHoc();
             }
             if (choose == 'x') 
                 break;
+        }
+    }
+
+    public void timKiemLopHoc() {
+        Scanner sc = new Scanner(System.in);
+        ChuongTrinhDB chuongTrinhDB = new ChuongTrinhDB();
+        ChuongTrinh ct; 
+        GioHoc gh;
+        ChiNhanh cn; 
+        char choose; 
+        while (true) {
+            Console.clearConsole();
+            System.out.println("========================Bat dau tim kiem======================");
+            HomeUI.menu_6();
+            System.out.print("Lua chon cua ban la: ");
+            choose = sc.nextLine().charAt(0);
+            switch (choose) {
+                case '1':
+                    Console.clearConsole();
+                    System.out.println("=================TIM KIEM LOP HOC================\n");
+                    HomeUI.menu_ChuongTrinh();
+                    System.out.print("Lua chon cua ban la: ");
+                    char cct = sc.nextLine().charAt(0); 
+                    if (cct == 'c') {
+                        ct = null;
+                    }
+                    else {
+                        ct = chuongTrinhDB.getlistChuongTrinh().get(Integer.parseInt(cct+"")-1);
+                    }
+                    System.out.println("");
+
+                    ArrayList<GioHoc> listgh = HomeUI.menu_GioHoc();
+                    System.out.print("Lua chon cua ban la: ");
+                    cct = sc.nextLine().charAt(0);
+                    if (cct == 'c') {
+                        gh = null;
+                    }
+                    else {
+                        gh = listgh.get(Integer.parseInt(cct+"")-1);
+                    }
+
+                    System.out.println("");
+                    ArrayList<ChiNhanh> listcn = HomeUI.menu_ChiNhanh();
+                    System.out.print("Lua chon cua ban la: ");
+                    cct = sc.nextLine().charAt(0);
+                    if (cct == 'c') {
+                        cn = null;
+                    }
+                    else {
+                        cn = listcn.get(Integer.parseInt(cct+"")-1);
+                    }
+
+                    ArrayList<LopHoc> listlh = lopHocServices.timKiemLopHoc(ct, gh, cn);
+                    char chooseLop;
+                    while (true) {
+                        Console.clearConsole();
+                        System.out.println("=========================================KET QUA TIM KIEM LOP==========================================\n");
+                        if (listlh.size() != 0) 
+                            lopHocServices.displayList(listlh);
+                        else 
+                            System.out.println("KHONG CO LOP HOC PHU HOP!!!!!!!!!!!!!\n");
+                        HomeUI.menu_2_1();
+                        System.out.print("Lua chon cua ban la: ");
+                        chooseLop = sc.nextLine().charAt(0);
+                        switch (chooseLop) {
+                            case '1':
+                                shopMenuLuaChonLopHoc(listlh);  
+                                break;
+                            
+                            case '3': 
+                                HomeUI.menu_ChuongTrinh();
+                                System.out.print("Lua chon cua ban la: ");
+                                cct = sc.nextLine().charAt(0); 
+                                if (cct == 'c') {
+                                    ct = null;
+                                }
+                                else {
+                                    ct = chuongTrinhDB.getlistChuongTrinh().get(Integer.parseInt(cct+"")-1);
+                                }
+                                System.out.println("");
+            
+                                HomeUI.menu_GioHoc();
+                                System.out.print("Lua chon cua ban la: ");
+                                cct = sc.nextLine().charAt(0);
+                                if (cct == 'c') {
+                                    gh = null;
+                                }
+                                else {
+                                    gh = listgh.get(Integer.parseInt(cct+"")-1);
+                                }
+            
+                                System.out.println("");
+                                HomeUI.menu_ChiNhanh();
+                                System.out.print("Lua chon cua ban la: ");
+                                cct = sc.nextLine().charAt(0);
+                                if (cct == 'c') {
+                                    cn = null;
+                                }
+                                else {
+                                    cn = listcn.get(Integer.parseInt(cct+"")-1);
+                                }
+                                listlh = lopHocServices.timKiemLopHoc(listlh, ct, gh, cn);
+                            break;
+                        
+                            default:
+                                break;
+                        }
+                        if (chooseLop == 'x') 
+                            break;
+                    }
+                    break;
+            }
+
+            if (choose == 'x') 
+                break;
+            
         }
     }
 

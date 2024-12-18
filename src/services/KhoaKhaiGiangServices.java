@@ -10,6 +10,7 @@ public class KhoaKhaiGiangServices {
         KhoaKhaiGiangDB = new KhoaKhaiGiangDB();
     }
 
+    
     // private NgayThangNam tinhThoiGianKetKhoaKhaiGiangc(NgayThangNam batDau, int soTuan) {
     //     int ngay = batDau.getNgay();
     //     int thang = batDau.getThang();

@@ -64,6 +64,13 @@ public class TheoDoiHocTapDB {
         return null;
     }
 
+    public TheoDoiHocTap getTheoDoiHocTapByKKG(String idKhoaKhaiGiang, ArrayList<TheoDoiHocTap> list) {
+        for (TheoDoiHocTap x : list) 
+            if (x.getLopHoc().getkhoaKhaiGiang().getMaKhoaKhaiGiang().equals(idKhoaKhaiGiang))
+                return x;
+        return null;
+    }
+
     public ArrayList<TheoDoiHocTap> getListTheoDoiByHocVien(String idhocvien) {
         ArrayList<TheoDoiHocTap> list = new ArrayList<>();
         for (TheoDoiHocTap x : listTheoDoiHocTap) 
@@ -91,7 +98,7 @@ public class TheoDoiHocTapDB {
     public ArrayList<HocVien> getHocVienTheoLopHoc(String idlop) {
         ArrayList<HocVien> list = new ArrayList<>();
         for (TheoDoiHocTap x : listTheoDoiHocTap) 
-            if (x.getHocVien().getMaHocVien().equals(idlop)) 
+            if (x.getLopHoc().getMaLopHoc().equals(idlop)) 
                 list.add(x.getHocVien());
         return list;
     }

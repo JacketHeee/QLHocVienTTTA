@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import ui.HocVienUI;
-import ui.HomeUI;
 import utils.Console;
 import utils.Sleep;
 import model.khoahoc.LopHoc;
+import model.lichhoc.KhoaKhaiGiang;
 import model.person.NgayThangNam;
 import model.user.HocVien; // Lớp model chứa thông tin học viên
 import services.HocVienServices;
@@ -38,6 +38,7 @@ public class HocVienController {
                     xemDanhSachKhoaHocDaDangKy();
                 break;
                 case '3': 
+                    xemDiemVaTrangThai();
                 break;
             }
             if (choose == 'x') {
@@ -122,6 +123,25 @@ public class HocVienController {
         }
         
     }
+
+    public void xemDiemVaTrangThai() {
+        ArrayList<KhoaKhaiGiang> list = hocVienServices.getKhoaKhaiGiangHienco();
+        Scanner sc = new Scanner(System.in);
+        char choose; 
+        while (true) {
+            Console.clearConsole();
+            System.out.println("====================================XEM KET QUA HOC TAP================================\n\n");
+            hocVienServices.displayTheoDoiHocTapByKhoaKG(list);
+            System.out.println("------------------------");
+            System.out.println("x: Quay lai");
+            System.out.println("------------------------");
+            System.out.print("Lua cho cua ban la: ");
+            choose = sc.nextLine().charAt(0);
+            if (choose == 'x') 
+                break;
+        }
+    }
+
     void hihi() {
         Scanner sc =  new Scanner(System.in);
         char choose;
@@ -139,8 +159,6 @@ public class HocVienController {
                 break;
             }
             if (choose == 'x') {
-                Console.clearConsole();
-                Sleep.dangXuat();
                 break;
             }
         }

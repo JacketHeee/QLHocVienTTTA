@@ -146,6 +146,14 @@ public class LopHoc {
         return hocViens;
     }
 
+    public void setHocViens(ArrayList<HocVien> hocViens) {
+        this.hocViens = hocViens;
+    }
+
+    public void setHoaDonThanhToans(ArrayList<HoaDonThanhToan> hoaDonThanhToans) {
+        this.hoaDonThanhToans = hoaDonThanhToans;
+    }
+
     public ArrayList<HoaDonThanhToan> getHoaDonThanhToans() {
         return hoaDonThanhToans;
     }

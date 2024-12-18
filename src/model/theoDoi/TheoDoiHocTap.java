@@ -2,6 +2,7 @@ package model.theoDoi;
 
 import model.khoahoc.LopHoc;
 import model.user.HocVien;
+import utils.Chuoi;
 
 public class TheoDoiHocTap {
     private String maTheoDoi;
@@ -73,11 +74,11 @@ public class TheoDoiHocTap {
     }
     @Override
     public String toString() {
-        return " [" + maTheoDoi + ", " + hocVien.getMaHocVien() + ", " + lopHoc.getMaLopHoc() + ", "
-                + trangThai + ", " + diemGiuaKy + ", " + diemCuoiKy + ", " + tongDiem
-                + ", " + nhanXet + "]";
+        return String.format("%-4s | %-15s | %-5s | %-8s | %-8s | %-8s | %-20s", 
+            Chuoi.centerText(lopHoc.getkhoaHoc().getMaKhoaHoc(), 4),lopHoc.getkhoaHoc().getTenKhoaHoc(),
+            Chuoi.centerText(lopHoc.getMaLopHoc(),4), Chuoi.centerText(diemGiuaKy+"",8),Chuoi.centerText(diemCuoiKy+"",8),
+            Chuoi.centerText(tongDiem+"",8),trangThai);
     }
-    
     // Constructor
     public void show() {
         System.out.println(toString());

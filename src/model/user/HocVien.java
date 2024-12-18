@@ -5,12 +5,14 @@ import model.person.CaNhan;
 import model.person.DiaChi;
 import model.person.NgayThangNam;
 import model.thanhtoan_khuyenmai.HoaDonThanhToan;
+import model.theoDoi.TheoDoiHocTap;
 import utils.Chuoi;
 public class HocVien extends CaNhan{
     private String maHocVien;
     private NguoiDung maNguoiDung;  // Đây có thể là tham chiếu đến đối tượng người dùng
     private ArrayList<LopHoc> lopHocs;
     private ArrayList<HoaDonThanhToan> hoaDonThanhToans;
+    private ArrayList<TheoDoiHocTap> theoDoiHocTaps;
 
     public HocVien() {
         super();
@@ -70,5 +72,14 @@ public class HocVien extends CaNhan{
         System.out.println("");
     }
     // Other methods as needed
+
+    public ArrayList<TheoDoiHocTap> getTheoDoiHocTaps() {
+        return theoDoiHocTaps;
+    }
+
+    public void setTheoDoiHocTaps(ArrayList<TheoDoiHocTap> theoDoiHocTaps) {
+        this.theoDoiHocTaps = theoDoiHocTaps;
+    }
+    
 }
 

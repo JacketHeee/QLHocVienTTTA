@@ -3,6 +3,7 @@ package services;
 import java.util.ArrayList;
 
 import database.khoahoc.LopHocDB;
+import database.theoDoi.TheoDoiHocTapDB;
 import model.khoahoc.KhoaHoc;
 import model.khoahoc.LopHoc;
 import utils.Chuoi;
@@ -12,6 +13,9 @@ public class LopHocServices {
 
     public LopHocServices() {
         lopHocDB = new LopHocDB();
+        TheoDoiHocTapDB theoDoiHocTapDB = new TheoDoiHocTapDB();
+        for (LopHoc x : lopHocDB.getlistLopHoc())
+            x.setHocViens(theoDoiHocTapDB.getHocVienTheoLopHoc(x.getMaLopHoc()));
     }
     public ArrayList<LopHoc> displayList(ArrayList<LopHoc> list) {
         System.out.println(Chuoi.line(105,'-')); 

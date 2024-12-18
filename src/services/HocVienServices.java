@@ -4,38 +4,65 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+import database.lichhoc.KhoaKhaiGiangDB;
 import database.theoDoi.TheoDoiHocTapDB;
 import database.users.HocVienDB;
 import model.khoahoc.KhoaHoc;
 import model.khoahoc.LopHoc;
+import model.lichhoc.KhoaKhaiGiang;
+import model.theoDoi.TheoDoiHocTap;
 import model.user.HocVien;
 
 public class HocVienServices {
-    private HocVienDB hocVienDB; 
+    private HocVienDB hocVienDB;
+    private TheoDoiHocTapDB theoDoiHocTapDB;
     private HocVien hocVien;
 
     public HocVienServices(HocVien hocVien) {
         hocVienDB = new HocVienDB();
         this.hocVien = hocVien;  
-        TheoDoiHocTapDB theoDoiHocTapDB = new TheoDoiHocTapDB();
-        hocVien.setLopHocs(theoDoiHocTapDB.getLopHocTheoHocVien(hocVien.getMaHocVien()));      
+        theoDoiHocTapDB = new TheoDoiHocTapDB();
+        hocVien.setLopHocs(theoDoiHocTapDB.getLopHocTheoHocVien(hocVien.getMaHocVien()));    
+        hocVien.setTheoDoiHocTaps(theoDoiHocTapDB.getListTheoDoiByHocVien(hocVien.getMaHocVien()));  
     }
 
-    // public KhoaHoc getKhoaHocCaoNhatDaHoanThanh() {
-    //     ArrayList<KhoaHoc> list = new ArrayList<>();
-    //     for (LopHoc x : hocVien.getLopHocs())
-    //         list.add(x.getkhoaHoc()); 
-    //     list.sort(new Comparator<KhoaHoc>() {
-    //         @Override
-    //         public int compare(KhoaHoc hv1, KhoaHoc hv2) {
-    //             return hv1.compareTo(hv2);
-    //         }
-    //     });
-    //     return list.
-    // }
+    public void displayTheoDoiHocTap() {
+        ArrayList<TheoDoiHocTap> list = theoDoiHocTapDB.getListTheoDoiByHocVien(hocVien.getMaHocVien());
+        for (TheoDoiHocTap x : list) 
+            x.show();
+    }
+
+    public ArrayList<KhoaKhaiGiang> getKhoaKhaiGiangHienco() {
+        ArrayList<KhoaKhaiGiang> list = new ArrayList<>();
+        KhoaKhaiGiangDB khoaKhaiGiangDB = new KhoaKhaiGiangDB();
+        for (KhoaKhaiGiang x : khoaKhaiGiangDB.getlistKhoaKhaiGiang()) 
+            for (int i=0; i<hocVien.getLopHocs().size(); i++) 
+                if (x.getMaKhoaKhaiGiang().equals(hocVien.getLopHocs().get(i).getkhoaKhaiGiang().getMaKhoaKhaiGiang())) {
+                    list.add(x);
+                    break;
+                }
+        return list;
+    }
+
+    public ArrayList<TheoDoiHocTap> getTheoDoiHocTapTheoKhoa(String idKKG) {
+        ArrayList<TheoDoiHocTap> list = new ArrayList<>();
+        for (TheoDoiHocTap x : hocVien.getTheoDoiHocTaps())
+            if (x.getLopHoc().getkhoaKhaiGiang().getMaKhoaKhaiGiang().equals(idKKG)) 
+                list.add(x);
+        return list;
+    }
+    public void displayTheoDoiHocTapByKhoaKG(ArrayList<KhoaKhaiGiang> list) {
+        TheoDoiHocTapServices theoDoiHocTapServices = new TheoDoiHocTapServices();
+        for (int i = list.size()-1; i>=0; i--) {
+            System.out.printf("\033[1mKhoa khai giang: %s, nam hoc: %s\033[0m\n\n",list.get(i).getTenKhoaKhaiGiang(),list.get(i).getNamHoc()+"");
+            theoDoiHocTapServices.displayList(getTheoDoiHocTapTheoKhoa(list.get(i).getMaKhoaKhaiGiang()));
+            System.out.println("");
+        }
+    }
     public static void main(String[] args) {
-        HocVienDB hocVienDB = new HocVienDB(); 
-        HocVien hv = hocVienDB.getHocVienByIDUser("10"); 
-        hv.show();
+        HocVienDB hocVienDB = new HocVienDB();
+        HocVien hv = hocVienDB.getHocvienByID("2");
+        HocVienServices hocVienServices = new HocVienServices(hv); 
+        hocVienServices.displayTheoDoiHocTap();
     }
 }

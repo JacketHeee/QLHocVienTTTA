@@ -5,6 +5,7 @@ import model.person.CaNhan;
 import model.person.DiaChi;
 import model.person.NgayThangNam;
 import model.thanhtoan_khuyenmai.HoaDonThanhToan;
+import utils.Chuoi;
 public class HocVien extends CaNhan{
     private String maHocVien;
     private NguoiDung maNguoiDung;  // Đây có thể là tham chiếu đến đối tượng người dùng
@@ -43,13 +44,30 @@ public class HocVien extends CaNhan{
         this.maNguoiDung = maNguoiDung;
     }
 
+    public ArrayList<LopHoc> getLopHocs() {
+        return lopHocs;
+    }
+
+    public void setLopHocs(ArrayList<LopHoc> lopHocs) {
+        this.lopHocs = lopHocs;
+    }
+
+    public ArrayList<HoaDonThanhToan> getHoaDonThanhToans() {
+        return hoaDonThanhToans;
+    }
+
+    public void setHoaDonThanhToans(ArrayList<HoaDonThanhToan> hoaDonThanhToans) {
+        this.hoaDonThanhToans = hoaDonThanhToans;
+    }
+
     public void show() {
-        System.out.println(this.maHocVien); 
-        this.maNguoiDung.printInfo();
-        System.out.println(this.getHoten());
-        this.getNgaysinh().show();
-        this.getNoisinh().show(); 
-        System.out.println("\n"+this.getGioitinh());
+        System.out.println("=====================THONG TIN CA NHAN=================");
+        System.out.printf("Ma hoc vien: \033[1m%s\033[0m\n",maHocVien);
+        super.show();
+        System.out.printf("So dien thoai: \033[1m%s\033[0m\n",maNguoiDung.getSoDienthoai());
+        System.out.printf("Email: \033[1m%s\033[0m\n",maNguoiDung.getEmail());
+        // System.out.printf("Khoa hoc cap nhat da hoan thanh: \033[1m%s\033[0m",)
+        System.out.println("");
     }
     // Other methods as needed
 }

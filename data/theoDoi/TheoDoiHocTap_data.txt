@@ -1,0 +1,10 @@
+1#1#LP001#Dang hoc#7.5#8.0#7.8#Hoc vien co tien bo nhung can cai thien ky nang nghe 
+2#2#LP002#Da hoan thanh#8.0#9.5#8.9#Hoc vien xuat sac ky nang giao tiep tot 
+3#1#LP003#Bo hoc#3.5#5.0#4.4#Hoc vien thieu dong luc khong tham gia day du buoi hoc
+4#2#LP004#Chua hoc#0.0#0.0#0.0#Hoc vien chua tham gia lop hoc
+5#1#LP005#Dang hoc#6.0#7.0#6.6#Can cham chi hon trong viec lam bai tap
+6#2#LP006#Da hoan thanh#9.0#9.8#9.6#Hoc vien rat cham chi va dat thanh tich cao
+7#1#LP007#Bo hoc#4.0#3.0#3.6#Hoc vien khong phu hop voi phuong phap hoc
+8#2#LP008#Dang hoc#7.0#7.5#7.3#Tiep tuc duy tri can cai thien phan ngu phap
+9#1#LP009#Da hoan thanh#8.5#9.0#8.7#Ky nang viet va doc hieu rat tot
+10#2#LP010#Chua hoc#0.0#0.0#0.0#Hoc vien chua tham gia bat ky buoi hoc nao

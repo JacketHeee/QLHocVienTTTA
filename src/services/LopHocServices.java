@@ -14,16 +14,16 @@ public class LopHocServices {
         lopHocDB = new LopHocDB();
     }
     public ArrayList<LopHoc> displayList(ArrayList<LopHoc> list) {
-        System.out.println(Chuoi.line(90,'-')); 
-        System.out.printf("%4s | %-20s | %-10s | %-10s | %-10s | %s\n",Chuoi.centerText("STT",4),
-            Chuoi.centerText("Ten lop hoc", 20),Chuoi.centerText("Ngay KG",10),
+        System.out.println(Chuoi.line(105,'-')); 
+        System.out.printf("%4s | %-20s | %-10s | %-10s | %-10s | %-30s\n",Chuoi.centerText("STT",4),
+            Chuoi.centerText("Ten khoa hoc", 20),Chuoi.centerText("Ngay KG",10),
         Chuoi.centerText("SL toi da", 10),Chuoi.centerText("SL hien co",10),
-        "Trang thai");
-        System.out.println(Chuoi.line(90,'-')); 
+        Chuoi.centerText("Gio hoc",30));
+        System.out.println(Chuoi.line(105,'-')); 
         int index = 1;
         for (LopHoc x : list) 
         System.out.println(String.format("%4s | ", Chuoi.centerText(index++ + "",4))+ x.getInforPre());
-        System.out.println(Chuoi.line(90,'-')); 
+        System.out.println(Chuoi.line(105,'-')); 
         System.out.println(""); 
         return list;
     }

@@ -1,23 +1,128 @@
 package controller;
 
+import utils.Date;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import ui.HocVienUI;
 import ui.HomeUI;
 import utils.Console;
 import utils.Sleep;
+import model.khoahoc.LopHoc;
+import model.person.NgayThangNam;
 import model.user.HocVien; // Lớp model chứa thông tin học viên
 import services.HocVienServices;
+import services.LopHocServices;
 
 public class HocVienController {
     private HocVien hocVien; // Thuộc tính chứa thông tin học viên
     private HocVienServices hocVienServices;
-    public HocVienController(HocVien hocVien) {
-        this.hocVien = hocVien; // Nhận đối tượng học viên khi tạo controller
-        hocVienServices = new HocVienServices();
+    public HocVienController(HocVien hocVien) { // Nhận đối tượng học viên khi tạo controller
+        hocVienServices = new HocVienServices(hocVien);
+        this.hocVien = hocVien;
     }
     
     public void showMenu() {
+        Scanner sc =  new Scanner(System.in);
+        char choose;
+        while (true) {
+            Console.clearConsole();
+            HocVienUI.menu();
+            System.out.print("Lua chon cua ban la: ");      
+            choose = sc.nextLine().charAt(0); 
+            switch (choose) {
+                case '1':
+                    xemThongTinTaiKhoan();
+                break;
+                case '2':
+                    xemDanhSachKhoaHocDaDangKy();
+                break;
+                case '3': 
+                break;
+            }
+            if (choose == 'x') {
+                Console.clearConsole();
+                Sleep.dangXuat();
+                break;
+            }
+        }
+    }
+
+    public void xemThongTinTaiKhoan() {
+        Scanner sc = new Scanner(System.in);
+        char choose;
+        while (true) {
+            Console.clearConsole();
+            hocVien.show();
+            HocVienUI.menu_1();
+            System.out.print("Lua chon cua ban la: ");      
+            choose = sc.nextLine().charAt(0); 
+            switch (choose) {
+                case '1':
+                    System.out.println("Dang cap nhat");
+                    Sleep.load(500);
+                    Console.clearConsole();
+                    System.out.println("Da cap nhat tai khoan!");
+                    Sleep.load(500);
+                break;
+                case '2':
+                    System.out.println("Dang doi mat khau");
+                    Sleep.load(500);
+                    Console.clearConsole();
+                    System.out.println("Da doi mat khau!");
+                    Sleep.load(500);
+                break;
+                case '3': 
+                break;
+            }
+            if (choose == 'x') {
+                break;
+            }
+        }
+    }
+
+    public void xemDanhSachKhoaHocDaDangKy() {
+        LopHocServices lopHocServices = new LopHocServices(); 
+        Scanner sc = new Scanner(System.in);
+        ArrayList<LopHoc> list = new ArrayList<>();
+        // NgayThangNam datenow = Date.now();
+        NgayThangNam datenow = new NgayThangNam("1","10","2024");
+        for (LopHoc x : hocVien.getLopHocs()) 
+            if (x.getkhoaKhaiGiang().getThoiGianBatDau().compareTo(datenow) <= 0 && x.getkhoaKhaiGiang().getThoiGianKetThuc().compareTo(datenow) >= 0)
+                list.add(x);
+        char choose;
+        while (true) {
+            Console.clearConsole();
+            System.out.println("====================================DANH SACH KHOA HOC DANG HOC======================================\n");
+            lopHocServices.displayList(list);
+            HocVienUI.menu_2();
+            System.out.print("Lua chon cua ban la: ");
+            choose = sc.nextLine().charAt(0);
+            switch (choose) {
+                case '1':
+                    System.out.print("\tSo thu tu lop hoc la: ");
+                    int sttLop = Integer.parseInt(sc.nextLine());
+                    char choose_2_1_1;
+                    while (true) {
+                        Console.clearConsole();
+                        list.get(sttLop-1).showAllInfor();
+                        HocVienUI.menu_2_1_after();
+                        System.out.print("Lua chon cua ban la: ");      
+                        choose_2_1_1 = sc.nextLine().charAt(0);
+                        if (choose_2_1_1 == 'x') 
+                            break;
+                    }
+                    break;
+            
+                default:
+                    break;
+            }
+            if (choose == 'x') 
+                break;
+        }
+        
+    }
+    void hihi() {
         Scanner sc =  new Scanner(System.in);
         char choose;
         while (true) {
@@ -38,9 +143,9 @@ public class HocVienController {
                 Sleep.dangXuat();
                 break;
             }
-            System.out.print("-------Enter de tiep tuc-----");
-            sc.nextLine();
         }
     }
 }
+
+
 

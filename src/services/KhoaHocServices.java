@@ -1,6 +1,7 @@
 package services;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 import database.khoahoc.KhoaHocDB;
 import database.khoahoc.LopHocDB;
@@ -70,5 +71,16 @@ public class KhoaHocServices {
     public KhoaHocDB getKhoaHocDB() {
         return khoaHocDB;
     }
+
+    // public KhoaHoc getKhoaHocCaoNhatDaHoanThanh(ArrayList<LopHoc> listKhoaHoc) {
+    //     for (LopHoc x : listKhoaHoc)
+    //         list.add(x.getkhoaHoc()); 
+    //     list.sort(new Comparator<KhoaHoc>() {
+    //         @Override
+    //         public int compare(KhoaHoc hv1, KhoaHoc hv2) {
+    //             return hv1.compareTo(hv2);
+    //         }
+    //     });
+    // }
 
 }

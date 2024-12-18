@@ -121,6 +121,16 @@ public class KhoaHoc {
         System.out.println();
     }
 
+    public int compareTo(KhoaHoc b) {
+        int k = this.getcapBac().getChuongTrinh().getMaChuongTrinh().compareTo(b.getcapBac().getChuongTrinh().getMaChuongTrinh());
+        if (k != 0) 
+            return k; 
+        k = this.getcapBac().getMaCapBac().compareTo(b.getcapBac().getMaCapBac());
+        if (k != 0) 
+            return k;
+        return this.getMaKhoaHoc().compareTo(b.getMaKhoaHoc());
+    }
+
     public static void main(String[] args) {
     //    LocalDate today = LocalDate.now();
     //    System.out.println(today);

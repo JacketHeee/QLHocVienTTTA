@@ -159,7 +159,8 @@ public class LopHoc {
         System.out.printf("Ten lop: \033[1m%s \033[0m \n",tenLopHoc);
         System.out.println("Khoa hoc: " + khoaHoc.getTenKhoaHoc());
         System.out.println("Ngay khai giang: " + khoaKhaiGiang.getThoiGianBatDau().getInfor()); 
-        System.out.println("Phong: " + phongHoc.getTenPhong() + " | " + phongHoc.getchiNhanh().getTenChiNhanh()+", " +
+        System.out.println("Phong: " + phongHoc.getTenPhong());
+        System.out.println("Co so: " + phongHoc.getchiNhanh().getTenChiNhanh()+"\nDia chi: " +
         phongHoc.getchiNhanh().getDiaChi().toString());
         System.out.println("Giang vien: \n");
         System.out.println(Chuoi.line(80 ,'-'));
@@ -182,8 +183,8 @@ public class LopHoc {
     }
 
     public String getInforPre() {
-        return String.format("%-20s | %-10s | %-10s | %-10s | %s", tenLopHoc, khoaKhaiGiang.getThoiGianBatDau().getInfor(), 
-        Chuoi.centerText(soLuongToiDa+"", 10), Chuoi.centerText(hocViens.size()+"", 10),trangThai);
+        return String.format("%-20s | %-10s | %-10s | %-10s | %s", khoaHoc.getTenKhoaHoc(), khoaKhaiGiang.getThoiGianBatDau().getInfor(), 
+        Chuoi.centerText(soLuongToiDa+"", 10), Chuoi.centerText(hocViens.size()+"", 10),gioHoc.toString());
     }
 
     public static void main(String[] args) {

@@ -8,7 +8,7 @@ import java.util.Scanner;
 import model.lichhoc.Thu;
 
 public class ThuDB {
-       private ArrayList<Thu> listThu; 
+    private ArrayList<Thu> listThu; 
     static String src;
 
     public ThuDB() {

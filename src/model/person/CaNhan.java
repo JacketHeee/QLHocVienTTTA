@@ -81,19 +81,26 @@ public class CaNhan {
     public String getInfor() {
         return hoten+ ";" +ngaysinh.getInfor()+ ";" +gioitinh+ ";" + noisinh.getInfor(); 
     }
+
     public String getName() {
         return NameHandler.getName(this.hoten);
     }
+
     public String getAllBeforeName() {
         return NameHandler.getAllbeforeName(this.hoten);
     }
+
     public void show() {
-        System.out.printf("%-15s%6s | %10s | %-3d | %s\n",getAllBeforeName(),getName(),ngaysinh.getInfor(),gioitinh,noisinh.getInfor());
+        // System.out.printf("%-15s%6s | %10s | %-3d | %s\n",getAllBeforeName(),getName(),ngaysinh.getInfor(),gioitinh,noisinh.getInfor());
+        System.out.printf("Ho ten: \033[1m%s\033[0m\n",hoten);
+        System.out.printf("Ngay sinh: \033[1m%s\033[0m\n",ngaysinh.getInfor());
+        System.out.printf("Gioi tinh: \033[1m%s\033[0m\n",gioitinh == 1 ? "Nam" : "Nu");
+        System.out.printf("Dia chi: \033[1m%s\033[0m\n",noisinh.toString());
     }
+
     public  static String lum(String str, String replace) {
         Pattern pat = Pattern.compile("(\\d{3}-\\w+ \\w+ (\\w+)?)"); 
         Matcher mat = pat.matcher(str);
         return mat.replaceAll(replace);
-    }
-    
+    }     
 }

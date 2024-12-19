@@ -7,7 +7,4 @@ public class Main {
         HomeController homeController = new HomeController();
         homeController.showMenu(); 
     }
-
-    
-    
 }

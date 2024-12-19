@@ -16,10 +16,12 @@ import utils.Sleep;
 public class UserController {
     private UserServices userService;  // Khai báo đối tượng UserService
     private NguoiDung loggedInUser;  // Đối tượng User lưu thông tin người dùng đã đăng nhập
+    private HomeController homeController;
 
     // Constructor để khởi tạo UserService
-    public UserController() {
+    public UserController(HomeController homeController) {
         this.userService = new UserServices();
+        this.homeController = homeController;
     }
     // Phương thức xử lý đăng nhập
     public void login() {
@@ -63,8 +65,7 @@ public class UserController {
                 break;
             case 3:
                 HocVienDB hocVienDB = new HocVienDB();
-                HocVienController hocVienController = new HocVienController(hocVienDB.getHocVienByIDUser(user.getMaNguoiDung()));
-                
+                HocVienController hocVienController = new HocVienController(hocVienDB.getHocVienByIDUser(user.getMaNguoiDung()),homeController);
                 hocVienController.showMenu();
                break;
             default:

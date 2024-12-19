@@ -34,4 +34,14 @@ public class HocVienUI {
         System.out.println("x: Quay lai");
         System.out.println("--------------------------");
     }
+
+    public static void menu_5() {
+        System.out.println("===================DANG KY KHOA HOC MOI========================");
+        System.out.println("1: Tim kiem lop hoc ");
+        System.out.println("2: Xem lop hoc sap khai giang");
+        System.out.println("3: Tim kiem khoa hoc");
+        System.out.println("4: Xem Danh sach khoa hoc");
+        System.out.println("x: Quay lai");
+        System.out.println("---------------------------------");
+    }
 }

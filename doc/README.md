@@ -1,3 +1,10 @@
+# Dự án này được tối ưu tốc độ bằng ý tưởng của thuật toán đệ quy có nhớ 
+## Chưa có thì khởi tạo và lưu lại
+## Có rồi thì lụm!!!!!!!!! trời ơi cái ý tưởng nó hay dễ sợ mình đã hiểu nó thầy Lai Đình Khải dạy, thật tuyệt dời hahahahahaha
+
+
+
+
 ## Getting Started
 
 Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.

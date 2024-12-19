@@ -26,20 +26,32 @@ import utils.Sleep;
 public class HomeController {
     private KhoaHocServices khoaHocServices;
     private LopHocServices lopHocServices;
-    private boolean isLogin;
+    private HocVien hv;
     public HomeController() {
         khoaHocServices = new KhoaHocServices();
         lopHocServices = new LopHocServices();
-        isLogin = false;
-    }
-    
-    public boolean isLogin() {
-        return isLogin;
+        hv = null;
     }
 
-    public void setLogin(boolean isLogin) {
-        this.isLogin = isLogin;
+    public HomeController(HocVien hv) {
+        khoaHocServices = new KhoaHocServices();
+        lopHocServices = new LopHocServices();
+        this.hv = hv;
     }
+
+    
+    
+    public HocVien getHv() {
+        return hv;
+    }
+
+
+
+    public void setHv(HocVien hv) {
+        this.hv = hv;
+    }
+
+
 
     public void showMenu() {
         Scanner sc =  new Scanner(System.in);
@@ -51,140 +63,162 @@ public class HomeController {
             choose = sc.nextLine().charAt(0); 
             switch (choose) {
                 case '1':   
-                    UserController userController = new UserController();
-                    userController.login();
+                    Sleep.load();
+                    dangNhap();
                 break;
                 case '2':
                     timKiemKhoaHoc();
                     break;
                 case '3': 
-                    
-                    char choose_3;
-                    while (true) {
-                        Console.clearConsole();
-                        HomeUI.menu_3(); 
-                        System.out.print("Lua chon cua ban la: ");      
-                        choose_3 = sc.nextLine().charAt(0);
-                        switch (choose_3) {
-                            case '1':
-                                char choose_3_1 = ' ';
-                                while (true) {
-                                    Console.clearConsole();
-                                    System.out.println("==============================================DANH SACH KHOA HOC===============================================\n");
-                                    ArrayList<KhoaHoc> list = khoaHocServices.displayAllKhoaHoc();
-                                    HomeUI.menu_3_afterDisplay();
-                                    System.out.print("Lua chon cua ban la: ");      
-                                    choose_3_1 = sc.nextLine().charAt(0);
-                                    showMenuAfterDisplayKhoaHoc(list, choose_3_1);
-                                    if (choose_3_1 == 'x') {
-                                        break;
-                                    }
-                                }
-                            break;
-                            default: 
-                                if (choose_3 != 'x') {
-                                    ArrayList<ChuongTrinh> list = (new ChuongTrinhServices()).getChuongTrinhDB().getlistChuongTrinh();
-                                        char choose_3_i;
-                                    while (true) {
-                                        Console.clearConsole();
-                                        HomeUI.menu_3_2(); 
-                                        System.out.print("Lua chon cua ban la: ");      
-                                        choose_3_i = sc.nextLine().charAt(0);
-                                        switch (choose_3_i) {
-                                            default :
-                                                if (choose_3_i != 'x') {
-                                                    int ho = Integer.parseInt(choose_3_i+"");
-                                                    char choose_3_i_i;
-                                                    while (true) {
-                                                        Console.clearConsole();
-                                                        HomeUI.menu_3_2_i(ho); 
-                                                        System.out.print("Lua chon cua ban la: ");      
-                                                        choose_3_i_i= sc.nextLine().charAt(0);
-                                                        switch (choose_3_i_i) {
-                                                            case '1':
-                                                            char choose3_i_i_1 = ' ';
-                                                            while (true) {
-                                                                Console.clearConsole();
-                                                                System.out.println("==============================================DANH SACH KHOA HOC===============================================");
-                                                                System.out.println(list.get(ho-1).getTenChuongTrinh() + "\n");
-                                                                ArrayList<KhoaHoc> list3_i_i_1 = khoaHocServices.displayAllKhoaHocTheoChuongTrinh(list.get(ho-1).getMaChuongTrinh());
-                                                                HomeUI.menu_3_afterDisplay();
-                                                                System.out.print("Lua chon cua ban la: ");      
-                                                                choose3_i_i_1= sc.nextLine().charAt(0);
-                                                                showMenuAfterDisplayKhoaHoc(list3_i_i_1, choose3_i_i_1);
-                                                                if (choose3_i_i_1 == 'x') {
-                                                                    break;
-                                                                }
-                                                            }
-                                                            break;
-                                                            default: 
-                                                                if (choose_3_i_i != 'x') {
-                                                                    int hi = Integer.parseInt(choose_3_i_i + "");
-                                                                    char choose3_i_i_i = ' ';
-                                                                    while (true) {
-                                                                        Console.clearConsole();
-                                                                        System.out.println("==============================================DANH SACH KHOA HOC===============================================");
-                                                                        System.out.println(list.get(ho-1).getTenChuongTrinh() + " > " + list.get(ho-1).getCapBacs().get(hi-2).getTenCapBac() + "\n");
-                                                                        ArrayList<KhoaHoc> list3_i_i_i = khoaHocServices.displayAllKhoaHocTheoCapBac(list.get(ho-1).getCapBacs().get(hi-2).getMaCapBac());
-                                                                        HomeUI.menu_3_afterDisplay();
-                                                                        System.out.print("Lua chon cua ban la: ");      
-                                                                        choose3_i_i_i= sc.nextLine().charAt(0);
-                                                                        showMenuAfterDisplayKhoaHoc(list3_i_i_i, choose3_i_i_i);
-                                                                        if (choose3_i_i_i == 'x') {
-                                                                            break;
-                                                                        }
-                                                                    }
-                                                                }
-                                                            break;
-                                                        }
-                                                        if (choose_3_i_i == 'x') 
-                                                            break;
-                                                    }
-                                                }
-                                                
-                                            break;
-                                        }
-                                        if (choose_3_i == 'x') 
-                                            break;
-                                    }
-                                }
-                            break;
-                        }
-                        if (choose_3 == 'x') 
-                            break;
-                    }
-                    
+                    Sleep.load();
+                    xemDanhSachKhoaHoc();
                 break;
                 case '4': 
-                    char choose_4 = ' ';
-                    while (true) {
-                        Console.clearConsole();
-                        System.out.println("===========================DANH SACH LOP HOC SAP KHAI GIANG=======================\n");
-                        ArrayList<LopHoc> list_4 = lopHocServices.displayAllKhoaHocSapKhaiGiang();
-                        HomeUI.menu_2_1();
-                        System.out.print("Lua chon cua ban la: ");
-                        choose_4 = sc.nextLine().charAt(0);
-                        switch (choose_4) {
-                            case '1':
-                                shopMenuLuaChonLopHoc(list_4);
-                                break;
-                        }
-                        if (choose_4 == 'x') 
-                            break;
-                    }
+                    Sleep.load();
+                   xemDanhSachLopHocSapKhaiGiang();
                 break;
                 case '5': 
-                    System.out.println("Dang gui yeu cau tu van");
-                    Sleep.load(500);
-                    Console.clearConsole();
-                    System.out.println("Da gui yeu cau tu van!");
-                    System.out.print("================ENTER de tiep tuc ==================");
-                    sc.nextLine();
+                    guiYeuCauTuVAn();
                 break;
                 case '6': 
+                    Sleep.load();
                     timKiemLopHoc();
             }
             if (choose == 'x') 
+                break;
+        }
+    
+    }
+
+    public void dangNhap() {
+        UserController userController = new UserController(this);
+        userController.login();
+    }
+
+    public void guiYeuCauTuVAn() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Dang gui yeu cau tu van");
+        Sleep.load(500);
+        Console.clearConsole();
+        System.out.println("Da gui yeu cau tu van!");
+        System.out.print("================ENTER de tiep tuc ==================");
+        sc.nextLine();
+    }
+
+    public void xemDanhSachLopHocSapKhaiGiang() {
+        Scanner sc = new Scanner(System.in);
+        char choose_4 = ' ';
+        while (true) {
+            Console.clearConsole();
+            System.out.println("===========================DANH SACH LOP HOC SAP KHAI GIANG=======================\n");
+            ArrayList<LopHoc> list_4 = lopHocServices.displayAllKhoaHocSapKhaiGiang();
+            HomeUI.menu_2_1();
+            System.out.print("Lua chon cua ban la: ");
+            choose_4 = sc.nextLine().charAt(0);
+            switch (choose_4) {
+                case '1':
+                    shopMenuLuaChonLopHoc(list_4);
+                    break;
+            }
+            if (choose_4 == 'x') 
+                break;
+        }
+    }
+
+    public void xemDanhSachKhoaHoc() {
+        Scanner sc = new Scanner(System.in);
+        char choose_3;
+        while (true) {
+            Console.clearConsole();
+            HomeUI.menu_3(); 
+            System.out.print("Lua chon cua ban la: ");      
+            choose_3 = sc.nextLine().charAt(0);
+            switch (choose_3) {
+                case '1':
+                    char choose_3_1 = ' ';
+                    while (true) {
+                        Console.clearConsole();
+                        System.out.println("==============================================DANH SACH KHOA HOC===============================================\n");
+                        ArrayList<KhoaHoc> list = khoaHocServices.displayAllKhoaHoc();
+                        HomeUI.menu_3_afterDisplay();
+                        System.out.print("Lua chon cua ban la: ");      
+                        choose_3_1 = sc.nextLine().charAt(0);
+                        showMenuAfterDisplayKhoaHoc(list, choose_3_1);
+                        if (choose_3_1 == 'x') {
+                            break;
+                        }
+                    }
+                break;
+                default: 
+                    if (choose_3 != 'x') {
+                        ArrayList<ChuongTrinh> list = (new ChuongTrinhServices()).getChuongTrinhDB().getlistChuongTrinh();
+                            char choose_3_i;
+                        while (true) {
+                            Console.clearConsole();
+                            HomeUI.menu_3_2(); 
+                            System.out.print("Lua chon cua ban la: ");      
+                            choose_3_i = sc.nextLine().charAt(0);
+                            switch (choose_3_i) {
+                                default :
+                                    if (choose_3_i != 'x') {
+                                        int ho = Integer.parseInt(choose_3_i+"");
+                                        char choose_3_i_i;
+                                        while (true) {
+                                            Console.clearConsole();
+                                            HomeUI.menu_3_2_i(ho); 
+                                            System.out.print("Lua chon cua ban la: ");      
+                                            choose_3_i_i= sc.nextLine().charAt(0);
+                                            switch (choose_3_i_i) {
+                                                case '1':
+                                                char choose3_i_i_1 = ' ';
+                                                while (true) {
+                                                    Console.clearConsole();
+                                                    System.out.println("==============================================DANH SACH KHOA HOC===============================================");
+                                                    System.out.println(list.get(ho-1).getTenChuongTrinh() + "\n");
+                                                    ArrayList<KhoaHoc> list3_i_i_1 = khoaHocServices.displayAllKhoaHocTheoChuongTrinh(list.get(ho-1).getMaChuongTrinh());
+                                                    HomeUI.menu_3_afterDisplay();
+                                                    System.out.print("Lua chon cua ban la: ");      
+                                                    choose3_i_i_1= sc.nextLine().charAt(0);
+                                                    showMenuAfterDisplayKhoaHoc(list3_i_i_1, choose3_i_i_1);
+                                                    if (choose3_i_i_1 == 'x') {
+                                                        break;
+                                                    }
+                                                }
+                                                break;
+                                                default: 
+                                                    if (choose_3_i_i != 'x') {
+                                                        int hi = Integer.parseInt(choose_3_i_i + "");
+                                                        char choose3_i_i_i = ' ';
+                                                        while (true) {
+                                                            Console.clearConsole();
+                                                            System.out.println("==============================================DANH SACH KHOA HOC===============================================");
+                                                            System.out.println(list.get(ho-1).getTenChuongTrinh() + " > " + list.get(ho-1).getCapBacs().get(hi-2).getTenCapBac() + "\n");
+                                                            ArrayList<KhoaHoc> list3_i_i_i = khoaHocServices.displayAllKhoaHocTheoCapBac(list.get(ho-1).getCapBacs().get(hi-2).getMaCapBac());
+                                                            HomeUI.menu_3_afterDisplay();
+                                                            System.out.print("Lua chon cua ban la: ");      
+                                                            choose3_i_i_i= sc.nextLine().charAt(0);
+                                                            showMenuAfterDisplayKhoaHoc(list3_i_i_i, choose3_i_i_i);
+                                                            if (choose3_i_i_i == 'x') {
+                                                                break;
+                                                            }
+                                                        }
+                                                    }
+                                                break;
+                                            }
+                                            if (choose_3_i_i == 'x') 
+                                                break;
+                                        }
+                                    }
+                                    
+                                break;
+                            }
+                            if (choose_3_i == 'x') 
+                                break;
+                        }
+                    }
+                break;
+            }
+            if (choose_3 == 'x') 
                 break;
         }
     }
@@ -386,7 +420,7 @@ public class HomeController {
                     Sleep.load();
                     break;
                 case '2': 
-                    formThanhtoan(null, null);
+                    formThanhtoan(hv, null);
                     break;
             }
             if (choose_2_1_1 == 'x') 
@@ -454,8 +488,23 @@ public class HomeController {
             System.out.println("Dang nhap lan dau va doi mat khau de dam bao bao mat nhe!!!");
         }
         System.out.println("------------------------------------------");
-        System.out.println("1: Xem hoa don thanh toan");
-        System.out.println("x: Quay lai");
-        sc.nextLine();
+        char choose;
+        while (true) {
+            System.out.println("1: Xem hoa don thanh toan");
+            System.out.println("x: Quay lai");
+            System.out.println("-------------------------");
+            System.out.print("Lua chon cua ban la: ");
+            choose = sc.nextLine().charAt(0);
+            switch (choose) {
+                case '1':
+                    Console.clearConsole();
+                    System.out.println("Xem hoa don thanh toan");
+                    break;
+                default:
+                    break;
+            }
+            if (choose == 'x')  
+                break;
+        }
     }
 }   

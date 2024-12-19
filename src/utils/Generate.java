@@ -69,6 +69,8 @@ public class Generate {
             System.out.println();
         }
         System.out.print("\033[0m");
+        System.out.println("");
+        System.out.println("");
     }
     
 

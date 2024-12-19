@@ -17,9 +17,11 @@ import services.LopHocServices;
 public class HocVienController {
     private HocVien hocVien; // Thuộc tính chứa thông tin học viên
     private HocVienServices hocVienServices;
-    public HocVienController(HocVien hocVien) { // Nhận đối tượng học viên khi tạo controller
+    private HomeController homeController;
+    public HocVienController(HocVien hocVien, HomeController homeController) { // Nhận đối tượng học viên khi tạo controller
         hocVienServices = new HocVienServices(hocVien);
         this.hocVien = hocVien;
+        this.homeController = homeController;
     }
     
     public void showMenu() {
@@ -32,14 +34,26 @@ public class HocVienController {
             choose = sc.nextLine().charAt(0); 
             switch (choose) {
                 case '1':
+                    Sleep.load();
                     xemThongTinTaiKhoan();
                 break;
                 case '2':
+                    Sleep.load();
                     xemDanhSachKhoaHocDaDangKy();
                 break;
-                case '3': 
+                case '3':
+                    Sleep.load(); 
                     xemDiemVaTrangThai();
                 break;
+                case '4': 
+                    Sleep.load();
+                    Console.clearConsole();
+                    System.out.println("TINH NANG DANG PHAT TRIEN");
+                    System.out.println("=======ENTER DE TIEP TUC==========");
+                    sc.nextLine();
+                case '5': 
+                    dangKyKhoaHocMoi();
+                    break;
             }
             if (choose == 'x') {
                 Console.clearConsole();
@@ -142,25 +156,42 @@ public class HocVienController {
         }
     }
 
-    void hihi() {
-        Scanner sc =  new Scanner(System.in);
+    public void dangKyKhoaHocMoi() {
+        Sleep.load();
+        Scanner sc = new Scanner(System.in);
+        
+        homeController.setHv(hocVien);
+        
         char choose;
+        
         while (true) {
             Console.clearConsole();
-            HocVienUI.menu();
-            System.out.print("Lua chon cua ban la: ");      
-            choose = sc.nextLine().charAt(0); 
+            HocVienUI.menu_5();
+
+            System.out.print("Lua chon cua ban la: ");
+            choose = sc.nextLine().charAt(0);
+            
             switch (choose) {
                 case '1':
-                break;
-                case '2':
-                break;
-                case '3': 
-                break;
+                    Sleep.load();
+                    homeController.timKiemLopHoc();
+                    break;
+                case '2': 
+                    Sleep.load();
+                    homeController.xemDanhSachLopHocSapKhaiGiang();
+                    break;
+                case '3':
+                    Sleep.load();
+                    homeController.timKiemKhoaHoc();
+                    break;
+                case '4': 
+                    Sleep.load();
+                    homeController.xemDanhSachKhoaHoc();
+                    break;
             }
-            if (choose == 'x') {
+
+            if (choose == 'x') 
                 break;
-            }
         }
     }
 }

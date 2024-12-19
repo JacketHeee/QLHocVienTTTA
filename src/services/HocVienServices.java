@@ -54,7 +54,7 @@ public class HocVienServices {
     public void displayTheoDoiHocTapByKhoaKG(ArrayList<KhoaKhaiGiang> list) {
         TheoDoiHocTapServices theoDoiHocTapServices = new TheoDoiHocTapServices();
         for (int i = list.size()-1; i>=0; i--) {
-            System.out.printf("\033[1mKhoa khai giang: %s, nam hoc: %s\033[0m\n\n",list.get(i).getTenKhoaKhaiGiang(),list.get(i).getNamHoc()+"");
+            System.out.printf("\033[1;4mKhoa khai giang: %s, nam hoc: %s\033[0m\n\n",list.get(i).getTenKhoaKhaiGiang(),list.get(i).getNamHoc()+"");
             theoDoiHocTapServices.displayList(getTheoDoiHocTapTheoKhoa(list.get(i).getMaKhoaKhaiGiang()));
             System.out.println("");
         }

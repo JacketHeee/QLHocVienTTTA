@@ -12,6 +12,7 @@ import model.khoahoc.ChuongTrinh;
 import model.khoahoc.KhoaHoc;
 import model.khoahoc.LopHoc;
 import model.lichhoc.GioHoc;
+import model.user.HocVien;
 import services.ChuongTrinhServices;
 import services.KhoaHocServices;
 import services.LopHocServices;
@@ -19,15 +20,27 @@ import services.UserServices;
 import ui.HomeUI;
 import utils.Chuoi;
 import utils.Console;
+import utils.Generate;
 import utils.Sleep;
 
 public class HomeController {
     private KhoaHocServices khoaHocServices;
     private LopHocServices lopHocServices;
+    private boolean isLogin;
     public HomeController() {
         khoaHocServices = new KhoaHocServices();
         lopHocServices = new LopHocServices();
+        isLogin = false;
     }
+    
+    public boolean isLogin() {
+        return isLogin;
+    }
+
+    public void setLogin(boolean isLogin) {
+        this.isLogin = isLogin;
+    }
+
     public void showMenu() {
         Scanner sc =  new Scanner(System.in);
         char choose;
@@ -42,21 +55,7 @@ public class HomeController {
                     userController.login();
                 break;
                 case '2':
-                    System.out.print("\tTu khoa tim kiem la: ");
-                    String input = sc.nextLine();
-                    Sleep.load();
-                    char choose_2 = ' ';
-                    while (true) {
-                            
-                            ArrayList<KhoaHoc> list = timKiemTheoTen(input);
-                            HomeUI.menu_2();
-                            System.out.print("Lua chon cua ban la: ");      
-                            choose_2 = sc.nextLine().charAt(0);
-                            showMenuAfterDisplayKhoaHoc(list, choose_2);
-                            if (choose_2 == 'x') {
-                                break;
-                            }
-                    }
+                    timKiemKhoaHoc();
                     break;
                 case '3': 
                     
@@ -188,6 +187,25 @@ public class HomeController {
             if (choose == 'x') 
                 break;
         }
+    }
+
+    public void timKiemKhoaHoc() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("\tTu khoa tim kiem la: ");
+                    String input = sc.nextLine();
+                    Sleep.load();
+                    char choose_2 = ' ';
+                    while (true) {
+                            
+                            ArrayList<KhoaHoc> list = timKiemTheoTen(input);
+                            HomeUI.menu_2();
+                            System.out.print("Lua chon cua ban la: ");      
+                            choose_2 = sc.nextLine().charAt(0);
+                            showMenuAfterDisplayKhoaHoc(list, choose_2);
+                            if (choose_2 == 'x') {
+                                break;
+                            }
+                    }
     }
 
     public void timKiemLopHoc() {
@@ -366,10 +384,78 @@ public class HomeController {
                 case '1':
                     System.out.println("Da gui yeu cau tu van");
                     Sleep.load();
-                break;
+                    break;
+                case '2': 
+                    formThanhtoan(null, null);
+                    break;
             }
             if (choose_2_1_1 == 'x') 
                 break;
         }
+    }
+
+    public void formThanhtoan(HocVien hv, ArrayList<LopHoc> list) {
+        Scanner sc = new Scanner(System.in);
+        String name,sdt,email;
+        Console.clearConsole();
+        System.out.println("===========================THANH TOAN=========================");
+        if (hv == null) {
+            System.out.print("\033[1mHo ten: \033[0m");
+            name = sc.nextLine(); 
+            System.out.print("\033[1mSo dien thoai: \033[0m");
+            sdt = sc.nextLine(); 
+            System.out.print("\033[1mEmail: \033[0m");
+            email = sc.nextLine();
+            
+        } else {
+            System.out.print("\033[1mHo ten: \033[0m");
+            name = hv.getHoten(); 
+            System.out.println(name);
+            System.out.print("\033[1mSo dien thoai: \033[0m");
+            sdt = hv.getMaNguoiDung().getSoDienthoai(); 
+            System.out.println(sdt);
+            System.out.print("\033[1mEmail: \033[0m");
+            email = hv.getMaNguoiDung().getEmail();
+            System.out.println(email);
+        }
+
+        System.out.println("\033[1mDanh sach lop hoc: \033[0m");
+        // for (LopHoc x : list) 
+        //     x.show();
+        // System.out.println("Chon khuyen mai: "); //lựa chọn phát triển
+
+        System.out.println("\033[1mPhuong thuc thanh toan: \033[0m ");
+        String[] phthuc = {"Tien mat","Chuyen khoan"};
+        int index=1;
+        for (String  x : phthuc) 
+            System.out.printf("%d: %s\n",index,phthuc[index++ -1]);
+        System.out.print("Lua chon cua ban la: ");       
+        switch (Integer.parseInt(sc.nextLine())) {
+            case 1:
+                Sleep.load(500);
+                Sleep.load(500);
+                break;
+        
+            case 2: 
+                Sleep.load(500);
+                Console.clearConsole();
+                System.out.println("================ VUI LONG QUET MA QR DE THANH TOAN ================\n\n");
+                Generate.generateQRCode(15, 20);
+                Sleep.tamDung(3000);
+                Sleep.load(500);
+                Sleep.load(500);
+                break;
+        }
+
+        Console.clearConsole();
+        System.out.println("\033[1mDa xac thuc thanh toan!\033[0m");
+        if (hv == null) {
+            System.out.println("Tai khoan cua ban da duoc gui qua Email va SMS.");
+            System.out.println("Dang nhap lan dau va doi mat khau de dam bao bao mat nhe!!!");
+        }
+        System.out.println("------------------------------------------");
+        System.out.println("1: Xem hoa don thanh toan");
+        System.out.println("x: Quay lai");
+        sc.nextLine();
     }
 }   

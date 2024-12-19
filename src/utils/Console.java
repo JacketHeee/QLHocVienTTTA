@@ -1,5 +1,11 @@
 package utils;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import model.khoahoc.LopHoc;
+import model.user.HocVien;
+
 public class Console {
     public static void clearConsole() {
         try {
@@ -14,5 +20,12 @@ public class Console {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    
+
+    public static void main(String[] args) {
+        Console console = new Console();
+        // console.formThanhtoan(new HocVien(),null);
     }
 }

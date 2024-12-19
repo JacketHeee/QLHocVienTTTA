@@ -52,6 +52,7 @@ public class HomeUI {
     public static void menu_2_1_1() {
         System.out.println("--------------------------");
         System.out.println("1: Gui yeu cau tu van");
+        System.out.println("2: Dang ky ghi danh ngay");
         System.out.println("x: Quay lai");
         System.out.println("--------------------------");
     }

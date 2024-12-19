@@ -1,12 +1,16 @@
 package model.user;
+import java.io.Console;
 import java.util.ArrayList;
+import java.util.Scanner;
+
 import model.khoahoc.LopHoc;
 import model.person.CaNhan;
 import model.person.DiaChi;
 import model.person.NgayThangNam;
 import model.thanhtoan_khuyenmai.HoaDonThanhToan;
 import model.theoDoi.TheoDoiHocTap;
-import utils.Chuoi;
+// import utils.Chuoi;
+import utils.*;
 public class HocVien extends CaNhan{
     private String maHocVien;
     private NguoiDung maNguoiDung;  // Đây có thể là tham chiếu đến đối tượng người dùng

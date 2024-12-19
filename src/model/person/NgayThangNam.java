@@ -1,6 +1,9 @@
 package model.person;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
+import utils.Date;
 
 
 public class NgayThangNam {
@@ -62,4 +65,20 @@ public class NgayThangNam {
             return k;
         return Integer.compare(Integer.parseInt(ngay), Integer.parseInt(date.getNgay()));
     }
+
+    public LocalDate toLocalDate() {
+        NgayThangNam date = Date.format(this);
+        String formattedDate = String.format("%s-%s-%s", date.getNam(), date.getThang(), date.getNgay());
+        return LocalDate.parse(formattedDate, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+    }
+
+    // Phương thức tạo từ LocalDate
+    public static NgayThangNam fromLocalDate(LocalDate date) {
+        return new NgayThangNam(
+            String.valueOf(date.getDayOfMonth()),
+            String.valueOf(date.getMonthValue()),
+            String.valueOf(date.getYear())
+        );
+    }
+
 }

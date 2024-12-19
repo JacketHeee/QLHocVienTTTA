@@ -28,7 +28,7 @@ public class Sleep {
     }
 
     public static void load() {
-        for (int i=0; i<2; i++) {
+        for (int i=0; i<3; i++) {
             tamDung(350);
             System.out.print(".");
         }

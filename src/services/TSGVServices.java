@@ -1,6 +1,9 @@
 package services;
 import java.util.*;
+
+import database.users.HocVienDB;
 import model.khoahoc.*;
+import model.user.HocVien;
 import utils.Chuoi;
 public class TSGVServices {
     private KhoaHocServices khoaHocServices; 
@@ -35,4 +38,27 @@ public class TSGVServices {
             System.out.println(Chuoi.line(90,'-'));
         }
     }
+
+    public ArrayList<HocVien> timKiemHocVien(String input) {
+        String[] keys = input.split(" ");
+        ArrayList<HocVien> list = new ArrayList<>(); 
+        HocVienDB hocVienDB = new HocVienDB();
+        for (HocVien x : hocVienServices.getListHocVien())
+        // for (HocVien x : hocVienDB.getListHocVien())
+            if (x.getMaHocVien().equals(input) || Chuoi.isTontai(keys, x.getHoten())) 
+                list.add(x);
+        return list; 
+    }
+
+    public ArrayList<LopHoc> displayAllLopHoc() {
+        return lopHocServices.displayList(lopHocServices.getlistLopHoc());
+    }
+
+    public static void main(String[] args) {
+        TSGVServices tsgvServices = new TSGVServices(null, null); 
+        for (HocVien x : tsgvServices.timKiemHocVien("m"))   
+            x.show();
+    }
+
+
 }

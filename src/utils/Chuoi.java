@@ -20,7 +20,14 @@ public class Chuoi {
         return line(x,' ') + text;
     }
 
-    
+    public static boolean isTontai(String[] list, String key) {
+        for (String  x : list) {
+            if (key.indexOf(x) != -1) 
+                return true;
+        }
+        return false;
+    }
+      
     
 
 }

@@ -14,11 +14,11 @@ public class TS_GiaoVuUI {
         // System.out.println("4: Quan ly lop hoc");
         // System.out.println("5: Xu ly yeu cau ");
         System.out.println("1: Nhap thong tin ung vien");
-        System.out.println("2: Ghi danh cho hoc vien");
+        System.out.println("2: Tim kiem thong tin hoc vien");
         System.out.println("3: Xep lop cho hoc vien dong tien nhieu khoa");
         System.out.println("4: BAO CAO THONG KE");
         System.out.println("5: Xem danh sach lop hoc");
-        System.out.println("6: Xem ho so hoc vien");
+        System.out.println("6: Tinh nang dang phat trien!!!");
         System.out.println("7: Dat lich kiem tra dau vao cho giao vien");
         System.out.println("8: Sap xep lop day cho giao vien");
         System.out.println("9: Chuyen doi lop cho hoc vien");
@@ -40,7 +40,11 @@ public class TS_GiaoVuUI {
     }
 
     public static void menu_2() {
-        System.out.println("");
+        System.out.println("-----------------------------");
+        System.out.println("1: Xem ho so hoc vien");
+        System.out.println("2: Ghi danh cho hoc vien");
+        System.out.println("x: Quay lai");
+        System.out.println("-----------------------------");
     }
 
     public static void menu_4() {
@@ -49,7 +53,7 @@ public class TS_GiaoVuUI {
         System.out.println("2: Thong ke so luong hoc vien moi khoa theo tung trinh do");
         System.out.println("3: Thong ke hoc phi");
         System.out.println("x: Quay lai");
-        System.out.println("-----------------------------------");
+        System.out.println("----------------------------------");
     }
     
     public static void menu_4_3() {
@@ -60,6 +64,13 @@ public class TS_GiaoVuUI {
 
     public static void menu_4_i_i() {
         System.out.println("------------------------------");
+        System.out.println("x: Quay lai");
+    }
+
+    public static void menu_5() {
+        System.out.println("------------------------");
+        System.out.println("1: Xem chi tiet lop hoc");
+        System.out.println("2: Xem danh sach hoc vien cua lop");
         System.out.println("x: Quay lai");
     }
 }

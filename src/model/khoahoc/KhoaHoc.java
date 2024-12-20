@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import database.khoahoc.ChuongTrinhDB;
 import model.person.NgayThangNam;
+import model.user.HocVien;
 import services.LopHocServices;
 import utils.Date;
 
@@ -26,6 +27,7 @@ public class KhoaHoc {
         this.tenKhoaHoc = tenKhoaHoc;
         this.moTa = moTa;
         this.hocPhi = hocPhi;
+        this.lopHocs = new ArrayList<>();
     }
 
     public void addLopHoc(LopHoc lopHoc) {
@@ -150,5 +152,13 @@ public class KhoaHoc {
         // System.out.print("\033[4mThis is \033[1mbold  \033[4mtext");
         System.out.print("\033[1mBold Red Text\033[0m"); // Chữ đậm và màu đỏ
 
+    }
+
+    public int getSoLuongHocVien() {
+        int tong = 0; 
+        for (LopHoc x : lopHocs) {
+            tong += x.getHocViens().size();
+        }
+        return tong;
     }
 }

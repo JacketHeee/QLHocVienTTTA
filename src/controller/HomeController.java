@@ -46,7 +46,24 @@ public class HomeController {
     public HomeController() {
         khoaHocServices = new KhoaHocServices();
         lopHocServices = new LopHocServices();
+        khoaHocServices.themLopHocVaoKhoaHoc(lopHocServices);
         hv = null;
+    }
+
+    public KhoaHocServices getKhoaHocServices() {
+        return khoaHocServices;
+    }
+
+    public void setKhoaHocServices(KhoaHocServices khoaHocServices) {
+        this.khoaHocServices = khoaHocServices;
+    }
+
+    public LopHocServices getLopHocServices() {
+        return lopHocServices;
+    }
+
+    public void setLopHocServices(LopHocServices lopHocServices) {
+        this.lopHocServices = lopHocServices;
     }
 
     public HomeController(HocVien hv) {

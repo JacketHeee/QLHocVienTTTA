@@ -28,9 +28,11 @@ public class GiaoVienDB {
     public ArrayList<GiaoVien> getListGiaoVien() {
         return listGiaoVien;
     }
+
     public void setListGiaoVien(ArrayList<GiaoVien> listGiaoVien) {
         this.listGiaoVien = listGiaoVien;
     }
+    
     public ArrayList<GiaoVien> docFile() {
         ArrayList<GiaoVien> listGiaoVien = new ArrayList<>();
         File userFile = new File(src); 

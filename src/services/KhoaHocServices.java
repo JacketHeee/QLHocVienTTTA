@@ -10,13 +10,23 @@ import model.khoahoc.LopHoc;
 import utils.Chuoi;
 
 public class KhoaHocServices {
-    private KhoaHocDB khoaHocDB; 
+    private KhoaHocDB khoaHocDB;
+    private LopHocDB lopHocDB;
 
     public KhoaHocServices() {
         khoaHocDB = new KhoaHocDB();  
-        LopHocDB lopHocDB = new LopHocDB();
-        for (KhoaHoc x : khoaHocDB.getlistKhoaHoc()) 
-            x.setLopHocs(lopHocDB.getLopHoctheoIDKhoaHoc(x.getMaKhoaHoc()));
+    }
+
+    public void themLopHocVaoKhoaHoc(LopHocServices lopHocServices) {
+        // lopHocServices.displayAllLopHoc();
+        for (KhoaHoc x: khoaHocDB.getlistKhoaHoc()){
+            // lopHocServices.displayList(lopHocServices.getLopHoctheoIDKhoaHoc(x.getMaKhoaHoc()));
+            x.setLopHocs(lopHocServices.getLopHoctheoIDKhoaHoc(x.getMaKhoaHoc()));
+        }
+
+        for (KhoaHoc x : khoaHocDB.getlistKhoaHoc()) {
+            System.out.println(x.getSoLuongHocVien());
+            lopHocServices.displayList(x.getLopHocs());}
     }
 
     public void displayLopHocTheoID(String id) {
@@ -60,6 +70,10 @@ public class KhoaHocServices {
 
     public ArrayList<KhoaHoc> displayAllKhoaHocTheoChuongTrinh(String idChuongTrinh) {
         return displayList(khoaHocDB.getListKhoaHocByIdChuongTrinh(idChuongTrinh));
+    }
+
+    public ArrayList<KhoaHoc> getListKhoaHocByIdCapBac(String id) {
+        return khoaHocDB.getListKhoaHocByIdCapBac(id);
     }
     
     public static void main(String[] args) {

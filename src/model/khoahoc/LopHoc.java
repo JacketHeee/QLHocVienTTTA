@@ -199,6 +199,11 @@ public class LopHoc {
         return String.format("%-5s | %-20s | %-20s | %-10s", maLopHoc, tenLopHoc, khoaHoc.getTenKhoaHoc(), khoaKhaiGiang.getThoiGianBatDau().getInfor() );  
     }
 
+    public String getInforForThongKeTheoLop() {
+        return String.format("%-5s | %-20s | %-20s | %-10s | %-10s | %-10s", maLopHoc, tenLopHoc, khoaHoc.getTenKhoaHoc(),
+            khoaKhaiGiang.getThoiGianBatDau().getInfor(), Chuoi.centerText(hocViens.size()+"", 10),Chuoi.centerText(phongHoc.getSucChua()+"",10));  
+    }
+
     public static ArrayList<LopHoc> displayListInHoaDon(ArrayList<LopHoc> list) {
         System.out.println(Chuoi.line(71,'-')); 
         System.out.printf("%4s | %-5s | %-20s | %-20s | %-10s\n",Chuoi.centerText("STT",4),
@@ -212,9 +217,23 @@ public class LopHoc {
         return list;
     }
 
+    public static ArrayList<LopHoc> displayListThongKeTheoLop(ArrayList<LopHoc> list) {
+        System.out.println(Chuoi.line(98,'-')); 
+        System.out.printf("%4s | %-5s | %-20s | %-20s | %-10s | %-10s | %s\n",Chuoi.centerText("STT",4),
+        Chuoi.centerText("ID",5),Chuoi.centerText("Ten lop hoc", 20),Chuoi.centerText("Ten khoa hoc",20),
+        Chuoi.centerText("Ngay KG", 10), "SL hien co", "SL toi da");
+        System.out.println(Chuoi.line(98,'-')); 
+        int index = 1;
+        for (LopHoc x : list) 
+        System.out.println(String.format("%4s | ", Chuoi.centerText(index++ + "",4))+ x.getInforForThongKeTheoLop());
+        System.out.println(Chuoi.line(98,'-')); 
+        return list;
+    }
+    
     public static void main(String[] args) {
         LopHocDB lopHocDB = new LopHocDB(); 
-        System.err.println(lopHocDB.getLopHocById("LP005").getInforPre());
+        // System.err.println(lopHocDB.getLopHocById("LP005").getInforPre());
+        displayListThongKeTheoLop(lopHocDB.getlistLopHoc());
     }
 }   
 

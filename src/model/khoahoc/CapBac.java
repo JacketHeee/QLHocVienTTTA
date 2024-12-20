@@ -2,6 +2,8 @@ package model.khoahoc;
 
 import java.util.ArrayList;
 
+import utils.Chuoi;
+
 public class CapBac {
     private String maCapBac;
     private ChuongTrinh chuongTrinh;  // Association with ChuongTrinh class
@@ -76,6 +78,25 @@ public class CapBac {
 
     public void setKhoaHocs(ArrayList<KhoaHoc> khoaHocs) {
         this.khoaHocs = khoaHocs;
+    }
+
+    public void showForThongKeTheoTrinhDo() {
+        int indexCapBac = khoaHocs.size()/2;
+        int i = 0;
+        for (KhoaHoc x : khoaHocs) {
+            if (i != indexCapBac) {
+                System.out.printf(" %-21s | %-4s | %-20s | %-10s | %-15s\n"," ", x.getMaKhoaHoc(),
+                    Chuoi.centerText(x.getTenKhoaHoc(), 20), Chuoi.centerText(String.format("%.1f", x.getHocPhi()), 10),
+                        Chuoi.centerText(x.getSoLuongHocVien()+"", 15));
+            }
+            else {
+                System.out.printf(" %-21s | %-4s | %-20s | %-10s | %-15s\n",Chuoi.centerText(tenCapBac, 21), x.getMaKhoaHoc(),
+                    Chuoi.centerText(x.getTenKhoaHoc(), 20), Chuoi.centerText(String.format("%.1f", x.getHocPhi()), 10),
+                        Chuoi.centerText(x.getSoLuongHocVien()+"", 15));
+            }
+            // x.getSoLuongHocVien()+""
+            i++;
+        }
     }
 }
 

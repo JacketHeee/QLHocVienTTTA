@@ -18,8 +18,19 @@ import model.user.HocVien;
 public class HocVienServices {
     private HocVienDB hocVienDB;
     private TheoDoiHocTapDB theoDoiHocTapDB;
-    private HocVien hocVien;
+    private HocVien hocVien = null;
+    private ArrayList<HocVien> lisHocViens;
     private TheoDoiHocTapServices theoDoiHocTapServices = null;
+    
+    public HocVienServices() {
+        hocVienDB = new HocVienDB();
+        lisHocViens = hocVienDB.getListHocVien();
+        theoDoiHocTapDB = new TheoDoiHocTapDB();
+        for (HocVien x : lisHocViens) {
+            x.setLopHocs(theoDoiHocTapDB.getLopHocTheoHocVien(x.getMaHocVien()));
+            x.setTheoDoiHocTaps(theoDoiHocTapDB.getListTheoDoiByHocVien(x.getMaHocVien()));  
+        }
+    }
 
     public HocVienServices(HocVien hocVien) {
         hocVienDB = new HocVienDB();
@@ -72,6 +83,20 @@ public class HocVienServices {
         hocVien.setGioitinh(gioiTinh);
         hocVienDB.capNhatHocVien(hocVien);
     }
+
+    public ArrayList<HocVien> getListHocVien() {
+        return hocVienDB.getListHocVien();
+    }
+
+    public HocVien getHocVienByIDHocVien(String id) {
+        return hocVienDB.getHocvienByID(id);
+    }
+
+    public HocVien getHocVienByIDUser(String id) {
+        return hocVienDB.getHocVienByIDUser(id);
+    }
+
+
 
     public static void main(String[] args) {
         HocVienDB hocVienDB = new HocVienDB();

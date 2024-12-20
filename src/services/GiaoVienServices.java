@@ -1,15 +1,29 @@
 package services;
 
+import java.util.ArrayList;
+
 import database.users.GiaoVienDB;
 import model.user.GiaoVien;
 
 public class GiaoVienServices {
-    private GiaoVienDB GiaoVienDB; 
+    private GiaoVienDB giaoVienDB; 
 
     public GiaoVienServices() {
-        GiaoVienDB = new GiaoVienDB();
+        giaoVienDB = new GiaoVienDB();
     }
 
+    public ArrayList<GiaoVien> getListGiaoVien() {
+        return giaoVienDB.getListGiaoVien();
+    }
+
+    public GiaoVien getGiaoVienByID(String id) {
+        return giaoVienDB.getGiaoVienByID(id);
+    }
+    
+    public GiaoVien getGiaoVienByIDUser(String id) {
+        return giaoVienDB.getGiaoVienByIDUser(id);
+    }
+    
     public static void main(String[] args) {
         GiaoVienDB giaoVienDB = new GiaoVienDB();
         GiaoVien hv = giaoVienDB.getGiaoVienByIDUser("10"); 

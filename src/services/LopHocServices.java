@@ -20,6 +20,7 @@ public class LopHocServices {
         for (LopHoc x : lopHocDB.getlistLopHoc())
             x.setHocViens(theoDoiHocTapDB.getHocVienTheoLopHoc(x.getMaLopHoc()));
     }
+    
     public ArrayList<LopHoc> displayList(ArrayList<LopHoc> list) {
         System.out.println(Chuoi.line(135,'-')); 
         System.out.printf("%4s | %-20s | %-10s | %-10s | %-10s | %-35s | %s\n",Chuoi.centerText("STT",4),
@@ -126,6 +127,20 @@ public class LopHocServices {
                 tong += x.getkhoaHoc().getHocPhi();
         }
         return tong;
+    }
+
+    public ArrayList<LopHoc> getlistLopHoc() {
+        return lopHocDB.getlistLopHoc();
+    }
+
+    public LopHoc getLopHocById(String id) {
+        return lopHocDB.getLopHocById(id);
+    }
+    public ArrayList<LopHoc> getLopHoctheoIDKhoaHoc(String id) {
+        return lopHocDB.getLopHoctheoIDKhoaHoc(id);
+    }
+    public ArrayList<LopHoc> getLopHocSapKhaiGiang () {
+        return lopHocDB.getLopHocSapKhaiGiang();
     }
 
     public static void main(String[] args) {

@@ -91,6 +91,13 @@ public class TheoDoiHocTapDB {
         return null;
     }
 
+    public TheoDoiHocTap getTheoDoiHocTapByKKG(String idKhoaKhaiGiang) {
+        for (TheoDoiHocTap x : listTheoDoiHocTap) 
+            if (x.getLopHoc().getkhoaKhaiGiang().getMaKhoaKhaiGiang().equals(idKhoaKhaiGiang))
+                return x;
+        return null;
+    }
+
     public ArrayList<TheoDoiHocTap> getListTheoDoiByHocVien(String idhocvien) {
         ArrayList<TheoDoiHocTap> list = new ArrayList<>();
         for (TheoDoiHocTap x : listTheoDoiHocTap) 

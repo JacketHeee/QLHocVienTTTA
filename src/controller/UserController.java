@@ -55,7 +55,7 @@ public class UserController {
     private void showUIByRole(NguoiDung user) {
         switch (user.getrole()) {
             case 1:
-                TSGVController tsgvController = new TSGVController();
+                TSGVController tsgvController = new TSGVController(homeController);
                 Sleep.load();
                 tsgvController.showMenu();
                 break;

@@ -1,3 +1,4 @@
+
 package controller;
 
 import utils.Date;
@@ -9,6 +10,8 @@ import utils.Console;
 import utils.Sleep;
 import model.khoahoc.LopHoc;
 import model.lichhoc.KhoaKhaiGiang;
+import model.person.CaNhan;
+import model.person.DiaChi;
 import model.person.NgayThangNam;
 import model.user.HocVien; // Lớp model chứa thông tin học viên
 import services.HocVienServices;
@@ -26,6 +29,9 @@ public class HocVienController {
     
     public void showMenu() {
         Scanner sc =  new Scanner(System.in);
+        while (hocVien.isNewHocVien()) {
+            capNhatThongTinHocVien();
+        }
         char choose;
         while (true) {
             Console.clearConsole();
@@ -194,7 +200,30 @@ public class HocVienController {
                 break;
         }
     }
+
+    public void capNhatThongTinHocVien() {
+        Scanner sc = new Scanner(System.in); 
+        char choose; 
+        while (true) {
+            Console.clearConsole();
+            System.out.println("===================CAP NHAT THONG TIN LAN DAU==================");
+            CaNhan x = new CaNhan(hocVien.getHoten());
+            x.setInfor(hocVien.getName());
+            Console.clearConsole();
+            System.out.println("===========THONG TIN SAU CHINH SUA============");
+            x.show();
+            HocVienUI.menu_updateInfor();
+            System.out.println("");
+            System.out.print("Lua chon cua ban la:");
+            choose = sc.nextLine().charAt(0);
+            if (choose == '1') {
+                Sleep.load();
+            }
+            else if (choose == 'x') {
+                System.out.println("Con bo------");
+                hocVienServices.capNhatThongTin(hocVien, x.getHoten(), x.getNgaysinh(), x.getNoisinh(), x.getGioitinh()); 
+                break;
+            }
+        }
+    }
 }
-
-
-

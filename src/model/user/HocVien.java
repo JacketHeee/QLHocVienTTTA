@@ -18,8 +18,16 @@ public class HocVien extends CaNhan{
     private ArrayList<HoaDonThanhToan> hoaDonThanhToans;
     private ArrayList<TheoDoiHocTap> theoDoiHocTaps;
 
+    
     public HocVien() {
         super();
+        this.maNguoiDung = new NguoiDung();
+        this.lopHocs = new ArrayList<>();
+        this.hoaDonThanhToans = new ArrayList<>();
+    }
+
+    public HocVien(String hoten) {
+        super(hoten);
         this.maNguoiDung = new NguoiDung();
         this.lopHocs = new ArrayList<>();
         this.hoaDonThanhToans = new ArrayList<>();
@@ -84,6 +92,24 @@ public class HocVien extends CaNhan{
     public void setTheoDoiHocTaps(ArrayList<TheoDoiHocTap> theoDoiHocTaps) {
         this.theoDoiHocTaps = theoDoiHocTaps;
     }
+
+    public boolean isNewHocVien() {
+        return (getGioitinh() == -1);
+    }
     
+    public boolean addLopHoc(LopHoc lopHoc) {
+        lopHocs.add(lopHoc);
+        return true;
+    }
+
+    public boolean addHoaDon(HoaDonThanhToan hoadon) {
+        hoaDonThanhToans.add(hoadon);
+        return true;
+    }
+
+    public boolean addTheoDoi(TheoDoiHocTap theodoi) {
+        theoDoiHocTaps.add(theodoi);
+        return true;
+    }
 }
 

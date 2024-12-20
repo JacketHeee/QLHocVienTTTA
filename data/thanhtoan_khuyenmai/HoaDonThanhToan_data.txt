@@ -1,0 +1,15 @@
+1#1#LP001#null#19#12#2024#DaThanhToan#500000.0#TienMat#19#12#2024#500000.0#Thanh toan thanh cong#null
+2#2#LP002#null#19#12#2024#DaThanhToan#1000000.0#TienMat#19#12#2024#1000000.0#Thanh toan thanh cong#null
+3#1#LP003#null#19#12#2024#DaThanhToan#1500000.0#ChuyenKhoan#19#12#2024#1500000.0#Thanh toan thanh cong#null
+4#2#LP004#null#19#12#2024#DaThanhToan#2000000.0#ChuyenKhoan#19#12#2024#2000000.0#Thanh toan thanh cong#null
+5#2#LP005#null#19#12#2024#DaThanhToan#2500000.0#TienMat#19#12#2024#2500000.0#Thanh toan thanh cong#null
+6#2#LP006#null#19#12#2024#DaThanhToan#3000000.0#ChuyenKhoan#19#12#2024#3000000.0#Thanh toan thanh cong#null
+7#1#LP007#null#19#12#2024#DaThanhToan#3500000.0#TienMat#19#12#2024#3500000.0#Thanh toan thanh cong#null
+8#2#LP008#null#19#12#2024#DaThanhToan#4000000.0#TienMat#19#12#2024#4000000.0#Thanh toan thanh cong#null
+9#2#LP009#null#19#12#2024#DaThanhToan#4500000.0#ChuyenKhoan#19#12#2024#4500000.0#Thanh toan thanh cong#null
+10#1#LP010#null#19#12#2024#DaThanhToan#5000000.0#TienMat#19#12#2024#5000000.0#Thanh toan thanh cong#null
+11#3#LP010#null#20#12#2024#Dathanhtoan#12000000.0#Chuyen khoan#20#12#2024#12000000.0#Thanh toan thanh cong#null
+12#4#LP012#null#20#12#2024#Dathanhtoan#12000000.0#Tien mat#20#12#2024#12000000.0#Thanh toan thanh cong#null
+13#4#LP013#null#20#12#2024#Dathanhtoan#12000000.0#Tien mat#20#12#2024#12000000.0#Thanh toan thanh cong#null
+14#5#LP011#null#20#12#2024#Dathanhtoan#12000000.0#Chuyen khoan#20#12#2024#12000000.0#Thanh toan thanh cong#null
+15#5#LP004#null#20#12#2024#Dathanhtoan#12000000.0#Chuyen khoan#20#12#2024#12000000.0#Thanh toan thanh cong#null

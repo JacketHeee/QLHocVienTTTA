@@ -10,7 +10,7 @@ public class CaNhan {
     private String hoten;
     private NgayThangNam ngaysinh;
     private DiaChi noisinh;
-    private int gioitinh;//1. Nam, 0. Nu
+    private int gioitinh;//1. Nam, 0. Nu, -1: gia tri mac dinh
     //----------------------------
     public static void main(String[] args) {
         // String infor = "237483#Nguyen Hung#Manh#01#01#2005#32#Cao Lo#4#8#034#1";
@@ -27,9 +27,25 @@ public class CaNhan {
         // nguoi.show();
     }
     public CaNhan() {
+        gioitinh = -1;
         this.ngaysinh = new NgayThangNam();
         this.noisinh = new DiaChi();
     }
+
+    public CaNhan(CaNhan x) {
+        this.hoten = x.hoten;
+        this.ngaysinh = x.getNgaysinh();
+        this.noisinh = x.noisinh;
+        this.gioitinh = x.gioitinh;
+    }
+
+    public CaNhan(String hoten) {
+        this.hoten = hoten;
+        this.ngaysinh = new NgayThangNam();
+        this.noisinh = new DiaChi();
+        gioitinh = -1;
+    }
+
     public CaNhan(String hoten, NgayThangNam ngaysinh, DiaChi noisinh, int gioitinh) {
         this.hoten = hoten;
         this.ngaysinh = ngaysinh;
@@ -46,6 +62,18 @@ public class CaNhan {
         this.gioitinh = Integer.parseInt(sc.nextLine());
         noisinh.setInfor();
     }
+
+    public void setInfor(String name) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Ho va ten: ");
+        System.out.println(name);
+        System.out.print("Ngay sinh: ");
+        this.ngaysinh.setInfor();
+        System.out.print("1-Nam | 0- Nu\nGioi tinh:  ");
+        this.gioitinh = Integer.parseInt(sc.nextLine());
+        noisinh.setInfor();
+    }
+    
     public String getHoten() {
         return hoten;
     }

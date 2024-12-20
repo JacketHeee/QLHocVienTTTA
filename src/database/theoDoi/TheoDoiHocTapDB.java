@@ -1,7 +1,6 @@
 package database.theoDoi;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -50,6 +49,27 @@ public class TheoDoiHocTapDB {
         return listTheoDoiHocTap;
     }
 
+    public void ghiFile(TheoDoiHocTap theoDoiHocTap) {
+        try (FileWriter fw = new FileWriter(src, true)) { // true để ghi tiếp vào file hiện có
+            // theoDoiHocTap.show();
+            fw.write(System.lineSeparator());
+            fw.write(
+                theoDoiHocTap.getMaTheoDoi() + "#" +
+                theoDoiHocTap.getHocVien().getMaHocVien() + "#" +
+                theoDoiHocTap.getLopHoc().getMaLopHoc() + "#" +
+                theoDoiHocTap.getTrangThai() + "#" +
+                String.format("%.1f", theoDoiHocTap.getDiemGiuaKy()) + "#" +
+                String.format("%.1f",theoDoiHocTap.getDiemCuoiKy()) + "#" +
+                String.format("%.1f",theoDoiHocTap.getTongDiem()) + "#" +
+                theoDoiHocTap.getNhanXet()
+            );
+            this.listTheoDoiHocTap.add(theoDoiHocTap);
+        } catch (IOException e) {
+            System.out.println("Khong the ghi file");
+        }
+    }
+    
+
     public static void main(String[] args) {
         TheoDoiHocTapDB TheoDoiHocTapDB = new TheoDoiHocTapDB(); 
         for (TheoDoiHocTap x : TheoDoiHocTapDB.getlistTheoDoiHocTap())
@@ -89,9 +109,10 @@ public class TheoDoiHocTapDB {
 
     public ArrayList<LopHoc> getLopHocTheoHocVien(String idHv) {
         ArrayList<LopHoc> list = new ArrayList<>();
-        for (TheoDoiHocTap x : listTheoDoiHocTap) 
+        for (TheoDoiHocTap x : listTheoDoiHocTap){ 
             if (x.getHocVien().getMaHocVien().equals(idHv)) 
                 list.add(x.getLopHoc());
+        }
         return list;
     }
 

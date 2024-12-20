@@ -35,6 +35,20 @@ public class LopHocServices {
         return list;
     }
     
+
+    public ArrayList<LopHoc> displayListInHoaDon(ArrayList<LopHoc> list) {
+        System.out.println(Chuoi.line(71,'-')); 
+        System.out.printf("%4s | %-5s | %-20s | %-20s | %-10s\n",Chuoi.centerText("STT",4),
+        Chuoi.centerText("ID",5),Chuoi.centerText("Ten lop hoc", 20),Chuoi.centerText("Ten khoa hoc",20),
+        Chuoi.centerText("Ngay KG", 10));
+        System.out.println(Chuoi.line(71,'-')); 
+        int index = 1;
+        for (LopHoc x : list) 
+            System.out.println(String.format("%4s | ", Chuoi.centerText(index++ + "",4))+ x.getInforForHoaDon());
+        System.out.println(Chuoi.line(71,'-')); 
+        return list;
+    }
+
     public ArrayList<LopHoc> displayAllLopHoc() {
         return displayList(lopHocDB.getlistLopHoc());
     }
@@ -104,6 +118,16 @@ public class LopHocServices {
         }
         return list;
     }
+
+    public double tinhTongTien(ArrayList<LopHoc> list) {
+        double tong = 0; 
+        if (list != null && !list.isEmpty()) {
+            for (LopHoc x : list) 
+                tong += x.getkhoaHoc().getHocPhi();
+        }
+        return tong;
+    }
+
     public static void main(String[] args) {
         LopHocServices lopHocServices = new LopHocServices();
         lopHocServices.displayAllLopHoc();

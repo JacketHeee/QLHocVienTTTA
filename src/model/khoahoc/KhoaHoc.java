@@ -116,8 +116,7 @@ public class KhoaHoc {
         System.out.println("\033[37m" + moTa + "\033[0m\n");
         System.out.println("Thoi gian hoc: " + capBac.getThoiLuongString() + "\n");
         System.out.println("Cac lop hoc kha dung"  + "\n");
-        LopHocServices lopHocServices = new LopHocServices();
-        lopHocServices.displayList(getLopHocSapKhaiGiang());
+        LopHoc.displayListInHoaDon(getLopHocSapKhaiGiang());
         System.out.println();
     }
 

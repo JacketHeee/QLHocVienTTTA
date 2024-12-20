@@ -44,4 +44,11 @@ public class HocVienUI {
         System.out.println("x: Quay lai");
         System.out.println("---------------------------------");
     }
+
+    public static void menu_updateInfor() {
+        System.out.println("----------------------");
+        System.out.println("1: Chinh sua lai thong tin");
+        System.out.println("x: Xac nhan va tiep tuc");
+        System.out.println("----------------------");
+    }
 }

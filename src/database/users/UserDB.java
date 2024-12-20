@@ -39,7 +39,7 @@ public class UserDB {
         }
         return listUser;
     }
-    public void ghiVaofile(NguoiDung user) {
+    public void ghiFile(NguoiDung user) {
         try (FileWriter writer = new FileWriter(src, true)) { // 'true' để mở chế độ ghi thêm
             writer.write("\n");
             writer.write(user.getMaNguoiDung()+"#");
@@ -50,6 +50,7 @@ public class UserDB {
             writer.write(user.getSoDienthoai()+"#");
             writer.write(user.getEmail()+"#");
             writer.write(user.getNgayDangKy().getForWrite());
+            this.listUser.add(user);
         } catch (IOException e) {
             System.out.println("Có lỗi xảy ra: " + e.getMessage());
         }

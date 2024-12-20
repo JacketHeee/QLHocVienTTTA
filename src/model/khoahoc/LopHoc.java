@@ -195,9 +195,26 @@ public class LopHoc {
         Chuoi.centerText(soLuongToiDa+"", 10), Chuoi.centerText(hocViens.size()+"", 10),gioHoc.toString(),phongHoc.getchiNhanh().getTenChiNhanh());
     }
 
+    public String getInforForHoaDon() {
+        return String.format("%-5s | %-20s | %-20s | %-10s", maLopHoc, tenLopHoc, khoaHoc.getTenKhoaHoc(), khoaKhaiGiang.getThoiGianBatDau().getInfor() );  
+    }
+
+    public static ArrayList<LopHoc> displayListInHoaDon(ArrayList<LopHoc> list) {
+        System.out.println(Chuoi.line(71,'-')); 
+        System.out.printf("%4s | %-5s | %-20s | %-20s | %-10s\n",Chuoi.centerText("STT",4),
+        Chuoi.centerText("ID",5),Chuoi.centerText("Ten lop hoc", 20),Chuoi.centerText("Ten khoa hoc",20),
+        Chuoi.centerText("Ngay KG", 10));
+        System.out.println(Chuoi.line(71,'-')); 
+        int index = 1;
+        for (LopHoc x : list) 
+        System.out.println(String.format("%4s | ", Chuoi.centerText(index++ + "",4))+ x.getInforForHoaDon());
+        System.out.println(Chuoi.line(71,'-')); 
+        return list;
+    }
+
     public static void main(String[] args) {
         LopHocDB lopHocDB = new LopHocDB(); 
-        lopHocDB.getLopHocById("LP005").showAllInfor();
+        System.err.println(lopHocDB.getLopHocById("LP005").getInforPre());
     }
 }   
 

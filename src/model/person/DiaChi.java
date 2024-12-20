@@ -15,7 +15,7 @@ public class DiaChi {
     public void setInfor() {
         Scanner sc = new Scanner(System.in);
         this.tinh.setInfor();
-        System.out.printf("Tinh: %s\n",this.tinh.getTentinh());
+        System.out.printf("Tinh: %s\n",this.tinh.getTentinh() + "-" + this.tinh.getMatinh());
         System.out.print("Quan: ");
         this.quan = NameHandler.format(sc.nextLine());
         System.out.print("Phuong: ");

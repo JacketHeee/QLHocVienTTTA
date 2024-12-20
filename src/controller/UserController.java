@@ -37,8 +37,8 @@ public class UserController {
         loggedInUser = userService.checkLogin(username, password);
         if (loggedInUser != null) {
             Console.clearConsole();
-            Sleep.dangNhap();
             // In ra thông tin người dùng
+            System.out.print("Dang dang nhap");
             showUIByRole(loggedInUser);
         } else {
             System.out.println("Sai tai khoan hoac mat khau.");
@@ -56,16 +56,19 @@ public class UserController {
         switch (user.getrole()) {
             case 1:
                 TSGVController tsgvController = new TSGVController();
+                Sleep.load();
                 tsgvController.showMenu();
                 break;
             case 2:
                 GiaoVienDB giaoVienDB = new GiaoVienDB();
                 GiaoVienController giaoVienController = new GiaoVienController(giaoVienDB.getGiaoVienByID(user.getMaNguoiDung()));
+                Sleep.load();
                 giaoVienController.showMenu();
                 break;
             case 3:
                 HocVienDB hocVienDB = new HocVienDB();
                 HocVienController hocVienController = new HocVienController(hocVienDB.getHocVienByIDUser(user.getMaNguoiDung()),homeController);
+                Sleep.load();
                 hocVienController.showMenu();
                break;
             default:

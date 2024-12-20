@@ -8,3 +8,10 @@
 8#2#LP008#Dang hoc#7.0#7.5#7.3#Tiep tuc duy tri can cai thien phan ngu phap
 9#1#LP009#Da hoan thanh#8.5#9.0#8.7#Ky nang viet va doc hieu rat tot
 10#2#LP010#Chua hoc#0.0#0.0#0.0#Hoc vien chua tham gia bat ky buoi hoc nao
+11#3#LP010#Chua hoc#0.0#0.0#0.0#Khong co
+12#3#LP013#Chua hoc#0.0#0.0#0.0#Khong co
+13#3#LP010#Chua hoc#0.0#0.0#0.0#Khong co
+14#4#LP012#Chua hoc#0.0#0.0#0.0#Khong co
+15#4#LP013#Chua hoc#0.0#0.0#0.0#Khong co
+16#5#LP011#Chua hoc#0.0#0.0#0.0#Khong co
+17#5#LP004#Chua hoc#0.0#0.0#0.0#Khong co

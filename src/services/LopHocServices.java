@@ -13,12 +13,15 @@ import utils.Chuoi;
 
 public class LopHocServices {
     private LopHocDB lopHocDB; 
+    private TheoDoiHocTapDB theoDoiHocTapDB;
 
     public LopHocServices() {
         lopHocDB = new LopHocDB();
-        TheoDoiHocTapDB theoDoiHocTapDB = new TheoDoiHocTapDB();
-        for (LopHoc x : lopHocDB.getlistLopHoc())
+        theoDoiHocTapDB = new TheoDoiHocTapDB();
+        for (LopHoc x : lopHocDB.getlistLopHoc()) {
             x.setHocViens(theoDoiHocTapDB.getHocVienTheoLopHoc(x.getMaLopHoc()));
+            x.setTheoDoiHocTaps(theoDoiHocTapDB.getListTheoDoiByLopHoc(x.getMaLopHoc()));
+        }
     }
     
     public ArrayList<LopHoc> displayList(ArrayList<LopHoc> list) {
@@ -141,6 +144,9 @@ public class LopHocServices {
     }
     public ArrayList<LopHoc> getLopHocSapKhaiGiang () {
         return lopHocDB.getLopHocSapKhaiGiang();
+    }
+    public ArrayList<LopHoc> getLopHocTheoGiaoVien(String idGiaovien) {
+        return lopHocDB.getLopHocTheoGiaoVien(idGiaovien);
     }
 
     public static void main(String[] args) {

@@ -61,7 +61,7 @@ public class UserController {
                 break;
             case 2:
                 GiaoVienDB giaoVienDB = new GiaoVienDB();
-                GiaoVienController giaoVienController = new GiaoVienController(giaoVienDB.getGiaoVienByID(user.getMaNguoiDung()));
+                GiaoVienController giaoVienController = new GiaoVienController(giaoVienDB.getGiaoVienByID(user.getMaNguoiDung()),homeController);
                 Sleep.load();
                 giaoVienController.showMenu();
                 break;

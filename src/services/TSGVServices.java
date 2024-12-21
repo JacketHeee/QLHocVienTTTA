@@ -17,7 +17,7 @@ public class TSGVServices {
         this.khoaHocServices = khoaHocServices;
         this.lopHocServices = lopHocServices;
         hocVienServices = new HocVienServices();
-        giaoVienServices = new GiaoVienServices();
+        giaoVienServices = new GiaoVienServices(lopHocServices);
         theoDoiHocTapServices = new TheoDoiHocTapServices();
         capBacServices = new CapBacServices();
         capBacServices.themKhoaHocVaoCapbac(khoaHocServices);

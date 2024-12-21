@@ -4,6 +4,7 @@ import model.chinhanh_phonghoc.PhongHoc;
 import model.lichhoc.GioHoc;
 import model.lichhoc.KhoaKhaiGiang;
 import model.thanhtoan_khuyenmai.HoaDonThanhToan;
+import model.theoDoi.TheoDoiHocTap;
 import model.user.GiaoVien;
 import model.user.HocVien;
 import utils.Chuoi;
@@ -25,6 +26,7 @@ public class LopHoc {
     private GioHoc gioHoc;
     private ArrayList<HocVien> hocViens;
     private ArrayList<HoaDonThanhToan> hoaDonThanhToans;
+    private ArrayList<TheoDoiHocTap> theoDoiHocTaps;
     // Constructor
     public LopHoc() {
         this.khoaHoc = new KhoaHoc(); 
@@ -35,6 +37,7 @@ public class LopHoc {
         this.gioHoc = new GioHoc();
         this.hocViens = new ArrayList<>();
         this.hoaDonThanhToans = new ArrayList<>();
+        this.theoDoiHocTaps = new ArrayList<>();
     }
 
     public LopHoc(String maLopHoc, String tenLopHoc, KhoaHoc khoaHoc, KhoaKhaiGiang khoaKhaiGiang, PhongHoc phongHoc,
@@ -51,6 +54,15 @@ public class LopHoc {
         this.gioHoc = gioHoc;
         this.hocViens = new ArrayList<>();
         this.hoaDonThanhToans = new ArrayList<>();
+        this.theoDoiHocTaps = new ArrayList<>();
+    }
+
+    public ArrayList<TheoDoiHocTap> getTheoDoiHocTaps() {
+        return theoDoiHocTaps;
+    }
+
+    public void setTheoDoiHocTaps(ArrayList<TheoDoiHocTap> theoDoiHocTaps) {
+        this.theoDoiHocTaps = theoDoiHocTaps;
     }
 
     // Getters and Setters

@@ -91,6 +91,14 @@ public class LopHocDB {
                 listToShow.add(x);
         return listToShow;
     }
+
+    public ArrayList<LopHoc> getLopHocTheoGiaoVien(String idGiaovien) {
+        ArrayList<LopHoc> listToShow = new ArrayList<>();
+        for (LopHoc x : listLopHoc) 
+            if (x.getgvTroGiang().getMaGV().equals(idGiaovien) || x.getgvChinh().getMaGV().equals(idGiaovien)) 
+                listToShow.add(x);
+        return listToShow;
+    }
     // public ArrayList<LopHoc> getLopHocSapKhaiGiangTheoIDKhoaHoc(String id) {
     //     ArrayList<LopHoc> list = new ArrayList<>(); 
     //     for (LopHoc x : this.listLopHoc) 
